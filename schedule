@@ -21,6 +21,8 @@ Kitchen Management Web App Development Schedule
         --> I have decided to attempt to use bootstraps modals for logging into the web app
         --> Index page layout is completed.  Will need some css for visual enhancement
             -->Borrowed and cited some open source code for photo carousel and modal login
+        --> mySQL database created. users, and user_roles tables created.  Tomcat granted access to read.
+            --> 4 user roles set up. 4 users created
     -->WEEK 5 GOALS
         -->Build user role database
         --> Build landing pages for each role
