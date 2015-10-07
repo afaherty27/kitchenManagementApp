@@ -17,7 +17,14 @@ Kitchen Management Web App Development Schedule
 
         --> responsive for mobile devices
 >>WEEK 5<<
-
+    --> PROGRESS REPORT
+        --> I have decided to attempt to use bootstraps modals for logging into the web app
+        --> Index page layout is completed.  Will need some css for visual enhancement
+            -->Borrowed and cited some open source code for photo carousel and modal login
+    -->WEEK 5 GOALS
+        -->Build user role database
+        --> Build landing pages for each role
+        -->Sync login modals to database for authorization
 >>WEEK 6<<
 
 >>WEEK 7<<
