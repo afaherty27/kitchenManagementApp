@@ -3,14 +3,18 @@ Enterprise Java Individual Project
 
 Kitchen Management Web App Development Schedule
 
+KEY: X   = completed
+     X?  = potentially completed. Will need more attention
+     /X/ = item removed from plan
+
 >>WEEK 4<<
     -->HTML pages
-        -->welcome page
-        -->login form
+        -->welcome page X
+        -->login form X?
         -->login error page
-        -->user role: admin (chef)
-        -->user role: general (cook/dishwasher)
-        -->possible general management role
+        -->user role: admin (chef) X
+        -->user role: general (cook/dishwasher) X
+        -->possible general management role X
             -->no access to edit recipe interface
              -->post messages to BOH employees
              -->view schedule
@@ -24,7 +28,7 @@ Kitchen Management Web App Development Schedule
         --> mySQL database created. users, and user_roles tables created.  Tomcat granted access to read.
             --> 4 user roles set up. 4 users created
     -->WEEK 5 GOALS
-        -->Build user role database
+        -->Build user role database X
         --> Build landing pages for each role
         -->Sync login modals to database for authorization
         -->Build employee schedule links
