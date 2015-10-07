@@ -25,4 +25,4 @@ WALK THROUGH
     A "dishUser" will simply have access to the schedule and contact list
 
     For the "generalManager" role, they will be able to access the schedule, contact list, and push notifications to
-        the rest of the roles if there is an announcement/memo for the kithcen.
+        the rest of the roles if there is an announcement/memo for the kitchen.
