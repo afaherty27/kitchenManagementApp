@@ -29,11 +29,23 @@ KEY: X   = completed
             --> 4 user roles set up. 4 users created
     -->WEEK 5 GOALS
         -->Build user role database X
-        --> Build landing pages for each role
-        -->Sync login modals to database for authorization
+        --> Build landing pages for each role X
+        -->Sync login modals to database for authorization WORKING, UNTESTED
         -->Build employee schedule links
 
 >>WEEK 6<<
+    -->PRORESS REPORT
+        -->10/14: Began laying out framework for accessing each roles individual dashboard.  Will complete
+                  and test tomorrow
+
+    --> Create a database connection WORKING, UNTESTED
+    --> Complete LoginRedirect
+        --Map in web.xml (10/15)
+    --> Configure security in web.xml (10/15)
+    --> Rebuild jsp files using tags (10/15-10/16)
+    --> The major goal this week is to have the webapp authorization and navigation completed
+            by 17:29 Monday, Oct 19
+
 
 >>WEEK 7<<
 
