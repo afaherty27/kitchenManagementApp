@@ -17,7 +17,7 @@ public class Employee {
     /**
      * @return user_name value
      */
-    public String getUser_name() {
+    public String getUserName() {
         return user_name;
     }
 
@@ -25,14 +25,14 @@ public class Employee {
      * Sets the user_name value
      * @param user_name value assigned to user_name
      */
-    public void setUser_name(String user_name) {
+    public void setUserName(String user_name) {
         this.user_name = user_name;
     }
 
     /**
      * @return user_role value
      */
-    public String getUser_role() {
+    public String getUserRole() {
         return user_role;
     }
 
@@ -40,7 +40,7 @@ public class Employee {
      * Sets the user_role value
      * @param user_role value assigned to user_role
      */
-    public void setUser_role(String user_role) {
+    public void setUserRole(String user_role) {
         this.user_role = user_role;
     }
 }
