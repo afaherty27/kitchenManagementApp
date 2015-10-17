@@ -11,15 +11,16 @@ import java.io.IOException;
  * Date: 10/14/2015
  */
 @WebServlet(
-        name = "chefHome",
-        urlPatterns = {"/chef"}
+        name = "dishHome",
+        urlPatterns = {"/dishwasher"}
 )
-public class ChefHomeJSPRedirect extends HttpServlet {
+public class DishHomeJSPRedirect extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String url = "/chef/chef.jsp";
+        String url = "/dish/dish.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
     }
 }
+
