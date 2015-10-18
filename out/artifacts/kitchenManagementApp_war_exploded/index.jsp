@@ -6,25 +6,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<c:set var="title" value="KMA: HOME" scope="request" />>
 
-  <title>Welcome: KMA Home</title>
-
-  <!-- Bootstrap   -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/template.css" rel="stylesheet">
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-</head>
+<c:import url="/jsp/head.jsp" />
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top"
-     role="navigation"s>
+     role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -33,11 +23,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button> <!-- END BUTTON-->
-      <li><a class="navbar-brand" href="index.html">KMA</a></li><!-- Title of page -->
+      <li><a class="navbar-brand" href="index.jsp">KMA</a></li><!-- Title of page -->
     </div> <!-- END NAVBAR-HEADER-->
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right"> <!-- align on right properly -->
         <li class="active"><a href="#">HOME</a></li>
+        <li><a href="/gm/generalManager.jsp">General Manager</a></li> <!--this works see line41 -->
 
         <li class="dropdown">
           <a href="#"
@@ -45,12 +36,12 @@
              data-toggle="dropdown">LOGIN<b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li class="dropdown-header">Management</li><!--menu title -->
-            <li><a href="#login"data-toggle="modal">Chef</a></li>
-            <li><a href="#login"data-toggle="modal"">General Manager</a></li>
-            <li class="divider"></li> <!-- divides 2 sections of dropdown -->
+            <li><a href="/chef" data-toggle="modal">Chef</a></li>
+            <li><a href="/generalManager" data-toggle="modal">General Manager</a></li>
+            <li class="divider"></li> <!-- divides 2 sections of dropdown --><!-- this does not work-->
             <li class="dropdown-header"></li><!--menu title -->
-            <li><a href="#login"data-toggle="modal"">Line Cook</a></li>
-            <li><a href="#login"data-toggle="modal"">Dishwasher</a></li> <!-- if these do not work, remove modal -->
+            <li><a href="/dishwasher" data-toggle="modal">Line Cook</a></li>
+            <li><a href="/lineCook" data-toggle="modal">Dishwasher</a></li> <!-- if these do not work, remove modal -->
           </ul>
         </li>
         <li><a href="#contact" data-toggle="modal">SUPPORT</a><li>
@@ -114,11 +105,11 @@
     </p>
   </div> <!-- CLOSE col-sm-4 -->
   <div class="col-sm-4">
-    <h2 class="rowHeader">Featured Projects</h2>
+    <h2 class="rowHeader">Management Benefits</h2>
     <p>Coming Soon</p>
   </div> <!-- CLOSE col-sm-4 -->
   <div class="col-sm-4">
-    <h2 class="rowHeader">Contact</h2>
+    <h2 class="rowHeader">Staff Benefits</h2>
     <p>Coming Soon</p>
   </div> <!-- CLOSE col-sm-4 -->
 </div> <!-- CLOSE row -->
@@ -150,37 +141,6 @@
   </div> <!-- END modal-dialog -->
 </div> <!-- END modal -->
 
-<!-- provided by: http://www.bootply.com/101498 -->
-<!--login modal-->
-<div id="login" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h1 class="text-center">Login</h1>
-      </div>
-      <div class="modal-body">
-        <form class="form col-md-12 center-block">
-          <div class="form-group">
-            <input class="form-control input-lg" placeholder="Username" type="text">
-          </div>
-          <div class="form-group">
-            <input class="form-control input-lg" placeholder="Password" type="password">
-          </div>
-          <div class="form-group">
-            <button class="btn btn-primary btn-lg btn-block">Sign In</button>
-            <span class="pull-right"><a href="#">Register</a></span><span><a href="#">Need help?</a></span>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <div class="col-md-12">
-          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

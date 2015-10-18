@@ -13,18 +13,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Chef -- Home</title>
+  <title>Chef: Home</title>
 
   <!-- Bootstrap   -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/template.css" rel="stylesheet">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/template.css" rel="stylesheet">
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top"
-     role="navigation"s>
+     role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -33,7 +33,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button> <!-- END BUTTON-->
-      <li><a class="navbar-brand" href="index.html">KMA</a></li><!-- Title of page -->
+      <li><a class="navbar-brand" href="../index.jsp">KMA</a></li><!-- Title of page -->
     </div> <!-- END NAVBAR-HEADER-->
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right"> <!-- align on right properly -->
@@ -45,12 +45,12 @@
              data-toggle="dropdown">LOGIN<b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li class="dropdown-header">Management</li><!--menu title -->
-            <li><a href="#login"data-toggle="modal">Chef</a></li>
-            <li><a href="#login"data-toggle="modal"">General Manager</a></li>
+            <li><a href="#login" data-toggle="modal">Chef</a></li>
+            <li><a href="#login" data-toggle="modal">General Manager</a></li>
             <li class="divider"></li> <!-- divides 2 sections of dropdown -->
             <li class="dropdown-header"></li><!--menu title -->
-            <li><a href="#login"data-toggle="modal"">Line Cook</a></li>
-            <li><a href="#login"data-toggle="modal"">Dishwasher</a></li> <!-- if these do not work, remove modal -->
+            <li><a href="#login" data-toggle="modal">Line Cook</a></li>
+            <li><a href="#login" data-toggle="modal">Dishwasher</a></li> <!-- if these do not work, remove modal -->
           </ul>
         </li>
         <li><a href="#contact" data-toggle="modal">SUPPORT</a><li>
@@ -62,27 +62,21 @@
 <!-- ROW 1 GRID -->
 <div class="row">
   <div class="col-sm-4">
-    <h2 class="rowHeader">Mission Statement</h2>
+    <h2 class="rowHeader">Schedule</h2>
     <p>
-      stuff about this program. blah blah blah
-    </p>
-    <p>
-      more stuff blah bblah blhaldh
-    </p>
-    <p>
-      ssaying more stuff
+      add link to build schedule
     </p>
   </div> <!-- CLOSE col-sm-4 -->
   <div class="col-sm-4">
-    <h2 class="rowHeader">Featured Projects</h2>
-    <p>Coming Soon</p>
+    <h2 class="rowHeader">Staff List</h2>
+    <p>link to a list of staff.  allows to add a new employee</p>
   </div> <!-- CLOSE col-sm-4 -->
   <div class="col-sm-4">
-    <h2 class="rowHeader">Contact</h2>
-    <p>Coming Soon</p>
+    <h2 class="rowHeader">Recipe Development</h2>
+    <p>build form to build recipe and add to a database</p>
   </div> <!-- CLOSE col-sm-4 -->
 </div> <!-- CLOSE row -->
-</div> <!-- CLOSE container -->
+
 
 <!-- FOOTER -->
 <div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
@@ -103,7 +97,7 @@
           <p> For technical difficulties please email afaherty27@gmail.com</p>
         </div> <!-- END modal-body -->
         <div class="model-footer">
-          <a class="btn btn-primary"data-dismiss="modal">Close</a>
+          <a class="btn btn-primary" data-dismiss="modal">Close</a>
         </div> <!-- END modal-footer -->
       </div> <!-- END modal-header -->
     </div> <!-- END modal-content-->
@@ -143,7 +137,7 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 
 
 </body>

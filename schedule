@@ -37,14 +37,19 @@ KEY: X   = completed
     -->PRORESS REPORT
         -->10/14: Began laying out framework for accessing each roles individual dashboard.  Will complete
                   and test tomorrow
+        -->10/16: All role logins have been mapped in web.xml. Login modals are all coded.
+        -->10/18: cannot direct user to dashboards using directs.  /chef works correct. but /generalManager, /dish, and
+                    /lineCook do not. Confused.
 
-    --> Create a database connection WORKING, UNTESTED
+    --> Create a database connection WORKING, REMOVED
     --> Complete LoginRedirect
-        --Map in web.xml (10/15)
-    --> Configure security in web.xml (10/15)
-    --> Rebuild jsp files using tags (10/15-10/16)
+        --Map in web.xml (10/15) COMPLETED
+    --> Configure security in web.xml (10/15) WORKING
+    --> Rebuild jsp files using tags (10/15-10/16) BEFORE CLASS MONDAY
     --> The major goal this week is to have the webapp authorization and navigation completed
-            by 17:29 Monday, Oct 19
+            by 17:29 Monday, Oct 19 WORKING, ALMOST COMPLETE, BUT WITH ISSUES
+
+
 
 
 >>WEEK 7<<

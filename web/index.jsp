@@ -9,11 +9,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
-<!-- --HEAD -->
+<c:set var="title" value="KMA: HOME" scope="request" />>
+
 <c:import url="/jsp/head.jsp" />
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top"
-     role="navigation"s>
+     role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -27,6 +28,7 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right"> <!-- align on right properly -->
         <li class="active"><a href="#">HOME</a></li>
+        <li><a href="/gm/generalManager.jsp">General Manager</a></li> <!--this works see line41 -->
 
         <li class="dropdown">
           <a href="#"
@@ -34,12 +36,12 @@
              data-toggle="dropdown">LOGIN<b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li class="dropdown-header">Management</li><!--menu title -->
-            <li><a href="#chefLogin"data-toggle="modal">Chef</a></li>
-            <li><a href="#gManagerLogin"data-toggle="modal"">General Manager</a></li>
-            <li class="divider"></li> <!-- divides 2 sections of dropdown -->
+            <li><a href="/chef" data-toggle="modal">Chef</a></li>
+            <li><a href="/generalManager" data-toggle="modal">General Manager</a></li>
+            <li class="divider"></li> <!-- divides 2 sections of dropdown --><!-- this does not work-->
             <li class="dropdown-header"></li><!--menu title -->
-            <li><a href="#lineCookLogin"data-toggle="modal"">Line Cook</a></li>
-            <li><a href="#dishLoginModal"data-toggle="modal"">Dishwasher</a></li> <!-- if these do not work, remove modal -->
+            <li><a href="/dishwasher" data-toggle="modal">Line Cook</a></li>
+            <li><a href="/lineCook" data-toggle="modal">Dishwasher</a></li> <!-- if these do not work, remove modal -->
           </ul>
         </li>
         <li><a href="#contact" data-toggle="modal">SUPPORT</a><li>
@@ -139,12 +141,6 @@
   </div> <!-- END modal-dialog -->
 </div> <!-- END modal -->
 
-
-<!--login modals-->
-<c:import url="/jsp/chefLoginModal.jsp" />
-<c:import url="/jsp/gmLoginModal.jsp" />
-<c:import url="/jsp/lineCookLoginModal.jsp" />
-<c:import url="/jsp/dishLoginModal.jsp" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
