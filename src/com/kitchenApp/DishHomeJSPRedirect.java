@@ -16,11 +16,17 @@ import java.io.IOException;
 )
 public class DishHomeJSPRedirect extends HttpServlet {
 
+    /**
+     *
+     * @param request HttpServletRequest object
+     * @param response HttpServletResponse object
+     * @throws ServletException if there is a servlet error
+     * @throws IOException if there is an input output error
+     */
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String url = "/dish/dish.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-        dispatcher.forward(request, response);
+        response.sendRedirect(url);
     }
 }
 
