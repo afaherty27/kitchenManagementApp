@@ -53,13 +53,18 @@ KEY: X   = completed
 
 
 >>WEEK 7<<
-
+    -->finish week 6
 >>WEEK 8<<
+    -->create/populate SQL database of employees contact information
+        -->Have a page under chef to insert a new employee?
+    -->Display to contactlist jsp (Store in WEB INF so it cannot be accesseed outside of the program?
+    --> add links to each roles landing page
 
 >>WEEK 9<<
-
+    --> build employee contact database, servlets and pages to view them. link to landing pages
+    --> build recipe developer program, servlets and pages to view them.  link to landing pages.
 >>WEEK 10<<
-
+    --> finish recipe development program.
 >>WEEK 11<<
 
 >>WEEK 12<<
