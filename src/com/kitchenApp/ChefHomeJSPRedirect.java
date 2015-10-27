@@ -26,6 +26,7 @@ public class ChefHomeJSPRedirect extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String url = "/chef/chef.jsp";
+
         response.sendRedirect(url);
     }
 }

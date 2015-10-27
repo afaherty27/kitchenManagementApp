@@ -10,6 +10,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<c:set var="title" value="Welcome: Chef" scope="request" />
 <c:import url="/jsp/head.jsp" />
 
 <body>

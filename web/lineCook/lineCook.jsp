@@ -9,6 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
+<c:set var="title" value="Welcome: Line Cook" scope="request" />
 <c:import url="/jsp/head.jsp" />
 
 <body>
