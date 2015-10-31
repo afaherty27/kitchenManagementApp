@@ -13,18 +13,17 @@ DATABASE : KITCHEN APP
 -----------------------------------------|
 |       users                            |
 ------------------------------------|----|
-|user_name | varchar(15) | not null | PK |
+|user_id   | int         | not null | PK | AUTO INCREMENT
+------------------------------------|----|
+|user_name | varchar(15) | not null |    |
 ------------------------------------|----|
 |user_pass | varchar(15) | not null |    |
 ------------------------------------|----|
-                REMOVE USERS TABLE. MERGE W/EMPLOYEE DETAILS
------------------------------------------|
-|       employee                         |
-------------------------------------|----|
-|user_name | varchar(15) | not null | PK |
+|address   | varchar(25) | not null |    |
 ------------------------------------|----|
 | phone    | varchar(10) | not null |    |
 ------------------------------------|----|
 | email    | varchar(36) | not null |    |
 ------------------------------------|----|
-
+| soc_sec  | varchar(10) | not null |    |
+------------------------------------|----|
