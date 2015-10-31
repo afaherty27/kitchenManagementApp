@@ -1,5 +1,7 @@
 package com.kitchenApp;
 
+import org.apache.log4j.Logger;
+
 import javax.servlet.annotation.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -16,6 +18,8 @@ import java.io.IOException;
 )
 public class ChefHomeJSPRedirect extends HttpServlet {
 
+    //private final Logger logger = Logger.getLogger(ChefHomeJSPRedirect.class);
+
     /**
      *
      * @param request HttpServletRequest object
@@ -28,5 +32,8 @@ public class ChefHomeJSPRedirect extends HttpServlet {
         String url = "/chef/chef.jsp";
 
         response.sendRedirect(url);
+
+        //logger.info("Directing to " + url);
+
     }
 }
