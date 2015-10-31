@@ -13,8 +13,8 @@ import java.util.List;
 public interface UserDoa {
 
     List<User> getAllUsers();
-    User getUser(int userId, String userName, String password, String address, String email,
-            int phone, int social);
+    User getUser(int userId);
+    void addUser(User user);
     void updateUser(User user);
     void deleteUser(User user);
 }
