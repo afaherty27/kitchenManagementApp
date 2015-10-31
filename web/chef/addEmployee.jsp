@@ -78,7 +78,6 @@
     </div>
     <div class="form-group">
             <button type="submit" class="btn">Add Employee</button>
-        </div>
     </div>
 
 </form>
