@@ -26,7 +26,8 @@
     </p>
   </div> <!-- CLOSE col-sm-4 -->
   <div class="col-sm-4">
-    <h2 class="rowHeader">Staff List</h2>
+    <h2 class="rowHeader">Staff Management</h2>
+    <a href="addEmployee.jsp">New Employee</a>
     <p>link to a list of staff.  allows to add a new employee</p>
   </div> <!-- CLOSE col-sm-4 -->
   <div class="col-sm-4">
