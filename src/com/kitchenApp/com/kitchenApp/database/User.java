@@ -19,17 +19,15 @@ public class User {
 
     /**
      * Overloaded constructor for a User Object
-     * @param userId  ref to users ID number
      * @param userName ref to users name
      * @param password ref to users password
      * @param address ref to users address
      * @param email ref to users email
      * @param social ref to users social security number
      */
-    public User(int userId, String userName, String password, String address, String email,
+    public User(String userName, String password, String address, String email,
                 int phone, int social) {
 
-        this.userId = userId;
         this.userName = userName;
         this.password = password;
         this.address = address;
