@@ -18,8 +18,6 @@ import java.io.IOException;
 )
 public class ChefHomeJSPRedirect extends HttpServlet {
 
-    //private final Logger logger = Logger.getLogger(ChefHomeJSPRedirect.class);
-
     /**
      *
      * @param request HttpServletRequest object
@@ -32,8 +30,5 @@ public class ChefHomeJSPRedirect extends HttpServlet {
         String url = "/chef/chef.jsp";
 
         response.sendRedirect(url);
-
-        //logger.info("Directing to " + url);
-
     }
 }
