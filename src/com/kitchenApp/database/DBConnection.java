@@ -1,4 +1,4 @@
-package com.kitchenApp.com.kitchenApp.database;
+package com.kitchenApp.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 public class DBConnection {
 
-    private Connection establishConection() throws SQLException, ClassNotFoundException {
+    private Connection establishConnection() throws SQLException, ClassNotFoundException {
 
         String url = "jdbc:mysql://localhost/student";
         String userName = "student";

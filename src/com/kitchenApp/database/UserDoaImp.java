@@ -1,4 +1,4 @@
-package com.kitchenApp.com.kitchenApp.database;
+package com.kitchenApp.database;
 
 
 import org.apache.log4j.Logger;
@@ -14,11 +14,14 @@ import java.util.List;
 public class UserDoaImp implements UserDoa {
 
     private final Logger logger = Logger.getLogger(UserDoaImp.class);
+    DBConnection connection = new DBConnection();
 
     public void addUser(User user) {
 
         // refer to a DB connection
+        connection.establishConnection();
         //PreparedStatement object refering to sql statements
+        PreparedStatement addNew = connection.preparedStatement()
         logger.info("in addUser method");
     }
 

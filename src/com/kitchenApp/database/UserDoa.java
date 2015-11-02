@@ -1,4 +1,4 @@
-package com.kitchenApp.com.kitchenApp.database;
+package com.kitchenApp.database;
 
 
 import java.util.List;
