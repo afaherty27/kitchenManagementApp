@@ -16,6 +16,12 @@ public class User {
     private int phone;
     private int social;
 
+    /**
+     * zero arg constructor
+      */
+    public User() {
+
+    }
 
     /**
      * Overloaded constructor for a User Object
