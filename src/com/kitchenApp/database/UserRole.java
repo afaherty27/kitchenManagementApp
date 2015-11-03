@@ -7,6 +7,7 @@ package com.kitchenApp.database;
 
 public class UserRole {
 
+    private int roleId;
     private String userName;
     private String userRole;
 
@@ -22,10 +23,29 @@ public class UserRole {
      * @param userName value of user name
      * @param userRole value of user role
      */
-    public UserRole(String userName, String userRole) {
+    public UserRole(int roleId, String userName, String userRole) {
 
+        this.roleId = roleId;
         this.userName = userName;
         this.userRole = userRole;
+    }
+
+    /**
+     * recieves roleId value
+     * @return roleId
+     */
+    public String getRoleId() {
+
+        return roleId;
+    }
+
+    /**
+     * Set value of roleId
+     * @param roleId value of role Id
+     */
+    public void setRoleId(int roleId) {
+
+        this.roleId = roleId;
     }
 
     /**
