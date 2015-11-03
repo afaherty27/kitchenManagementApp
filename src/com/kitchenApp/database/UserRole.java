@@ -34,7 +34,7 @@ public class UserRole {
      * recieves roleId value
      * @return roleId
      */
-    public String getRoleId() {
+    public int getRoleId() {
 
         return roleId;
     }
