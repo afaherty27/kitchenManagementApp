@@ -25,6 +25,7 @@ public class User {
 
     /**
      * Overloaded constructor for a User Object
+     * @param userId ref to users id number
      * @param userName ref to users name
      * @param password ref to users password
      * @param address ref to users address
