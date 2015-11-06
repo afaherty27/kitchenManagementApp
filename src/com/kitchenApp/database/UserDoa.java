@@ -1,7 +1,7 @@
 package com.kitchenApp.database;
 
 
-import org.apache.log4j.Logger;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.HibernateException;
@@ -14,21 +14,23 @@ import org.hibernate.HibernateException;
 
 public class UserDoa {
 
-    private final Logger logger = Logger.getLogger(UserDoa.class);
-
-    public User addUser(String userName, String userPass, String address, int phone,
-                        String email, int social) {
+    /**
+     * Method to add user to the database
+     * @param user User object reference
+     * @return userId
+     */
+    public Integer addUser(User user) {
 
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction transaction = null;
-        Integer userId = 0;
+        Integer userId = null;
 
         try {
-            transaction = session.beginTransaction();
-            User user = new User(userName, userPass, address, email, phone, social);
-            userId = (int) session.save(user);
 
+            transaction = session.beginTransaction();
+            userId = (Integer) session.save(user);
             transaction.commit();
+
         } catch (HibernateException e){
             if (transaction != null) {
                 transaction.rollback();
@@ -38,7 +40,7 @@ public class UserDoa {
             session.close();
         }
 
-        return null; // TODO change value
+        return userId;
     }
 
     // TODO getUser(int userId)
