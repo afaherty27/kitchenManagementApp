@@ -11,6 +11,12 @@ import org.hibernate.Session;
 
 public class UserRoleDoa {
 
+
+    /**
+     * Method to add a userRole to the database
+     * @param userRole UserRole object reference
+     * @return userRoleId
+     */
     public Integer addUserRole(UserRole userRole) {
 
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
