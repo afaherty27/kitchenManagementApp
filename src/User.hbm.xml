@@ -14,7 +14,7 @@
         <property name="password" column="user_pass" type="string" />
         <property name="address"  column="address"   type="string" />
         <property name="email"    column="email"     type="string" />
-        <property name="phone"    column="phone"     type="int" />
-        <property name="social"   column="social"    type="int" />
+        <property name="phone"    column="phone"     type="string" />
+        <property name="social"   column="soc_sec"    type="string" />
     </class>
 </hibernate-mapping>
