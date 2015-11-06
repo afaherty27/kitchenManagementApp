@@ -1,11 +1,9 @@
-package com.kitchenApp.database;
+package com.kitchenApp.database.dataAccess;
 
-
-
+import com.kitchenApp.database.entity.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.HibernateException;
-
 
 /**
  *

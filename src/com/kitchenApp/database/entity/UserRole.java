@@ -1,4 +1,4 @@
-package com.kitchenApp.database;
+package com.kitchenApp.database.entity;
 
 /**
  * @author afaherty

@@ -1,4 +1,4 @@
-package com.kitchenApp.database;
+package com.kitchenApp.database.dataAccess;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
