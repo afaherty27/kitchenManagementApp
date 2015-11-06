@@ -13,8 +13,8 @@ public class User {
     private String password;
     private String address;
     private String email;
-    private int phone;
-    private int social;
+    private Integer phone;
+    private Integer social;
 
     /**
      * zero arg constructor
@@ -32,7 +32,7 @@ public class User {
      * @param social ref to users social security number
      */
     public User(String userName, String password, String address, String email,
-                int phone, int social) {
+                Integer phone, Integer social) {
 
         this.userName = userName;
         this.password = password;
