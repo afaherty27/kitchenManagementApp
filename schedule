@@ -34,7 +34,7 @@ KEY: X   = completed
         -->Build employee schedule links
 
 >>WEEK 6<<
-    -->PRORESS REPORT
+    -->PROGRESS REPORT
         -->10/14: Began laying out framework for accessing each roles individual dashboard.  Will complete
                   and test tomorrow
         -->10/16: All role logins have been mapped in web.xml. Login modals are all coded.
@@ -49,9 +49,6 @@ KEY: X   = completed
     --> The major goal this week is to have the webapp authorization and navigation completed
             by 17:29 Monday, Oct 19 WORKING, ALMOST COMPLETE, BUT WITH ISSUES
 
-
-
-
 >>WEEK 7<<
     -->finish week 6
 >>WEEK 8<<
@@ -61,18 +58,28 @@ KEY: X   = completed
     --> add links to each roles landing page
 
 >>WEEK 9<<
+    PROGRESS REPORT: UserDoa and UserRoleDoa are working with a Main class.  Currently working on integrating with
+                     the addEmployee jsp page. Hibernate integration is working via the Main.
+                     Refactored package layouts for organization
+
     --> build employee contact database, servlets and pages to view them. link to landing pages
-    --> build recipe developer program, servlets and pages to view them.  link to landing pages.
+    --> complete add employee action servlet.  build tests
+    --> modal for add employee? or new page?
+
+
 >>WEEK 10<<
-    --> finish recipe development program.
+    --> Recipe development program for Chef role.
+    --> Decide how to add the scheduling.  At this point leaning to a file upload and building a program at the end if time
 >>WEEK 11<<
-
+    --> Build database search servlets for contact list, recipes, and schedule
 >>WEEK 12<<
-
+    --> Check all logging and testing requirements
+    --> catch up on backlog work
 >>WEEK 13<<
-
+   --> Catchup week/TBD
 >>WEEK 14<<
-
+  --> Rough check: Is the app secured properly? Testing? Logging? Are the included programs working correctly?
 >>WEEK 15<<
-
+    --> Final Check.
 >>WEEK 16<<
+    --> Present
