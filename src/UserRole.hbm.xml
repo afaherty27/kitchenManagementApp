@@ -5,12 +5,12 @@
 <hibernate-mapping>
     <class name="com.kitchenApp.database.UserRole" table="user_role">
         <meta attribute="class-description">
-            This class contains the user detail
+            This class contains the user role detail
         </meta>
-        <id name="userName">
+        <id name="roleId" column="role_id" type="int">
             <generator class="native" />
         </id>
         <property name="userName" column="user_name" type="string" />
-        <property name="userRole" column="user_role" type="string" />
+        <property name="userRole" column="role_name" type="string" />
     </class>
 </hibernate-mapping>
