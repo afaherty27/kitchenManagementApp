@@ -65,6 +65,7 @@ KEY: X   = completed
     --> build employee contact database, servlets and pages to view them. link to landing pages
     --> complete add employee action servlet.  build tests
     --> modal for add employee? or new page?
+    --> complete remaining CRUD requirements; add action servlets
 
 
 >>WEEK 10<<
