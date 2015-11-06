@@ -7,17 +7,18 @@ import org.hibernate.service.ServiceRegistryBuilder;
 
 
 /**
- * @author afaherty
+ * @author sasdfd
  */
 
 public class SessionFactoryProvider {
+
 
     private static SessionFactory sessionFactory;
 
     /**
      * Instantiates a new SessionFactory object.  Loads configuration details.
      */
-    public static void  createSessionFactory() {
+    public static void createSessionFactory() {
 
         Configuration config = new Configuration(); // new Configuration obj
 
@@ -26,11 +27,12 @@ public class SessionFactoryProvider {
 
         //build on ServiceRegistry inst. Apply value of config var
         ServiceRegistry registry = new ServiceRegistryBuilder().applySettings(
-                     //apply all properties
                 config.getProperties()).buildServiceRegistry();
+        //apply all properties
 
         //instantiate new SessionFactory using properties & mappings
         sessionFactory = config.buildSessionFactory(registry);
+
     }
 
     /**
@@ -42,6 +44,7 @@ public class SessionFactoryProvider {
         if(sessionFactory == null) {
 
             createSessionFactory();
+
         }
 
         return sessionFactory;
