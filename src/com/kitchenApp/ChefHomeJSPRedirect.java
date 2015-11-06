@@ -18,6 +18,7 @@ import java.io.IOException;
 )
 public class ChefHomeJSPRedirect extends HttpServlet {
 
+    private final Logger log = Logger.getLogger(ChefHomeJSPRedirect.class);
     /**
      *
      * @param request HttpServletRequest object
@@ -28,6 +29,8 @@ public class ChefHomeJSPRedirect extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String url = "/chef/chef.jsp";
+
+        log.info("Accessing: " + url);
 
         response.sendRedirect(url);
     }
