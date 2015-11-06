@@ -1,5 +1,7 @@
 package com.kitchenApp;
 
+import org.apache.log4j.Logger;
+
 import javax.servlet.annotation.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -14,7 +16,12 @@ import java.io.IOException;
         name = "generalManagerHome",
         urlPatterns = {"/generalManager"}
 )
+/**
+ * redirect class for generalManager.jsp page
+ */
 public class GMHomeJSPRedirect extends HttpServlet {
+
+    private final Logger log = Logger.getLogger(GMHomeJSPRedirect.class);
 
     /**
      *
@@ -26,6 +33,9 @@ public class GMHomeJSPRedirect extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String url = "/gm/generalManager.jsp";
+
+        log.info("Accessing: " + url);
+
         response.sendRedirect(url);
     }
 }

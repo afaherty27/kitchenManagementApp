@@ -1,5 +1,7 @@
 package com.kitchenApp;
 
+import org.apache.log4j.Logger;
+
 import javax.servlet.annotation.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -14,7 +16,13 @@ import java.io.IOException;
         name = "dishHome",
         urlPatterns = {"/dishwasher"}
 )
+
+/**
+ * Redirect class for dish.jsp page
+ */
 public class DishHomeJSPRedirect extends HttpServlet {
+
+    private final Logger log = Logger.getLogger(DishHomeJSPRedirect.class);
 
     /**
      *
@@ -26,6 +34,9 @@ public class DishHomeJSPRedirect extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String url = "/dish/dish.jsp";
+
+        log.info("Accessing: " + url);
+
         response.sendRedirect(url);
     }
 }

@@ -16,6 +16,10 @@ import java.io.IOException;
         name = "chefHome",
         urlPatterns = {"/chef"}
 )
+
+/**
+ * redirect class for chef.jsp page
+ */
 public class ChefHomeJSPRedirect extends HttpServlet {
 
     private final Logger log = Logger.getLogger(ChefHomeJSPRedirect.class);
