@@ -1,4 +1,4 @@
-package com.kitchenApp;
+package com.kitchenApp.servlet;
 
 import org.apache.log4j.Logger;
 
@@ -10,19 +10,19 @@ import java.io.IOException;
 
 /**
  * @author afaherty
- * Date: 10/14/2015
+ * Date: 10/16/2015
  */
 @WebServlet(
-        name = "chefHome",
-        urlPatterns = {"/chef"}
+        name = "generalManagerHome",
+        urlPatterns = {"/generalManager"}
 )
-
 /**
- * redirect class for chef.jsp page
+ * redirect class for generalManager.jsp page
  */
-public class ChefHomeJSPRedirect extends HttpServlet {
+public class GMHomeJSPRedirect extends HttpServlet {
 
-    private final Logger log = Logger.getLogger(ChefHomeJSPRedirect.class);
+    private final Logger log = Logger.getLogger(GMHomeJSPRedirect.class);
+
     /**
      *
      * @param request HttpServletRequest object
@@ -32,7 +32,7 @@ public class ChefHomeJSPRedirect extends HttpServlet {
      */
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String url = "/chef/chef.jsp";
+        String url = "/gm/generalManager.jsp";
 
         log.info("Accessing: " + url);
 
