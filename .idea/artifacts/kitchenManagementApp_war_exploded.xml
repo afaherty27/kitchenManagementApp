@@ -7,6 +7,10 @@
         <element id="directory" name="classes">
           <element id="module-output" name="kitchenManagementApp" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$APPLICATION_HOME_DIR$/lib/log4j.jar" />
+          <element id="file-copy" path="C:/tomcat/lib/jstl-1.2.jar" />
+        </element>
       </element>
     </root>
   </artifact>
