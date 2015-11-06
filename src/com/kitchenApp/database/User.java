@@ -13,8 +13,8 @@ public class User {
     private String password;
     private String address;
     private String email;
-    private Integer phone;
-    private Integer social;
+    private String phone;
+    private String social;
 
     /**
      * zero arg constructor
@@ -31,9 +31,10 @@ public class User {
      * @param email ref to users email
      * @param social ref to users social security number
      */
-    public User(String userName, String password, String address, String email,
-                Integer phone, Integer social) {
+    public User(int userId, String userName, String password, String address,  String phone,
+                String email, String social) {
 
+        this.userId = userId;
         this.userName = userName;
         this.password = password;
         this.address = address;
@@ -126,7 +127,7 @@ public class User {
      * Receive value of phone
      * @return phone
      */
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
@@ -134,7 +135,7 @@ public class User {
      * Set value of phone
      * @param phone value of users phone
      */
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -142,7 +143,7 @@ public class User {
      * Receive value of social
      * @return social
      */
-    public int getSocial() {
+    public String getSocial() {
         return social;
     }
 
@@ -150,7 +151,7 @@ public class User {
      * Set value of social
      * @param social value of users social
      */
-    public void setSocial(int social) {
+    public void setSocial(String social) {
         this.social = social;
     }
 
