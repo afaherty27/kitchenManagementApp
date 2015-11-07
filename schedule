@@ -54,8 +54,7 @@ KEY: X   = completed
 >>WEEK 8<<
     -->create/populate SQL database of employees contact information
         -->Have a page under chef to insert a new employee?
-    -->Display to contactlist jsp (Store in WEB INF so it cannot be accesseed outside of the program?
-    --> add links to each roles landing page
+
 
 >>WEEK 9<<
     PROGRESS REPORT: UserDoa and UserRoleDoa are working with a Main class.  Currently working on integrating with
@@ -73,6 +72,8 @@ KEY: X   = completed
     --> Decide how to add the scheduling.  At this point leaning to a file upload and building a program at the end if time
 >>WEEK 11<<
     --> Build database search servlets for contact list, recipes, and schedule
+    -->Display to contactlist jsp (Store in WEB INF so it cannot be accesseed outside of the program?
+    --> add links to each roles landing page
 >>WEEK 12<<
     --> Check all logging and testing requirements
     --> catch up on backlog work
