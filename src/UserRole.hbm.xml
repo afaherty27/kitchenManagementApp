@@ -3,7 +3,7 @@
         "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="com.kitchenApp.database.UserRole" table="user_role">
+    <class name="com.kitchenApp.database.entity.UserRole" table="user_role">
         <meta attribute="class-description">
             This class contains the user role detail
         </meta>

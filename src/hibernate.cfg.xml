@@ -19,8 +19,8 @@
         </property>
 
         <!-- List of XML mapping files -->
-       <mapping resource="User.hbm.xml"  class="com.kitchenApp.database.User" />
+       <mapping resource="User.hbm.xml"  class="com.kitchenApp.database.entity.User" />
 
-        <mapping resource="UserRole.hbm.xml" class="com.kitchenApp.database.UserRole" />
+        <mapping resource="UserRole.hbm.xml" class="com.kitchenApp.database.entity.UserRole" />
     </session-factory>
 </hibernate-configuration>
