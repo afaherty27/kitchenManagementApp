@@ -1,7 +1,7 @@
-package com.kitchenApp.database;
+package com.kitchenApp;
 
-import com.kitchenApp.database.dataAccess.UserDoa;
-import com.kitchenApp.database.dataAccess.UserRoleDoa;
+import com.kitchenApp.database.dataAccess.UserDao;
+import com.kitchenApp.database.dataAccess.UserRoleDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,8 +25,8 @@ import java.io.IOException;
  */
 public class AddEmployeeAction extends HttpServlet {
 
-    private UserDoa userDoa;
-    private UserRoleDoa userRoleDoa;
+    private UserDao userDoa;
+    private UserRoleDao userRoleDoa;
 
 
     /**
@@ -49,7 +49,7 @@ public class AddEmployeeAction extends HttpServlet {
     public void addUserData(HttpServletRequest request) {
 
         // create a new userDoa object reference
-        userDoa = new userDoa();
+        //userDao = new userDao();
 
         //  TODO vars that refer to each form field refering to a User object constructor
 
@@ -60,7 +60,7 @@ public class AddEmployeeAction extends HttpServlet {
     public void addUserRoleData(HttpServletRequest request) {
 
         // create a new UserRoleDoa object reference
-        userRoleDoa = new userRoleDoa();
+        //userRoleDao = new userRoleDao();
 
         // TODO vars that refer to each form field refering to a UserRole object constructor
 
