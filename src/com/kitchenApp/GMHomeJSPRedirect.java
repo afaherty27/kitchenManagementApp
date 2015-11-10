@@ -1,7 +1,6 @@
-package com.kitchenApp.servlet;
+package com.kitchenApp;
 
 import org.apache.log4j.Logger;
-import org.omg.CORBA.Request;
 
 import javax.servlet.annotation.*;
 import javax.servlet.*;
@@ -11,19 +10,18 @@ import java.io.IOException;
 
 /**
  * @author afaherty
- * Date: 11/5/2015
+ * Date: 10/16/2015
  */
 @WebServlet(
-        name = "addEmployeeForm",
-        urlPatterns = {"/chef/addEmployee"}
+        name = "generalManagerHome",
+        urlPatterns = {"/generalManager"}
 )
-
 /**
- * forwarding class for addEmployee.jsp page
+ * redirect class for generalManager.jsp page
  */
-public class AddEmployeeJSPForward extends HttpServlet {
+public class GMHomeJSPRedirect extends HttpServlet {
 
-    private final Logger log = Logger.getLogger(AddEmployeeJSPForward.class);
+    private final Logger log = Logger.getLogger(GMHomeJSPRedirect.class);
 
     /**
      *
@@ -34,11 +32,10 @@ public class AddEmployeeJSPForward extends HttpServlet {
      */
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String url = "/chef/addEmployee.jsp";
+        String url = "/gm/generalManager.jsp";
 
         log.info("Accessing: " + url);
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-        dispatcher.forward(request, response);
+        response.sendRedirect(url);
     }
 }
