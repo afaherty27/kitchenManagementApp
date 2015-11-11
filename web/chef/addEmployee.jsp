@@ -15,57 +15,56 @@
 <body>
 <c:import url="/jsp/navbar.jsp" />
 <h1> add a new employee on this page</h1>
-<form class="form-horizontal">
+<form class="form-horizontal" method="post" action="addAction">
     <div class="form-group">
         <label for="inputUserName" class="control-label col-xs-2">User Name</label>
         <div class="col-xs-3">
-            <input type="text" class="form-control" id="inputUserName" placeholder="User Name" />
+            <input type="text" class="form-control" id="inputUserName" name="userName" placeholder="User Name" />
         </div>
     </div>
     <div class="form-group">
         <label for="inputPassword" class="control-label col-xs-2">Password</label>
         <div class="col-xs-3">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password" />
+            <input type="password" class="form-control" id="inputPassword" name="userPassword" placeholder="Password" />
         </div>
     </div>
     <div class="form-group">
         <label for="userAddress" class="control-label col-xs-2">Address</label>
         <div class="col-xs-3">
-            <input type="text" class="form-control" id="userAddress" placeholder="Address" />
+            <input type="text" class="form-control" id="userAddress" name="userAddress" placeholder="Address" />
         </div>
     </div>
     <div class="form-group">
         <label for="userPhone" class="control-label col-xs-2">Phone</label>
         <div class="col-xs-3">
-            <input type="text" class="form-control" id="userPhone" placeholder="1112224444" />
+            <input type="text" class="form-control" id="userPhone" name="userPhone" placeholder="1112224444" />
         </div>
     </div>
     <div class="form-group">
         <label for="userEmail" class="control-label col-xs-2">Email</label>
         <div class="col-xs-3">
-            <input type="text" class="form-control" id="userEmail" placeholder="Email" />
+            <input type="text" class="form-control" id="userEmail" name="userEmail" placeholder="Email" />
         </div>
     </div>
     <div class="form-group">
         <label for="userSocial" class="control-label col-xs-2">SSN</label>
         <div class="col-xs-3">
-            <input type="text" class="form-control" id="userSocial" placeholder="SSN" />
+            <input type="text" class="form-control" id="userSocial" name="userSocial" placeholder="SSN" />
         </div>
     </div>
     <div class="row">
         <label for="userRole" class="control-label col-xs-2">Role</label>
         <div class="col-xs-3" id="userRole">
             <div class="input-group">
-                <div class="input-group-btn">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Select Role
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li>chef</li>
-                        <li>generalManager</li>
-                        <li>lineCook</li>
-                        <li>dishwasher</li>
-                    </ul>
+                <div class="control-group">
+                    <div class="controls">
+                        <select name="selectRole">
+                            <option value="chef">Chef</option>
+                            <option value="generalManager">General Manager</option>
+                            <option value="lineCook">Line Cook</option>
+                            <option value="dishwasher">Dishwasher</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
