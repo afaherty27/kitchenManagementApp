@@ -2,6 +2,8 @@ package com.kitchenApp;
 
 import com.kitchenApp.database.dataAccess.UserDao;
 import com.kitchenApp.database.dataAccess.UserRoleDao;
+import com.kitchenApp.database.entity.User;
+import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,16 +19,18 @@ import java.io.IOException;
 
 @WebServlet(
         name = "addEmployeeServlet",
-        urlPatterns = "/addAction"
+        urlPatterns = "/chef/addAction"
 )
 
 /**
  *  Extracts HTML form data to be added to the database
  */
-public class AddEmployeeAction extends HttpServlet {
+public class EmployeeAddActionServlet extends HttpServlet {
 
-    private UserDao userDoa;
-    private UserRoleDao userRoleDoa;
+    private UserDao userDao;
+    private UserRoleDao userRoleDao;
+    private User user;
+    private final Logger log = Logger.getLogger(EmployeeAddActionServlet.class);
 
 
     /**
@@ -39,6 +43,7 @@ public class AddEmployeeAction extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        addUserData(request);
     }
 
 
@@ -48,13 +53,18 @@ public class AddEmployeeAction extends HttpServlet {
      */
     public void addUserData(HttpServletRequest request) {
 
-        // create a new userDoa object reference
-        //userDao = new userDao();
+        String userName = request.getParameter("userName");
+        String password = request.getParameter("userPassword");
+        String address  = request.getParameter("userAddress");
+        String phone    = request.getParameter("userPhone");
+        String email    = request.getParameter("userEmail");
+        String social   = request.getParameter("userSocial");
 
-        //  TODO vars that refer to each form field refering to a User object constructor
+       UserDao dao = new UserDao();
+        User user = new User(0, "gfaherty", "gpassword", "123 Some St.", "1234567890", "gfaherty@domain.com", "1234567890");
+        dao.addUser(user);
+     //User user = new User(0, userName, password, address, phone, email, social);
 
-        // TODO User user = newUser(param, param, param, param, param, param, param);
-        // TODO userDoa.addUser(user);
     }
 
     public void addUserRoleData(HttpServletRequest request) {
@@ -63,6 +73,10 @@ public class AddEmployeeAction extends HttpServlet {
         //userRoleDao = new userRoleDao();
 
         // TODO vars that refer to each form field refering to a UserRole object constructor
+        String userName = request.getParameter("userName");
+        String userRole = request.getParameter("selectRole");
+
+        log.info("input recieved: " + userName + " " + userRole);
 
         // TODO UserRole userRole = new UserRole(param, param, param);
         // TODO userRoleDoa.addUserRole(userRole);
