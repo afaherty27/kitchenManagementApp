@@ -61,10 +61,10 @@
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li>Chef</li>
-                        <li>General Manager</li>
-                        <li>Line Cook</li>
-                        <li>Dishwasher</li>
+                        <li>chef</li>
+                        <li>generalManager</li>
+                        <li>lineCook</li>
+                        <li>dishwasher</li>
                     </ul>
                 </div>
             </div>
