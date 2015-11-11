@@ -53,7 +53,7 @@ KEY: X   = completed
     -->finish week 6
 >>WEEK 8<<
     -->create/populate SQL database of employees contact information
-        -->Have a page under chef to insert a new employee?
+        -->Have a page under chef to insert a new employee? X
 
 
 >>WEEK 9<<
@@ -68,8 +68,22 @@ KEY: X   = completed
 
 
 >>WEEK 10<<
+    PROGRESS REPORT:
+        11/11: EmployeeAddActionServlet is recieving data from the addEmployee jsp page. See BUGS! section below for
+                   current notes.
+               Small adjustments to th addEmployee jsp form were made in order to receive the data.
+                   Simply added a name attribute to solve the null input values
+
     --> Recipe development program for Chef role.
     --> Decide how to add the scheduling.  At this point leaning to a file upload and building a program at the end if time
+
+    BUGS!
+        -->11/11: In DOAMain class, my hibernate integration is working.  When brought into the EmployeeAddActionServlet
+            -->I am receiving a HibernateException and a ClassNotFound exception.
+                ATTEMPT 1: Simple: bring working, hardcoded version from the DOAMain class into the Servlet. -->FAIL
+                ATTEMPT 2:
+
+            --> Will conduct more research tomorrow with a clear head
 >>WEEK 11<<
     --> Build database search servlets for contact list, recipes, and schedule
     -->Display to contactlist jsp (Store in WEB INF so it cannot be accesseed outside of the program?
