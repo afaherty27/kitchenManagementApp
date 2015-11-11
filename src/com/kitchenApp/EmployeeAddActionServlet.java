@@ -43,6 +43,9 @@ public class EmployeeAddActionServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+
+        // i believe I need to create a session for hibernate to be integrated here
+
         addUserData(request);
     }
 
