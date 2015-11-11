@@ -14,7 +14,7 @@
 
 <body>
 <c:import url="/jsp/navbar.jsp" />
-<h1> add a new employee on this page!</h1>
+<h1> add a new employee on this page</h1>
 <form class="form-horizontal">
     <div class="form-group">
         <label for="inputUserName" class="control-label col-xs-2">User Name</label>
@@ -26,12 +26,6 @@
         <label for="inputPassword" class="control-label col-xs-2">Password</label>
         <div class="col-xs-3">
             <input type="password" class="form-control" id="inputPassword" placeholder="Password" />
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="inputConfirmPassword" class="control-label col-xs-2">Confirm Password</label>
-        <div class="col-xs-3">
-            <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password" />
         </div>
     </div>
     <div class="form-group">
