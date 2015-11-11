@@ -156,5 +156,12 @@ public class User {
         this.social = social;
     }
 
+    /**
+     * Provides string data of employee information
+     * @return string of employee details
+     */
+    public String toString() {
+        return "";
+    }
 
 }
