@@ -3,6 +3,7 @@ package com.kitchenApp;
 import com.kitchenApp.database.dataAccess.UserDao;
 import com.kitchenApp.database.dataAccess.UserRoleDao;
 import com.kitchenApp.database.entity.User;
+import com.kitchenApp.database.entity.UserRole;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -30,6 +31,7 @@ public class EmployeeAddActionServlet extends HttpServlet {
     private UserDao userDao;
     private UserRoleDao userRoleDao;
     private User user;
+    private UserRole userRole;
     private final Logger log = Logger.getLogger(EmployeeAddActionServlet.class);
 
 
@@ -43,12 +45,11 @@ public class EmployeeAddActionServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-
-        // i believe I need to create a session for hibernate to be integrated here
-
         addUserData(request);
-    }
+        addUserRoleData(request);
 
+        response.sendRedirect("/chef/addEmployee.jsp");
+    }
 
     /**
      *  Recieves User object related data from form to submit to database
@@ -63,25 +64,22 @@ public class EmployeeAddActionServlet extends HttpServlet {
         String email    = request.getParameter("userEmail");
         String social   = request.getParameter("userSocial");
 
-       UserDao dao = new UserDao();
-        User user = new User(0, "gfaherty", "gpassword", "123 Some St.", "1234567890", "gfaherty@domain.com", "1234567890");
-        dao.addUser(user);
-     //User user = new User(0, userName, password, address, phone, email, social);
+        userDao = new UserDao();
+        user = new User(0, userName, password, address, phone, email, social);
+        userDao.addUser(user);
 
+        log.info("user.toString() for logging purposes");
     }
 
     public void addUserRoleData(HttpServletRequest request) {
 
-        // create a new UserRoleDoa object reference
-        //userRoleDao = new userRoleDao();
-
-        // TODO vars that refer to each form field refering to a UserRole object constructor
         String userName = request.getParameter("userName");
-        String userRole = request.getParameter("selectRole");
+        String roleType = request.getParameter("selectRole");
 
-        log.info("input recieved: " + userName + " " + userRole);
+        userRoleDao = new UserRoleDao();
+        userRole = new UserRole(0, userName, roleType);
+        userRoleDao.addUserRole(userRole);
 
-        // TODO UserRole userRole = new UserRole(param, param, param);
-        // TODO userRoleDoa.addUserRole(userRole);
+        log.info("userRole.toString() for logging purposes");
     }
 }
