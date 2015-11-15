@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
@@ -32,6 +33,7 @@ public class EmployeeAddActionServlet extends HttpServlet {
     private UserRoleDao userRoleDao;
     private User user;
     private UserRole userRole;
+    private HttpSession session;
     private final Logger log = Logger.getLogger(EmployeeAddActionServlet.class);
 
 
@@ -47,12 +49,12 @@ public class EmployeeAddActionServlet extends HttpServlet {
 
         addUserData(request);
         addUserRoleData(request);
-
-        response.sendRedirect("/chef/addEmployee.jsp");
+        createSession(request);
+        redirectOnSubmit(response);
     }
 
     /**
-     *  Recieves User object related data from form to submit to database
+     *  Receives User object related data from form to submit to database
      * @param request the HttpServletRequest object
      */
     public void addUserData(HttpServletRequest request) {
@@ -68,9 +70,13 @@ public class EmployeeAddActionServlet extends HttpServlet {
         user = new User(0, userName, password, address, phone, email, social);
         userDao.addUser(user);
 
-        log.info("user.toString() for logging purposes");
+        log.info(user.toString());
     }
 
+    /**
+     * Receives UserRole object related data from HTML form
+     * @param request HttpServletRequest object
+     */
     public void addUserRoleData(HttpServletRequest request) {
 
         String userName = request.getParameter("userName");
@@ -80,6 +86,33 @@ public class EmployeeAddActionServlet extends HttpServlet {
         userRole = new UserRole(0, userName, roleType);
         userRoleDao.addUserRole(userRole);
 
-        log.info("userRole.toString() for logging purposes");
+        log.info(userRole.toString());
+    }
+
+    /**
+     * Redirects user to clean form after submit. posts message for successful add
+     * @param response HttpServletResponse object
+     * @throws ServletException if there is a servlet error
+     * @throws IOException if there is an input/output error
+     */
+    public void redirectOnSubmit(HttpServletResponse response) throws ServletException, IOException {
+
+        String url = "/chef/addEmployee";
+        response.sendRedirect(url);
+    }
+
+    public void createSession(HttpServletRequest request) {
+
+        session = request.getSession();
+        writeSessionMessage(session);
+    }
+
+    public void writeSessionMessage(HttpSession session) {
+
+        String message = (String) session.getAttribute("entryString");
+
+        message = "<h4 style=\"color: red; font-variant: small-caps\""
+                + ">Success</h4>";
+        session.setAttribute("entryString", message);
     }
 }
