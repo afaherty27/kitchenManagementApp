@@ -14,7 +14,13 @@
 
 <body>
 <c:import url="/jsp/navbar.jsp" />
-<h1> add a new employee on this page</h1>
+
+<%=
+session.getAttribute("entryString")== null?"":session.getAttribute("entryString") %>
+<%
+    session.removeAttribute("entryString");
+%>
+
 <form class="form-horizontal" method="post" action="addAction">
     <div class="form-group">
         <label for="inputUserName" class="control-label col-xs-2">User Name</label>
@@ -74,6 +80,7 @@
     </div>
 
 </form>
+
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
