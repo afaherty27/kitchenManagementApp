@@ -81,9 +81,9 @@ KEY: X   = completed
         -->11/11: In DOAMain class, my hibernate integration is working.  When brought into the EmployeeAddActionServlet
             -->I am receiving a HibernateException and a ClassNotFound exception.
                 ATTEMPT 1: Simple: bring working, hardcoded version from the DOAMain class into the Servlet. -->FAIL
-                ATTEMPT 2:
+                ATTEMPT 2: Add to artifact --> SUCCESS
 
-            --> Will conduct more research tomorrow with a clear head
+
 >>WEEK 11<<
     --> Build database search servlets for contact list, recipes, and schedule
     -->Display to contactlist jsp (Store in WEB INF so it cannot be accesseed outside of the program?
