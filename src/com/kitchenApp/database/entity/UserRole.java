@@ -83,4 +83,16 @@ public class UserRole {
 
         this.userRole = userRole;
     }
+
+    /**
+     * Provides string data of users role information
+     * @return string of user role details
+     */
+    public String toString() {
+        return  System.lineSeparator() +
+                "User " + " "
+                + userName + " has been authorized as "
+                + userRole;
+    }
+
 }

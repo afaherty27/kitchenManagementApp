@@ -161,7 +161,14 @@ public class User {
      * @return string of employee details
      */
     public String toString() {
-        return "";
+        return  System.lineSeparator() +
+                "New User: " + " "
+                + userName + " "
+                + password + " "
+                + address + " "
+                + email + " "
+                + phone + " "
+                + social;
     }
 
 }
