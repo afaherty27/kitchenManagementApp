@@ -40,7 +40,7 @@ public class EmployeeAddActionServlet extends HttpServlet {
     /**
      * Handles HTTP post request
      * @param request the HttpServletRequest object
-     * @param response the HttpServletResponse objet
+     * @param response the HttpServletResponse object
      * @throws ServletException if there is a Servlet failure
      * @throws IOException if there is an IO failure
      */
