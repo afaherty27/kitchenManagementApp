@@ -10,8 +10,7 @@ import org.hibernate.Session;
  * 11/2/2015
  */
 
-public class UserRoleDoa {
-
+public class UserRoleDao {
 
     /**
      * Method to add a userRole to the database

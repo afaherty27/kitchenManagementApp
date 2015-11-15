@@ -10,7 +10,7 @@ import org.hibernate.HibernateException;
  * @author afaherty
  */
 
-public class UserDoa {
+public class UserDao {
 
     /**
      * Method to add user to the database
@@ -48,6 +48,25 @@ public class UserDoa {
     // TODO updateUser(User user)
 
     // TODO deleteUser(User user)
+    public void deleteUser(Integer userId) {
+
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        Transaction trans = null;
+
+        try {
+            trans = session.beginTransaction();
+            User user = (User)session.get(User.class, userId);
+            session.delete(user);
+            trans.commit();
+        } catch (HibernateException e) {
+            if (trans != null) {
+                trans.rollback();
+            }
+        } finally {
+            session.close();
+        }
+
+    }
 
 
 }
