@@ -52,7 +52,21 @@
             <form-login-page>/login.jsp</form-login-page>
             <form-error-page>/index.jsp</form-error-page>
         </form-login-config>
-
     </login-config>
 
+    <security-role>
+        <role-name>chef</role-name>
+    </security-role>
+
+    <security-role>
+        <role-name>dishwasher</role-name>
+    </security-role>
+
+    <security-role>
+        <role-name>lineCook</role-name>
+    </security-role>
+
+    <security-role>
+        <role-name>generalManager</role-name>
+    </security-role>
 </web-app>
