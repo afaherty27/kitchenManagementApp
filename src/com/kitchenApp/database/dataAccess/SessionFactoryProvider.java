@@ -7,7 +7,7 @@ import org.hibernate.service.ServiceRegistryBuilder;
 
 
 /**
- * @author sasdfd
+ * @author afaherty
  */
 
 public class SessionFactoryProvider {
