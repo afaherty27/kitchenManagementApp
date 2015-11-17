@@ -47,7 +47,6 @@ public class UserDao {
 
     // TODO updateUser(User user)
 
-    // TODO deleteUser(User user)
     public void deleteUser(Integer userId) {
 
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
