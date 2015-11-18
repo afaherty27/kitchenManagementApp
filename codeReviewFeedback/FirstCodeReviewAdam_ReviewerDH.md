@@ -15,14 +15,14 @@ See Evaluation column:
 
 ### Project Structure
 | Metric | Measurement | Criteria | Evaluation |
-| :---------- | :----------: | :---------- |
+| :---------- | :----------: | :---------- | :---------- |
 | Classes are single-purpose | none, some, most, all | based on how many different things a given class tries to do; can be measured with IntelliJ class complexity evaluation | Most |
 | Proper file structure | Y/N | related classes are grouped, have logical folders (out, resources, src, tests, etc), don't unnecessarily nest things | Y |
 | Proper implementation of industry-standard high-level structure (or, appropriate separation of concerns) | poor, fair, good, excellent | how well does the project adhere to the appropriate framework, etc (MVC, encapsulation of databases, authentication) | Good |
 
 ### Code Structure and Style
-| Metric | Measurement | Criteria |
-| :---------- | :----------: | :---------- |
+| Metric | Measurement | Criteria | Evaluation |
+| :---------- | :----------: | :---------- | :---------- |
 | No duplicate code | Y/N | analyze/locate duplicates in IntelliJ | Y |
 | No dead/useless/lazy/unreachable code | Y/N | IntelliJ natively identifies unused variables and uncalled functions | Y (did see a duplicate servlet/github version that should be cleaned out of there) |
 | Variables and methods have appropriate access modifiers | Y/N (possibly scale?) | are variables private with public getters/setters, are methods private unless called from outside the class, etc | Y |
@@ -35,8 +35,8 @@ See Evaluation column:
 | Class constructors are present and appropriately implemented | none, some, most, all | constructors are declared and used in object initialization | Y |
 
 ### Testing
-| Metric | Measurement | Criteria |
-| :---------- | :----------: | :---------- |
+| Metric | Measurement | Criteria | Evaluation |
+| :---------- | :----------: | :---------- | :---------- |
 | Code compiles with no errors or warnings | Y/N | can ignore (most) typos and "Java language level migration aids" (like <String, String> instead of <>) and other common-sense things | Y | 
 | Appropriate use of logging | poor, fair, good, excellent | items being logged are relevant; logs are being output to correct, logical location | good, log4j is implemented |
 | no System.out.println use | Y/N |Should not have any System.out.printlns used for testing purposes. | Y |
