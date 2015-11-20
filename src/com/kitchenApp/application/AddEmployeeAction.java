@@ -31,6 +31,8 @@ import java.io.IOException;
  */
 public class AddEmployeeAction extends HttpServlet {
 
+    private static final int USER_ID_PLACEHOLDER = 0;
+
     private UserDao userDao;
     private UserRoleDao userRoleDao;
     private User user;
@@ -69,7 +71,7 @@ public class AddEmployeeAction extends HttpServlet {
         String social   = request.getParameter("userSocial");
 
         userDao = new UserDao();
-        user = new User(0, userName, password, address, phone, email, social);
+        user = new User(USER_ID_PLACEHOLDER, userName, password, address, phone, email, social);
         userDao.addUser(user);
 
         log.info(user.toString());
