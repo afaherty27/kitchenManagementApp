@@ -27,7 +27,7 @@ import java.io.IOException;
 )
 
 /**
- *  Extracts HTML form data to be added to the database
+ *  Extracts HTML form data to be added to the database regarding new users
  */
 public class AddEmployeeAction extends HttpServlet {
 
