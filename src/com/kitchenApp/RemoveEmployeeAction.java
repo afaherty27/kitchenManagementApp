@@ -21,7 +21,7 @@ import java.io.IOException;
 
 public class RemoveEmployeeAction extends HttpServlet {
 
-    private final Logger log = Logger.getLogger(RemoveEmployeeAction.class)
+    private final Logger log = Logger.getLogger(RemoveEmployeeAction.class);
     /**
      * Handles HTTP post request
      * @param request the HttpServletRequest object
