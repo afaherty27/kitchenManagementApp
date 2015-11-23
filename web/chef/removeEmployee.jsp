@@ -18,13 +18,13 @@
 <!--
 NEED
   text box for search termn
-  radio buttons for name, id or ssn delete. or simple id# only?
+  radio buttons for name, id or ssn delete. or simply id# only?
   submit button
 
-    these will  go in one BS column.
+    these will  go in one BS row.
 
   Next column will present user list when a button is clicked
-    for simplified delete terms
+    for simplified delete terms (display id# and name only)
 -->
 
 <c:import url="/jsp/footer.jsp" />
