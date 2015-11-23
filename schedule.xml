@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kitchenSchedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <employee>
+        <name>afaherty</name>
+        <week>Nov 15-Nov 21</week>
+        <monday>off</monday>
+        <tuesday>off</tuesday>
+        <wednesday>11-cl</wednesday>
+        <thursday>10-cut</thursday>
+        <friday>9-cut</friday>
+        <saturday>10-cut</saturday>
+        <sunday>10-cl</sunday>
+    </employee>
+    <employee>
+        <name>gfaherty</name>
+        <week>Nov 15-Nov 21</week>
+        <monday>10-cut</monday>
+        <tuesday>9-cut</tuesday>
+        <wednesday>11-cl</wednesday>
+        <thursday>off</thursday>
+        <friday>off</friday>
+        <saturday>10-cut</saturday>
+        <sunday>10-cl</sunday>
+    </employee>
+</kitchenSchedule>
