@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,7 +14,14 @@ import java.io.IOException;
  * @author afaherty
  * @version 1.0 on 11/23/2015
  */
+@WebServlet(
+        name = "removeEmployee",
+        urlPatterns = {"/chef/removeEmployee"}
+)
 
+/**
+ * forwarding class for removeEmployee.jsp
+ */
 public class RemoveEmployeeJSPForward extends HttpServlet {
 
     private final Logger log = Logger.getLogger(AddEmployeeJSPForward.class);
