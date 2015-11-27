@@ -16,6 +16,8 @@ import java.util.List;
 
 public class UserRoleDao {
 
+    private Session session;
+
     /**
      * Method to add a userRole to the database
      * @param userRole UserRole object reference
@@ -23,7 +25,8 @@ public class UserRoleDao {
      */
     public Integer addUserRole(UserRole userRole) {
 
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        //open new session
+        beginSession();
 
         Transaction trans = null;
         Integer userRoleId = null;
@@ -52,7 +55,9 @@ public class UserRoleDao {
      */
     public UserRole getUserRole(int userRoleId) {
 
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        //open new session
+        beginSession();
+
         UserRole userRole = null;
 
         try {
@@ -76,7 +81,9 @@ public class UserRoleDao {
     public List getUserRoleList() {
 
         List<UserRole> userRoles = new ArrayList<>();
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+
+        //open new session
+        beginSession();
 
         //criteria
         Criteria criteria = session.createCriteria(UserRole.class);
@@ -95,13 +102,15 @@ public class UserRoleDao {
     }
 
     // TODO updateUser(User user)
-    public void updateUserRole(UserRole userRole) {
+    public void updateUserRole(Integer UserRoleId, String userRoleName) {
+
 
     }
 
     public void deleteUserRole(Integer userRoleId) {
 
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        beginSession();
+
         Transaction trans = null;
 
         try {
@@ -117,5 +126,12 @@ public class UserRoleDao {
             session.close();
         }
 
+    }
+
+    public void beginSession() {
+
+         session = SessionFactoryProvider.getSessionFactory().openSession();
+
+        //return session;
     }
 }

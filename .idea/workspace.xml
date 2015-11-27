@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f69ec5a4-db83-46b2-a5f9-f89a1b9cc961" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kitchenApp/RemoveEmployeeAction.java" afterPath="$PROJECT_DIR$/src/com/kitchenApp/RemoveEmployeeAction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kitchenApp/database/DOAMain.java" afterPath="$PROJECT_DIR$/src/com/kitchenApp/database/DOAMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/kitchenapp/database/dataAccess/UserDoaTest.java" afterPath="$PROJECT_DIR$/test/com/kitchenapp/database/dataAccess/UserDoaTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kitchenApp/database/dataAccess/UserRoleDao.java" afterPath="$PROJECT_DIR$/src/com/kitchenApp/database/dataAccess/UserRoleDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="kitchenManagementApp.iws" />
@@ -79,9 +81,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -89,31 +89,41 @@
       <file leaf-file-name="removeEmployee.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/chef/removeEmployee.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.3396225">
+            <state vertical-scroll-proportion="0.0">
               <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RemoveEmployeeAction.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/kitchenApp/RemoveEmployeeAction.java">
+      <file leaf-file-name="schedule" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schedule">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.10887097">
-              <caret line="23" column="76" selection-start-line="23" selection-start-column="76" selection-end-line="23" selection-end-column="76" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="83" column="54" selection-start-line="83" selection-start-column="54" selection-end-line="83" selection-end-column="54" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmployeeAddActionServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/kitchenApp/EmployeeAddActionServlet.java">
+      <file leaf-file-name="UserRoleDao.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/kitchenApp/database/dataAccess/UserRoleDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.29024944">
+              <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DOAMain.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/kitchenApp/database/DOAMain.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="79" />
-              <folding />
+              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -158,9 +168,6 @@
         <option value="$PROJECT_DIR$/test/com/kitchenApp/database/dataAccess/DoaTest.java" />
         <option value="$PROJECT_DIR$/test/com/kitchenapp/database/UserDoaTest.java" />
         <option value="$PROJECT_DIR$/src/com/kitchenApp/database/dataAccess/UserDoa.java" />
-        <option value="$PROJECT_DIR$/src/com/kitchenApp/database/dataAccess/UserRoleDao.java" />
-        <option value="$PROJECT_DIR$/src/com/kitchenApp/database/DOAMain.java" />
-        <option value="$PROJECT_DIR$/test/com/kitchenapp/database/dataAccess/UserDoaTest.java" />
         <option value="$PROJECT_DIR$/src/com/kitchenApp/EmployeeAddActionServet.java" />
         <option value="C:/tomcat/logs/KitchenWebAppLogs/ServletLog.out" />
         <option value="$PROJECT_DIR$/web/jsp/navbar.jsp" />
@@ -192,6 +199,9 @@
         <option value="$PROJECT_DIR$/web/lineCook/lineCook.jsp" />
         <option value="$PROJECT_DIR$/web/chef/removeEmployee.jsp" />
         <option value="$PROJECT_DIR$/src/com/kitchenApp/RemoveEmployeeAction.java" />
+        <option value="$PROJECT_DIR$/test/com/kitchenapp/database/dataAccess/UserDoaTest.java" />
+        <option value="$PROJECT_DIR$/src/com/kitchenApp/database/DOAMain.java" />
+        <option value="$PROJECT_DIR$/src/com/kitchenApp/database/dataAccess/UserRoleDao.java" />
       </list>
     </option>
   </component>
@@ -223,7 +233,7 @@
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1932" />
-    <option name="height" value="903" />
+    <option name="height" value="872" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -248,8 +258,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -374,6 +382,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="chef" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kitchenManagementApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kitchenManagementApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kitchenManagementApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kitchenManagementApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dataAccess" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -521,6 +569,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -552,7 +602,7 @@
       <recent name="C:\Users\Student\Dropbox\enterpriseJava\kitchenManagementApp\web\WEB-INF\lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.KitchenAppTomcat">
+  <component name="RunManager" selected="Application.DOAMain">
     <configuration default="false" name="DOAMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1013,8 +1063,8 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.UserDoaTest.addUser" />
-        <item index="1" class="java.lang.String" itemvalue="Application.DOAMain" />
+        <item index="0" class="java.lang.String" itemvalue="Application.DOAMain" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.UserDoaTest.addUser" />
         <item index="2" class="java.lang.String" itemvalue="Tomcat Server.index.jsp" />
       </list>
     </recent_temporary>
@@ -1087,25 +1137,10 @@
       <workItem from="1447991835842" duration="9014000" />
       <workItem from="1448007697816" duration="1302000" />
       <workItem from="1448263722468" duration="56000" />
-      <workItem from="1448268217313" duration="2496000" />
-    </task>
-    <task id="LOCAL-00086" summary="completed provider">
-      <created>1446787129599</created>
-      <option name="number" value="00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1446787129599</updated>
-    </task>
-    <task id="LOCAL-00087" summary="addUserData method created, addUserRoleData method created.  TODOs are set">
-      <created>1446787310243</created>
-      <option name="number" value="00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1446787310243</updated>
-    </task>
-    <task id="LOCAL-00088" summary="edited schedule">
-      <created>1446880536773</created>
-      <option name="number" value="00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1446880536774</updated>
+      <workItem from="1448268217313" duration="3125000" />
+      <workItem from="1448340116239" duration="105000" />
+      <workItem from="1448425509029" duration="3058000" />
+      <workItem from="1448587048823" duration="1309000" />
     </task>
     <task id="LOCAL-00089" summary="edited edited package statement">
       <created>1447035247113</created>
@@ -1383,11 +1418,29 @@
       <option name="project" value="LOCAL" />
       <updated>1448270707994</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="added redirect method. javadoc. log4j set up.">
+      <created>1448270721964</created>
+      <option name="number" value="00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1448270721964</updated>
+    </task>
+    <task id="LOCAL-00136" summary="added getUserRole method">
+      <created>1448587724912</created>
+      <option name="number" value="00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1448587724929</updated>
+    </task>
+    <task id="LOCAL-00137" summary="added getUserRoleList method">
+      <created>1448587823006</created>
+      <option name="number" value="00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1448587823006</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203193000" />
+    <option name="totallyTimeSpent" value="208294000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1399,23 +1452,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="903" extended-state="6" />
+    <frame x="-8" y="-8" width="1932" height="872" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827586" sideWeight="0.49554566" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30051813" sideWeight="0.49554566" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29959515" sideWeight="0.49554566" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965517" sideWeight="0.49443206" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36707154" sideWeight="0.50213677" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965517" sideWeight="0.49554566" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32976446" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965517" sideWeight="0.49554566" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36787564" sideWeight="0.49786323" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36707154" sideWeight="0.49786323" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965517" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16346154" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16346154" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31102782" sideWeight="0.49223948" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1447,12 +1500,12 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3994602" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32827586" sideWeight="0.49554566" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30051813" sideWeight="0.49554566" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29959515" sideWeight="0.49554566" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965517" sideWeight="0.49443206" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965517" sideWeight="0.49554566" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36787564" sideWeight="0.49786323" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36707154" sideWeight="0.49786323" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20770878" sideWeight="0.5077605" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965517" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -1475,8 +1528,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
-    <MESSAGE value="restore" />
-    <MESSAGE value="directory commit" />
     <MESSAGE value="added debugging process" />
     <MESSAGE value="format readme" />
     <MESSAGE value="removed a TODO comment" />
@@ -1500,11 +1551,13 @@
     <MESSAGE value="added notes" />
     <MESSAGE value="added TODO list" />
     <MESSAGE value="added redirect method. javadoc. log4j set up." />
-    <option name="LAST_COMMIT_MESSAGE" value="added redirect method. javadoc. log4j set up." />
+    <MESSAGE value="added getUserRole method" />
+    <MESSAGE value="added getUserRoleList method" />
+    <option name="LAST_COMMIT_MESSAGE" value="added getUserRoleList method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1513,6 +1566,16 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/test/com/kitchenapp/database/dataAccess/UserDoaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.51492536">
@@ -1583,41 +1646,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/kitchenapp/database/dataAccess/UserDoaTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21333334">
-          <caret line="56" column="5" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kitchenApp/database/dataAccess/UserRoleDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.456">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/159573b9/c13d311c-4cfc-403a-b3b0-1205e62442ae/kitchenapp..user_role">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/159573b9/c13d311c-4cfc-403a-b3b0-1205e62442ae/kitchenapp..users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1674,13 +1723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07343412">
           <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schedule">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4038877">
-          <caret line="83" column="54" selection-start-line="83" selection-start-column="54" selection-end-line="83" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -1744,7 +1786,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+      <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
@@ -1752,15 +1794,8 @@
           <caret line="20" column="70" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="70" />
         </state>
       </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kitchenApp/database/DOAMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50268817">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
       </provider>
     </entry>
     <entry file="file://C:/tomcat/conf/tomcat-users.xml">
@@ -1811,7 +1846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47004607">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1819,7 +1853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.5660377">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1827,7 +1860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3357453">
           <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="40" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1835,7 +1867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.807692">
           <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="88" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1843,7 +1874,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.377358">
           <caret line="94" column="34" selection-start-line="94" selection-start-column="34" selection-end-line="94" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1851,7 +1881,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.377358">
           <caret line="100" column="34" selection-start-line="100" selection-start-column="34" selection-end-line="100" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1859,7 +1888,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.81765556">
           <caret line="94" column="34" selection-start-line="94" selection-start-column="34" selection-end-line="94" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1867,22 +1895,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1827957">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="17" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/chef/removeEmployee.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.3396225">
-          <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kitchenApp/EmployeeAddActionServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="4" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="79" />
+          <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
           <folding />
         </state>
       </provider>
@@ -1891,19 +1910,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kitchenApp/EmployeeAddActionServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38844085">
+          <caret line="65" column="60" selection-start-line="65" selection-start-column="60" selection-end-line="65" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/kitchenapp/database/dataAccess/UserDoaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.023809524">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kitchenApp/RemoveEmployeeAction.java">
+    <entry file="file://$PROJECT_DIR$/schedule">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10887097">
-          <caret line="23" column="76" selection-start-line="23" selection-start-column="76" selection-end-line="23" selection-end-column="76" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="83" column="54" selection-start-line="83" selection-start-column="54" selection-end-line="83" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kitchenApp/database/DOAMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kitchenApp/database/dataAccess/UserRoleDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29024944">
+          <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

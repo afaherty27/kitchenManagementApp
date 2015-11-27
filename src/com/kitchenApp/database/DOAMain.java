@@ -2,7 +2,10 @@ package com.kitchenApp.database;
 
 import com.kitchenApp.database.dataAccess.UserDao;
 import com.kitchenApp.database.dataAccess.UserDao;
+import com.kitchenApp.database.dataAccess.UserRoleDao;
 import com.kitchenApp.database.entity.User;
+import com.kitchenApp.database.entity.UserRole;
+import org.apache.log4j.Logger;
 
 /**
  * @author afaherty
@@ -11,14 +14,17 @@ import com.kitchenApp.database.entity.User;
 
 public class DOAMain {
 
+    private static final Logger log = Logger.getLogger(DOAMain.class);
     /**
      * main processing method of this test
      * @param args
      */
     public static void main(String[] args) {
 
-        UserDao dao = new UserDao();
-        User user = new User(0, "gfaherty", "gpassword", "123 Some St.", "1234567890", "gfaherty@domain.com", "1234567890");
-        dao.addUser(user);
+        UserRoleDao dao = new UserRoleDao();
+        UserRole userRole = new UserRole();
+        //dao.getUserRole("afaherty");
+        System.out.println(dao.getUserRoleList());
+
     }
 }

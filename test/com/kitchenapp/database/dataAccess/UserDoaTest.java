@@ -44,18 +44,6 @@ public class UserDoaTest {
 
         sessionFactory = config.buildSessionFactory(registry);
         session = sessionFactory.openSession();
-
-
-        User userBefore = new User();
-        userList = new ArrayList<User>();
-
-        userBefore.setUserId(1);
-        userBefore.setUserName("test");
-        userBefore.setPassword("testPassword");
-        userBefore.setEmail("test@test.test");
-        userBefore.setPhone("1111111111");
-        userBefore.setSocial("2222222222");
-        userList.add(userBefore);
     }
 
     @Test
@@ -68,6 +56,7 @@ public class UserDoaTest {
         dao.addUser(user);
 
         //read for user record. clean up the database afterwards.
+
     }
 
     @Test
