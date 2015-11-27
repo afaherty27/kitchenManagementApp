@@ -2,6 +2,7 @@ package com.kitchenApp.application;
 
 import com.kitchenApp.database.dataAccess.UserDao;
 import com.kitchenApp.database.dataAccess.UserRoleDao;
+import com.kitchenApp.database.entity.UserRole;
 import org.apache.log4j.Logger;
 
 import javax.servlet.Servlet;
@@ -49,6 +50,7 @@ public class ManageEmployeesAction extends HttpServlet {
         session = request.getSession();
 
         List userList = userDao.getUserList();
+
         session.setAttribute("displayUsers", userList);
     }
 
