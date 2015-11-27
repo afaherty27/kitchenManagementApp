@@ -27,6 +27,13 @@ public class ManageEmployeesAction extends HttpServlet {
     private UserRoleDao userRole;
     private final Logger log = Logger.getLogger(this.getClass());
 
+    /**
+     * Performs get actions
+     * @param request HttpServletRequest object
+     * @param response HttpServlerResponse object
+     * @throws ServletException if there is a servlet error
+     * @throws IOException if there is an input/output error
+     */
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
