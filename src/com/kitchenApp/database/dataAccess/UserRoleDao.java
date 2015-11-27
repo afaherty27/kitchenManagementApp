@@ -101,10 +101,30 @@ public class UserRoleDao {
         return userRoles;
     }
 
-    // TODO updateUser(User user)
-    public void updateUserRole(Integer UserRoleId, String userRoleName) {
+    /**
+     * Updates users role within the application
+     * @param UserRoleId reference to users role id number
+     * @param userRoleType reference to the type of role user has within application
+     */
+    public void updateUserRole(Integer UserRoleId, String userRoleType) {
 
+        //open new session
+        beginSession();
 
+        Transaction tx = null;
+        try{
+            tx = session.beginTransaction();
+            UserRole userRole =
+                    (UserRole)session.get(UserRole.class, UserRoleId);
+            userRole.setUserRole(userRoleType);
+            session.update(userRole);
+            tx.commit();
+        }catch (HibernateException e) {
+            if (tx!=null) tx.rollback();
+            e.printStackTrace();
+        }finally {
+            session.close();
+        }
     }
 
     public void deleteUserRole(Integer userRoleId) {
