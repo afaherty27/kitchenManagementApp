@@ -127,6 +127,10 @@ public class UserRoleDao {
         }
     }
 
+    /**
+     * allows admin to delete user from database
+     * @param userRoleId reference to primary key in user_role table
+     */
     public void deleteUserRole(Integer userRoleId) {
 
         beginSession();
@@ -148,6 +152,9 @@ public class UserRoleDao {
 
     }
 
+    /**
+     * opens a new session for a hibernate transaction
+     */
     public void beginSession() {
 
          session = SessionFactoryProvider.getSessionFactory().openSession();
