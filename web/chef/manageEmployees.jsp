@@ -9,23 +9,28 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
-<c:set var="title" value="Remove Employee" scope="request" />
+<c:set var="title" value="Manage Employees" scope="request" />
 <c:import url="/jsp/head.jsp" />
 
 <body>
 <c:import url="/jsp/navbar.jsp" />
 
-<!--
-NEED
-  text box for search termn
-  radio buttons for name, id or ssn delete. or simply id# only?
-  submit button
+  <table class="table" style="margin-left: 10%; width: 20%;">
+    <tr>
+      <td style="font-weight: bolder; font-size: larger">USER NAME</td>
+      <td style="font-weight: bolder; font-size: larger; text-align: center;">ACTION</td>
 
-    these will  go in one BS row.
-
-  Next column will present user list when a button is clicked
-    for simplified delete terms (display id# and name only)
--->
+    </tr>
+    <c:forEach var="user"  items="${displayUsers}">
+      <tr>
+        <td>${user.getUserName()}</td>
+        <td style="text-align: center">
+          <input type="button" value="UPDATE"  />
+          <input type="button" value="DELETE" onclick="deleteUser" />
+        </td>
+      </tr>
+    </c:forEach>
+  </table>
 
 <c:import url="/jsp/footer.jsp" />
 
