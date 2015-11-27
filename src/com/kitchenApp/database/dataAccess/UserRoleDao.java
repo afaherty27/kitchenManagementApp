@@ -25,9 +25,7 @@ public class UserRoleDao {
      */
     public Integer addUserRole(UserRole userRole) {
 
-        //open new session
         beginSession();
-
         Transaction trans = null;
         Integer userRoleId = null;
 
@@ -57,7 +55,6 @@ public class UserRoleDao {
 
         //open new session
         beginSession();
-
         UserRole userRole = null;
 
         try {
@@ -82,7 +79,6 @@ public class UserRoleDao {
 
         List<UserRole> userRoles = new ArrayList<>();
 
-        //open new session
         beginSession();
 
         //criteria
@@ -108,10 +104,9 @@ public class UserRoleDao {
      */
     public void updateUserRole(Integer UserRoleId, String userRoleType) {
 
-        //open new session
         beginSession();
-
         Transaction tx = null;
+
         try{
             tx = session.beginTransaction();
             UserRole userRole =
@@ -134,7 +129,6 @@ public class UserRoleDao {
     public void deleteUserRole(Integer userRoleId) {
 
         beginSession();
-
         Transaction trans = null;
 
         try {
@@ -158,7 +152,5 @@ public class UserRoleDao {
     public void beginSession() {
 
          session = SessionFactoryProvider.getSessionFactory().openSession();
-
-        //return session;
     }
 }
