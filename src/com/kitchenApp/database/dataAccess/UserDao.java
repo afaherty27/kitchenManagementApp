@@ -49,12 +49,41 @@ public class UserDao {
         return userId;
     }
 
-    // TODO getUser(int userId)
+    /**
+     * Retrieves user data from database
+     * @param userId reference to userId in database
+     * @return user
+     */
+    public User getUser(int userId) {
+
+        beginSession();
+        User user = null;
+
+        try {
+
+            user = (User) session.get(User.class, userId);
+
+        } catch (HibernateException e) {
+
+            e.printStackTrace();
+            log.error(e);
+
+        } finally {
+
+            session.close();
+        }
+
+        return user;
+    }
 
     // TODO getAllUsers()
 
     // TODO updateUser(User user)
 
+    /**
+     *
+     * @param userId reference to user id in database
+     */
     public void deleteUser(Integer userId) {
 
         beginSession();
