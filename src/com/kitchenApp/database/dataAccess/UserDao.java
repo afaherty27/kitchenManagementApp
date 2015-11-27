@@ -7,14 +7,13 @@ import org.hibernate.Transaction;
 import org.hibernate.HibernateException;
 
 /**
- *
+ * Data Access Object for users table
  * @author afaherty
  */
-
 public class UserDao {
 
     private Session session;
-    private final Logger log = Logger.getLogger(this.getClass();
+    private final Logger log = Logger.getLogger(this.getClass());
 
     /**
      * Method to add user to the database
@@ -35,7 +34,8 @@ public class UserDao {
 
         } catch (HibernateException e){
 
-            log.error(e.printStackTrace());
+            e.printStackTrace();
+            log.error(e);
 
             if (transaction != null) {
 
@@ -68,7 +68,8 @@ public class UserDao {
 
         } catch (HibernateException e) {
 
-            log.error(e.printStackTrace());
+            e.printStackTrace();
+            log.error(e);
 
             if (trans != null) {
 
