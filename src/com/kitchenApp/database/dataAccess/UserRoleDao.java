@@ -149,7 +149,7 @@ public class UserRoleDao {
     }
 
     /**
-     * allows admin to delete user from database
+     * allows admin to delete userrole from database
      * @param userRoleId reference to primary key in user_role table
      */
     public void deleteUserRole(Integer userRoleId) {
