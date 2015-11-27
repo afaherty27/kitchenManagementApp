@@ -1,6 +1,9 @@
 package com.kitchenApp;
 
 import com.kitchenApp.database.dataAccess.UserDao;
+import com.kitchenApp.database.dataAccess.UserRoleDao;
+import com.kitchenApp.database.entity.User;
+import com.kitchenApp.database.entity.UserRole;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
@@ -29,6 +32,9 @@ import java.util.List;
 public class ManageEmployeesJSPForward extends HttpServlet {
 
     private UserDao userDao;
+    private UserRoleDao userRoleDao;
+    private User user;
+    private UserRole userRole;
     private HttpSession session;
     private final Logger log = Logger.getLogger(this.getClass());
 
@@ -46,8 +52,8 @@ public class ManageEmployeesJSPForward extends HttpServlet {
         forwardResults(request, response);
     }
 
-    /**
-     * Retrieves user list to display to the web page
+
+    /** Retrieves user list to display to the web page
      * @param request HttpServletRequest object
      */
     public void displayUserList(HttpServletRequest request) {
@@ -58,6 +64,8 @@ public class ManageEmployeesJSPForward extends HttpServlet {
         session = request.getSession();
 
         session.setAttribute("displayUsers", userDao.getUserList());
+
+        log.info("loading user list");
     }
 
     /**
