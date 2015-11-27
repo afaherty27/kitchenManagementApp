@@ -15,16 +15,16 @@ import java.io.IOException;
  * @version 1.0 on 11/23/2015
  */
 @WebServlet(
-        name = "removeEmployee",
-        urlPatterns = {"/chef/removeEmployee"}
+        name = "manageEmployees",
+        urlPatterns = {"/chef/manageEmployees"}
 )
 
 /**
  * forwarding class for removeEmployee.jsp
  */
-public class RemoveEmployeeJSPForward extends HttpServlet {
+public class ManageEmployeesJSPForward extends HttpServlet {
 
-    private final Logger log = Logger.getLogger(AddEmployeeJSPForward.class);
+    private final Logger log = Logger.getLogger(this.getClass());
 
     /**
      * forwards user to chef/removeEmployee.jsp
@@ -35,7 +35,7 @@ public class RemoveEmployeeJSPForward extends HttpServlet {
      */
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String url = "/chef/removeEmployee.jsp";
+        String url = "/chef/manageEmployees.jsp";
 
         log.info("Accessing: " + url);
 

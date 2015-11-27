@@ -21,10 +21,10 @@ public class DOAMain {
      */
     public static void main(String[] args) {
 
-        UserRoleDao dao = new UserRoleDao();
-        UserRole userRole = new UserRole();
-        //dao.getUserRole("afaherty");
-        System.out.println(dao.getUserRoleList());
+        UserDao dao = new UserDao();
+        User user = new User();
+        dao.updateUser(1, "afaherty", "password", null, "afaherty@madisoncollege.edu", "6086588202", "123121234");
+        System.out.println(dao.getUser(1));
 
     }
 }
