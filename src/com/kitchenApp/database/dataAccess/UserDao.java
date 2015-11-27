@@ -111,7 +111,7 @@ public class UserDao {
 
     // TODO updateUser(User user)
     public void updateUser(Integer UserId, String userName, String password, String address, String email,
-                           String phone, String social) {
+                           String phone) {
 
         beginSession();
         Transaction tx = null;
@@ -126,7 +126,6 @@ public class UserDao {
             user.setAddress(address);
             user.setEmail(email);
             user.setPhone(phone);
-            user.setSocial(social);
 
             session.update(user);
             tx.commit();
