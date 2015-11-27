@@ -1,6 +1,7 @@
 package com.kitchenApp.database.dataAccess;
 
 import com.kitchenApp.database.entity.User;
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.HibernateException;
@@ -13,6 +14,7 @@ import org.hibernate.HibernateException;
 public class UserDao {
 
     private Session session;
+    private final Logger log = Logger.getLogger(this.getClass();
 
     /**
      * Method to add user to the database
@@ -32,9 +34,13 @@ public class UserDao {
             transaction.commit();
 
         } catch (HibernateException e){
+
+            log.error(e.printStackTrace());
+
             if (transaction != null) {
+
+                log.debug("performing rollback");
                 transaction.rollback();
-                //logger.info(e.printStackTrace());
             }
         } finally {
             session.close();
@@ -59,8 +65,14 @@ public class UserDao {
             User user = (User)session.get(User.class, userId);
             session.delete(user);
             trans.commit();
+
         } catch (HibernateException e) {
+
+            log.error(e.printStackTrace());
+
             if (trans != null) {
+
+                log.debug("performing rollback");
                 trans.rollback();
             }
         } finally {
