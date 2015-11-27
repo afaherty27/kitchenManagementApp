@@ -1,14 +1,18 @@
 package com.kitchenApp;
 
+import com.kitchenApp.database.dataAccess.UserDao;
 import org.apache.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * @author afaherty
@@ -24,7 +28,37 @@ import java.io.IOException;
  */
 public class ManageEmployeesJSPForward extends HttpServlet {
 
+    private UserDao userDao;
+    private HttpSession session;
     private final Logger log = Logger.getLogger(this.getClass());
+
+    /**
+     * Retrieves list of users to display to page.
+     * @param request HttpServletRequest object
+     * @param response HttpServlerResponse object
+     * @throws ServletException if there is a servlet error
+     * @throws IOException if there is an input/output error
+     */
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        displayUserList(request);
+
+        forwardResults(request, response);
+    }
+
+    /**
+     * Retrieves user list to display to the web page
+     * @param request HttpServletRequest object
+     */
+    public void displayUserList(HttpServletRequest request) {
+
+        ServletContext context = getServletContext();
+        userDao = new UserDao();
+
+        session = request.getSession();
+
+        session.setAttribute("displayUsers", userDao.getUserList());
+    }
 
     /**
      * forwards user to chef/manageEmployees.jsp
@@ -33,7 +67,7 @@ public class ManageEmployeesJSPForward extends HttpServlet {
      * @throws ServletException if there is a servlet error
      * @throws IOException if there is an input output error
      */
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void forwardResults(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String url = "/chef/manageEmployees.jsp";
 
