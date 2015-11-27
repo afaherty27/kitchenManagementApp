@@ -143,7 +143,6 @@ public class UserRoleDao {
         } finally {
             session.close();
         }
-
     }
 
     /**
