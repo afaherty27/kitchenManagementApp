@@ -20,14 +20,14 @@ import java.io.IOException;
 )
 
 /**
- * forwarding class for removeEmployee.jsp
+ * forwarding class for manageEmployees.jsp
  */
 public class ManageEmployeesJSPForward extends HttpServlet {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
     /**
-     * forwards user to chef/removeEmployee.jsp
+     * forwards user to chef/manageEmployees.jsp
      * @param request HttpServletRequest object
      * @param response HttpServletResponse object
      * @throws ServletException if there is a servlet error
