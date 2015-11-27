@@ -17,22 +17,80 @@
 
   <table class="table" style="margin-left: 10%; width: 20%;">
     <tr>
+      <td style="font-weight: bolder; font-size: larger">ID</td>
       <td style="font-weight: bolder; font-size: larger">USER NAME</td>
       <td style="font-weight: bolder; font-size: larger; text-align: center;">ACTION</td>
 
     </tr>
-    <c:forEach var="user"  items="${displayUsers}">
+    <c:forEach var="user" items="${displayUsers}">
       <tr>
+        <td>${user.getUserId()}</td>
         <td>${user.getUserName()}</td>
         <td style="text-align: center">
-          <input type="button" value="UPDATE"  />
-          <input type="button" value="DELETE" onclick="deleteUser" />
+          <a class="btn btn-success" href="#update" data-toggle="modal">UPDATE</a>
+          <a class="btn btn-danger" href="#delete" data-toggle="modal">DELETE</a>
         </td>
       </tr>
     </c:forEach>
   </table>
 
 <c:import url="/jsp/footer.jsp" />
+
+<!-- delete modal -->
+<div id="delete" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6>Confirm: Delete This Employee</h6>
+        <div class="modal-body">
+          <form method="post" action="deleteUser">
+            <input class="btn btn-success" type="submit" value="Send!" id="submit">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">Nah.</a>
+  </div>
+</div>
+
+<!-- update modal -->
+<div id="update" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h6>Update this employee</h6>
+        <div class="modal-body">
+          <form method="post" action="updateUser">
+            <input class="btn btn-success" type="submit" value="Send!" id="submit">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">Nah.</a>
+  </div>
+</div>
+
+
+<!--SUPPORT MODAL -->
+<div class="modal fade" id="contact" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4>Contact</h4>
+        <div class="modal-body">
+          <p> For technical difficulties please email afaherty27@gmail.com</p>
+        </div> <!-- END modal-body -->
+        <div class="model-footer">
+          <a class="btn btn-primary" data-dismiss="modal">Close</a>
+        </div> <!-- END modal-footer -->
+      </div> <!-- END modal-header -->
+    </div> <!-- END modal-content-->
+  </div> <!-- END modal-dialog -->
+</div> <!-- END modal -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
