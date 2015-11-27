@@ -2,9 +2,13 @@ package com.kitchenApp.database.dataAccess;
 
 import com.kitchenApp.database.entity.User;
 import org.apache.log4j.Logger;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.HibernateException;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Data Access Object for users table
@@ -76,7 +80,34 @@ public class UserDao {
         return user;
     }
 
-    // TODO getAllUsers()
+    /**
+     * Retrieves a list of users in database
+     * @return users
+     */
+    public List getUserList() {
+
+        List<User> users = new ArrayList<>();
+
+        beginSession();
+
+        //criteria
+        Criteria criteria = session.createCriteria(User.class);
+        try {
+
+            users = criteria.list(); //may need to edit for employee contact list
+
+        } catch (HibernateException e) {
+
+            e.printStackTrace();
+            log.error(e);
+
+        } finally {
+
+            session.close();
+        }
+
+        return users;
+    }
 
     // TODO updateUser(User user)
 
