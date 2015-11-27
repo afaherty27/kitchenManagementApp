@@ -1,5 +1,9 @@
 package com.kitchenApp.application;
 
+import com.kitchenApp.database.dataAccess.UserDao;
+import com.kitchenApp.database.dataAccess.UserRoleDao;
+import com.kitchenApp.database.entity.User;
+import com.kitchenApp.database.entity.UserRole;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -15,13 +19,12 @@ import java.io.IOException;
  */
 
 @WebServlet(
-        name = "removeEmployeeServlet",
-        urlPatterns = "/chef/removeUser"
+        name = "employeeAction",
+        urlPatterns = "/chef/employeeAction"
 )
 
-public class RemoveEmployeeAction extends HttpServlet {
+public class DeleteUserAction extends HttpServlet {
 
-    private final Logger log = Logger.getLogger(RemoveEmployeeAction.class);
     /**
      * Handles HTTP post request
      * @param request the HttpServletRequest object
@@ -29,20 +32,12 @@ public class RemoveEmployeeAction extends HttpServlet {
      * @throws ServletException if there is a Servlet failure
      * @throws IOException if there is an IO failure
      */
-    public void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        //TODO recieve value entered in text box. parse to Int.
-
-        // TODO display list of employees on button click
-
-        // TODO remove employee from database. Confirm before delete?????
-
-        // TODO display successful deletion message.
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         redirectOnSubmit(response);
-
     }
+
+    /**
     /**
      * Redirects user to clean form after submit. posts message for successful add
      * @param response HttpServletResponse object
@@ -51,7 +46,7 @@ public class RemoveEmployeeAction extends HttpServlet {
      */
     public void redirectOnSubmit(HttpServletResponse response) throws ServletException, IOException {
 
-        String url = "/chef/removeEmployee";
+        String url = "/chef/manageEmployees";
         response.sendRedirect(url);
     }
 }
