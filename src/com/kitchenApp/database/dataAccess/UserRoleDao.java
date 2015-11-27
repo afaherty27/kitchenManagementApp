@@ -69,7 +69,10 @@ public class UserRoleDao {
         return userRole;
     }
 
-    // TODO getAllUsers()
+    /**
+     * Retrieves a list of all user roles in the database
+     * @return userRoles
+     */
     public List getUserRoleList() {
 
         List<UserRole> userRoles = new ArrayList<>();
