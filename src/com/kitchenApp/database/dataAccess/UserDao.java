@@ -110,6 +110,43 @@ public class UserDao {
     }
 
     // TODO updateUser(User user)
+    public void updateUser(Integer UserId, String userName, String password, String address, String email,
+                           String phone, String social) {
+
+        beginSession();
+        Transaction tx = null;
+
+        try{
+
+            tx = session.beginTransaction();
+            User user = (User)session.get(User.class, UserId);
+
+            user.setUserName(userName);
+            user.setPassword(password);
+            user.setAddress(address);
+            user.setEmail(email);
+            user.setPhone(phone);
+            user.setSocial(social);
+
+            session.update(user);
+            tx.commit();
+
+        }catch (HibernateException e) {
+
+            e.printStackTrace();
+            log.error(e);
+
+            if (tx != null) {
+
+                log.debug("performing rollback");
+                tx.rollback();
+            }
+
+        }finally {
+
+            session.close();
+        }
+    }
 
     /**
      *
