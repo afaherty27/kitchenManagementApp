@@ -12,6 +12,8 @@ import org.hibernate.HibernateException;
 
 public class UserDao {
 
+    private Session session;
+
     /**
      * Method to add user to the database
      * @param user User object reference
@@ -19,7 +21,7 @@ public class UserDao {
      */
     public Integer addUser(User user) {
 
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        beginSession();
         Transaction transaction = null;
         Integer userId = null;
 
@@ -49,7 +51,7 @@ public class UserDao {
 
     public void deleteUser(Integer userId) {
 
-        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+        beginSession();
         Transaction trans = null;
 
         try {
@@ -67,5 +69,11 @@ public class UserDao {
 
     }
 
+    /**
+     * opens a new session for a hibernate transaction
+     */
+    public void beginSession() {
 
+        session = SessionFactoryProvider.getSessionFactory().openSession();
+    }
 }
