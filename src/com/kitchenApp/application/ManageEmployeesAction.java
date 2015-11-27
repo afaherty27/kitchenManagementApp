@@ -11,7 +11,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(
 
@@ -23,8 +25,8 @@ import java.io.IOException;
  */
 public class ManageEmployeesAction extends HttpServlet {
 
-    private UserDao user;
-    private UserRoleDao userRole;
+    private UserDao userDao;
+    private HttpSession session;
     private final Logger log = Logger.getLogger(this.getClass());
 
     /**
@@ -37,8 +39,17 @@ public class ManageEmployeesAction extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 
+        /*
+            List all employees information, sans password.
+            use C tag lib foreach, call java bean data on page.
+         */
+        ServletContext context = getServletContext();
+        userDao = (UserDao)context.getAttribute("dao");
 
-        forwardToResults(request, response);
+        session = request.getSession();
+
+        List userList = userDao.getUserList();
+        session.setAttribute("displayUsers", userList);
     }
 
     /**
