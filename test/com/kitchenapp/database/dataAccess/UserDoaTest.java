@@ -52,10 +52,20 @@ public class UserDoaTest {
         // research database mocking. do not do this stuff below.u
         UserDao dao = new UserDao();
 
-        User user = new User(999, "test", "test", "123 test", "1111111111", "test@test.test", "2222222222");
-        dao.addUser(user);
 
         //read for user record. clean up the database afterwards.
+
+    }
+
+    @Test
+    public void updateUser() {
+        UserDao dao = new UserDao();
+        User user = new User(0, "test", "test", "test", "test", "test", "test");
+
+        dao.addUser(user);
+        dao.updateUser(user.getUserId(), "test1", "test1", "test1", "test1", "test1");
+
+        System.out.println(dao.getUser(user.getUserId()));
 
     }
 
