@@ -109,14 +109,22 @@ public class UserDao {
         return users;
     }
 
-    // TODO updateUser(User user)
+    /**
+     * Updates users information in the database
+     * @param UserId reference to primary key in database
+     * @param userName reference to user name
+     * @param password reference to password
+     * @param address reference to users address
+     * @param email reference to users email
+     * @param phone reference to users phone
+     */
     public void updateUser(Integer UserId, String userName, String password, String address, String email,
                            String phone) {
 
         beginSession();
         Transaction tx = null;
 
-        try{
+        try {
 
             tx = session.beginTransaction();
             User user = (User)session.get(User.class, UserId);
@@ -148,7 +156,7 @@ public class UserDao {
     }
 
     /**
-     *
+     * method to delete user from database
      * @param userId reference to user id in database
      */
     public void deleteUser(Integer userId) {
