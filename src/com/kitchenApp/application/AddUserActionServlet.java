@@ -43,8 +43,6 @@ public class AddUserActionServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        ServletContext servletContext = getServletContext();
-
         createSession(request);
 
         AddUserAction addUser = new AddUserAction();
