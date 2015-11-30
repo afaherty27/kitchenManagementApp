@@ -1,6 +1,5 @@
 package com.kitchenApp.application;
 
-
 import com.kitchenApp.EmployeeAddActionServlet;
 import com.kitchenApp.database.dataAccess.UserRoleDao;
 import com.kitchenApp.database.dataAccess.UserDao;
@@ -8,6 +7,7 @@ import com.kitchenApp.database.entity.User;
 import com.kitchenApp.database.entity.UserRole;
 import org.apache.log4j.Logger;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,17 +29,9 @@ import java.io.IOException;
 /**
  *  Extracts HTML form data to be added to the database regarding new users
  */
-public class AddEmployeeAction extends HttpServlet {
+public class AddUserActionServlet extends HttpServlet {
 
-    private static final int USER_ID_PLACEHOLDER = 0;
-
-    private UserDao userDao;
-    private UserRoleDao userRoleDao;
-    private User user;
-    private UserRole userRole;
-    private HttpSession session;
-    private final Logger log = Logger.getLogger(EmployeeAddActionServlet.class);
-
+    private final Logger log = Logger.getLogger(this.getClass());
 
     /**
      * Handles HTTP post request
@@ -51,46 +43,15 @@ public class AddEmployeeAction extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        addUserData(request);
-        addUserRoleData(request);
+        ServletContext servletContext = getServletContext();
+
         createSession(request);
+
+        AddUserAction addUser = new AddUserAction();
+        addUser.addUserData(request);
+        addUser.addUserRoleData(request);
+
         redirectOnSubmit(response);
-    }
-
-    /**
-     *  Receives User object related data from form to submit to database
-     * @param request the HttpServletRequest object
-     */
-    public void addUserData(HttpServletRequest request) {
-
-        String userName = request.getParameter("userName");
-        String password = request.getParameter("userPassword");
-        String address  = request.getParameter("userAddress");
-        String phone    = request.getParameter("userPhone");
-        String email    = request.getParameter("userEmail");
-        String social   = request.getParameter("userSocial");
-
-        userDao = new UserDao();
-        user = new User(USER_ID_PLACEHOLDER, userName, password, address, phone, email, social);
-        userDao.addUser(user);
-
-        log.info(user.toString());
-    }
-
-    /**
-     * Receives UserRole object related data from HTML form
-     * @param request HttpServletRequest object
-     */
-    public void addUserRoleData(HttpServletRequest request) {
-
-        String userName = request.getParameter("userName");
-        String roleType = request.getParameter("selectRole");
-
-        userRoleDao = new UserRoleDao();
-        userRole = new UserRole(0, userName, roleType);
-        userRoleDao.addUserRole(userRole);
-
-        log.info(userRole.toString());
     }
 
     /**
@@ -107,8 +68,10 @@ public class AddEmployeeAction extends HttpServlet {
 
     public void createSession(HttpServletRequest request) {
 
-        session = request.getSession();
+        HttpSession session = request.getSession();
+        log.debug("requesting Session");
         writeSessionMessage(session);
+
     }
 
     public void writeSessionMessage(HttpSession session) {
@@ -118,5 +81,6 @@ public class AddEmployeeAction extends HttpServlet {
         message = "<h4 style=\"color: red; font-variant: small-caps\""
                 + ">Success</h4>";
         session.setAttribute("entryString", message);
+        log.info("User added successfully");
     }
 }
