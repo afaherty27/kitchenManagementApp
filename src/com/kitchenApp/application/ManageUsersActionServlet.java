@@ -2,6 +2,7 @@ package com.kitchenApp.application;
 
 import com.kitchenApp.database.dataAccess.UserDao;
 import com.kitchenApp.database.dataAccess.UserRoleDao;
+import com.kitchenApp.database.entity.User;
 import com.kitchenApp.database.entity.UserRole;
 import org.apache.log4j.Logger;
 
@@ -24,9 +25,10 @@ import java.util.List;
  * @author afaherty
  * @version 1.0 on 11/26/15
  */
-public class ManageEmployeesAction extends HttpServlet {
+public class ManageUsersActionServlet extends HttpServlet {
 
     private UserDao userDao;
+    private User user;
     private HttpSession session;
     private final Logger log = Logger.getLogger(this.getClass());
 
