@@ -63,7 +63,54 @@
         <h6>Update this employee</h6>
         <div class="modal-body">
           <form method="post" action="updateUser">
-            <input class="btn btn-success" type="submit" value="Send!" id="submit">
+            <div class="form-group">
+              <label for="inputUserName">User Name</label>
+              <div>
+                <input type="text" class="form-control" id="inputUserName" name="userName" placeholder="User Name" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword">Password</label>
+              <div>
+                <input type="password" class="form-control" id="inputPassword" name="userPassword" placeholder="Password" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="userAddress">Address</label>
+              <div>
+                <input type="text" class="form-control" id="userAddress" name="userAddress" placeholder="Address" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="userPhone">Phone</label>
+              <div>
+                <input type="text" class="form-control" id="userPhone" name="userPhone" placeholder="1112224444" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="userEmail">Email</label>
+              <input type="text" class="form-control" id="userEmail" name="userEmail" placeholder="Email" />
+            </div>
+
+              <label for="userRole">Role</label>
+              <div id="userRole">
+                <div class="input-group">
+                  <div class="control-group">
+                    <div class="controls">
+                      <select name="selectRole">
+                        <option value="chef">Chef</option>
+                        <option value="generalManager">General Manager</option>
+                        <option value="lineCook">Line Cook</option>
+                        <option value="dishwasher">Dishwasher</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <div class="form-group" style="margin-top: .5em">
+              <button type="submit" class="btn">Update</button>
+            </div>
           </form>
         </div>
       </div>
