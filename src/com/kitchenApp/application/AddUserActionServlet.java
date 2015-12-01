@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- * Performs webapp database updates
+ * Performs webapp database add action
  * @author afaherty
  * 11/5/2015
  */
