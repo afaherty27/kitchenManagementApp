@@ -45,7 +45,15 @@
         <h6>Confirm: Delete This Employee</h6>
         <div class="modal-body">
           <form method="post" action="deleteUser">
-            <input class="btn btn-success" type="submit" value="Send!" id="submit">
+              <c:set var="user" scope="request" />
+              <select name="selectDelete">
+                <c:forEach  var="userDelete" items="${displayDelete}">
+                  <option value="${userDelete.getUserId()}">${userDelete.getUserName()}</option>
+                </c:forEach>
+              </select>
+              <div class="form-group" style="margin-top: .5em">
+                <button type="submit" class="btn">Delete</button>
+              </div>
           </form>
         </div>
       </div>
