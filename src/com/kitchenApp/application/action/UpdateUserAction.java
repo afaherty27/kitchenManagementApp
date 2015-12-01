@@ -19,9 +19,7 @@ public class UpdateUserAction {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
-    private User user;
     private UserDao userDao;
-    private UserRole userRole;
     private UserRoleDao userRoleDao;
 
     /**
