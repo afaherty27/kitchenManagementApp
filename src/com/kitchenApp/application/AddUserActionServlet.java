@@ -1,13 +1,8 @@
 package com.kitchenApp.application;
 
-import com.kitchenApp.EmployeeAddActionServlet;
-import com.kitchenApp.database.dataAccess.UserRoleDao;
-import com.kitchenApp.database.dataAccess.UserDao;
-import com.kitchenApp.database.entity.User;
-import com.kitchenApp.database.entity.UserRole;
+import com.kitchenApp.application.action.AddUserAction;
 import org.apache.log4j.Logger;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

@@ -1,4 +1,4 @@
-package com.kitchenApp.application;
+package com.kitchenApp.application.action;
 
 import com.kitchenApp.database.dataAccess.UserDao;
 import com.kitchenApp.database.dataAccess.UserRoleDao;

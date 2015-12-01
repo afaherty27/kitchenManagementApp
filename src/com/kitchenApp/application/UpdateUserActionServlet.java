@@ -1,6 +1,6 @@
 package com.kitchenApp.application;
 
-import com.kitchenApp.database.entity.User;
+import com.kitchenApp.application.action.UpdateUserAction;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;

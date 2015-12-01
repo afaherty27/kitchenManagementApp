@@ -1,4 +1,4 @@
-package com.kitchenApp.application;
+package com.kitchenApp.application.action;
 
 import org.apache.log4j.Logger;
 
