@@ -15,22 +15,23 @@
 <body>
 <c:import url="/jsp/navbar.jsp" />
 
+  <div style="margin-left: 10%; width: 20%; margin-bottom: 1em;">
+    <a class="btn btn-success" href="#update" data-toggle="modal">UPDATE USER</a>
+    <a class="btn btn-danger" href="#delete" data-toggle="modal">DELETE USER</a>
+  </div>
+
   <table class="table" style="margin-left: 10%; width: 20%;">
     <tr>
       <td style="font-weight: bolder; font-size: larger">ID</td>
       <td style="font-weight: bolder; font-size: larger">USER NAME</td>
-      <td style="font-weight: bolder; font-size: larger; text-align: center;">ACTION</td>
-
+      <td style="font-weight: bolder; font-size: larger">PHONE</td>
     </tr>
-    <c:forEach var="user" items="${displayUsers}">
+
+    <c:forEach  var="user" items="${displayUsers}">
       <tr>
         <td>${user.getUserId()}</td>
         <td>${user.getUserName()}</td>
-        <td style="text-align: center">
-          <a class="btn btn-success" href="#update" data-toggle="modal">UPDATE</a>
-          <a class="btn btn-danger" href="#delete" data-toggle="modal">DELETE</a>
-        </td>
-      </tr>
+        <td>${user.getPhone()}</td>
     </c:forEach>
   </table>
 
@@ -63,18 +64,16 @@
         <h6>Update this employee</h6>
         <div class="modal-body">
           <form method="post" action="updateUser">
-            <div class="form-group">
-              <label for="inputUserName">User Name</label>
-              <div>
-                <input type="text" class="form-control" id="inputUserName" name="userName" placeholder="User Name" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="inputPassword">Password</label>
-              <div>
-                <input type="password" class="form-control" id="inputPassword" name="userPassword" placeholder="Password" />
-              </div>
-            </div>
+            <c:set var="user" scope="request" />
+            <select name="selectUser">
+            <c:forEach  var="user" items="${displayUsers}">
+
+                  <option value="${user.getUserId()}">${user.getUserName()}</option>
+
+
+            </c:forEach>
+            </select>
+
             <div class="form-group">
               <label for="userAddress">Address</label>
               <div>
