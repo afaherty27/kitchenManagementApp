@@ -64,6 +64,7 @@ public class ManageEmployeesJSPForward extends HttpServlet {
         session = request.getSession();
 
         session.setAttribute("displayUsers", userDao.getUserList());
+        session.setAttribute("displayDelete", userDao.getUserList());
 
         log.info("loading user list");
     }
