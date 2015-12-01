@@ -14,6 +14,7 @@ import java.io.IOException;
 
 
 /**
+ * deletes user data from kitchenapp database
  * @author afaherty
  * @version 1.0 on 11/23/2015
  */
