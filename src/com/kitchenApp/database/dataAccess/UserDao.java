@@ -112,14 +112,12 @@ public class UserDao {
     /**
      * Updates users information in the database
      * @param UserId reference to primary key in database
-     * @param userName reference to user name
-     * @param password reference to password
+
      * @param address reference to users address
      * @param email reference to users email
      * @param phone reference to users phone
      */
-    public void updateUser(Integer UserId, String userName, String password, String address, String email,
-                           String phone) {
+    public void updateUser(Integer UserId, String address, String phone, String email) {
 
         beginSession();
         Transaction tx = null;
@@ -129,11 +127,9 @@ public class UserDao {
             tx = session.beginTransaction();
             User user = (User)session.get(User.class, UserId);
 
-            user.setUserName(userName);
-            user.setPassword(password);
             user.setAddress(address);
-            user.setEmail(email);
             user.setPhone(phone);
+            user.setEmail(email);
 
             session.update(user);
             tx.commit();
