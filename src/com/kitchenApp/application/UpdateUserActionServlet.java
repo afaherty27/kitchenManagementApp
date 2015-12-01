@@ -16,7 +16,7 @@ import java.io.IOException;
         urlPatterns = {"/chef/updateUser"}
 )
 /**
- * Handles user data updates
+ * Performs webapp database update action
  * @author afaherty
  * @version 1.0 on 11/27/2015
  */
