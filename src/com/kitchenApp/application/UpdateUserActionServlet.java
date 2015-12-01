@@ -50,7 +50,7 @@ public class UpdateUserActionServlet extends HttpServlet {
      */
     public void redirectOnSubmit(HttpServletResponse response) throws ServletException, IOException {
 
-        log.info("accessed user delete");
+        log.info("accessed user update");
         String url = "/chef/manageEmployees";
         response.sendRedirect(url);
     }
