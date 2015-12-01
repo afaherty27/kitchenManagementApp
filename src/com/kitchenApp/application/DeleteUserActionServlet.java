@@ -1,5 +1,6 @@
 package com.kitchenApp.application;
 
+import com.kitchenApp.application.action.DeleteUserAction;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -7,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(
@@ -32,5 +34,21 @@ public class DeleteUserActionServlet extends HttpServlet {
      */
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+
+
+        redirectOnSubmit(response);
+    }
+
+    /**
+     * Redirects user to clean form after submit. posts message for successful add
+     * @param response HttpServletResponse object
+     * @throws ServletException if there is a servlet error
+     * @throws IOException      if there is an input/output error
+     */
+    public void redirectOnSubmit(HttpServletResponse response) throws ServletException, IOException {
+
+        log.info("accessed user delete");
+        String url = "/chef/manageEmployees";
+        response.sendRedirect(url);
     }
 }
