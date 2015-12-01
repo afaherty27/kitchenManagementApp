@@ -1,6 +1,7 @@
 package com.kitchenApp.application;
 
 import com.kitchenApp.application.action.DeleteUserAction;
+import com.kitchenApp.application.action.UpdateUserAction;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -13,13 +14,13 @@ import java.io.IOException;
 
 @WebServlet(
         name = "deleteUser",
-        urlPatterns = {"/chef/deleteUser"}
+        urlPatterns = "/chef/deleteUser"
 )
 
 /**
- * Servlet to contain delete operations of a user
+ * Performs webapp database delete operations
  * @author afaherty
- * @version 1.0 on 11/30/15
+ * @version 2.0 on 12/1/2015
  */
 public class DeleteUserActionServlet extends HttpServlet {
 
@@ -34,7 +35,11 @@ public class DeleteUserActionServlet extends HttpServlet {
      */
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        DeleteUserAction delete = new DeleteUserAction();
+        delete.deleteUserData(request);
+        delete.deleteUserRoleData(request);
 
+        HttpSession session = request.getSession();
 
         redirectOnSubmit(response);
     }
