@@ -41,9 +41,9 @@ public class UpdateUserAction {
 
         userDao = new UserDao();
 
-        log.info("check check: " + userDao.getUser(idInt));
-
         userDao.updateUser(idInt, address, phone, email);
+
+        log.info("updating user");
 
         return userDao;
     }
@@ -64,6 +64,8 @@ public class UpdateUserAction {
         String userRole  = request.getParameter("selectRole");
 
         userRoleDao.updateUserRole(idInt, userRole);
+
+        log.info("updating userrrole");
 
         return userRoleDao;
     }
