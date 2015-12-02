@@ -4,39 +4,24 @@ import com.kitchenApp.database.dataAccess.UserDao;
 import com.kitchenApp.database.dataAccess.UserRoleDao;
 import org.apache.log4j.Logger;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-
-
-
 /**
  * deletes user data from kitchenapp database
  * @author afaherty
  * @version 1.0 on 11/23/2015
  */
-public class DeleteUserAction extends HttpServlet {
+public class DeleteUserAction {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
-    private UserDao userDao;
-    private UserRoleDao userRoleDao;
-
     /**
      * updates user data to kitchenapp database user table
-     * @param request HttpServletRequest object
-     * @throws ServletException if there is a servlet error
-     * @throws IOException if there is an input/output error
+     * @param userId reference to user id being deleted
      */
-    public UserDao deleteUserData(HttpServletRequest request) throws ServletException, IOException {
+    public UserDao deleteUserData(String userId) {
 
-        String userId = request.getParameter("selectDelete");
         int idInt = Integer.parseInt(userId);
 
-        userDao = new UserDao();
+        UserDao userDao = new UserDao();
         userDao.deleteUser(idInt);
 
         log.info("deleting user");
@@ -46,16 +31,13 @@ public class DeleteUserAction extends HttpServlet {
 
     /**
      * update user role data to kitchenapp database user_role table
-     * @param request HttpServletRequest object
-     * @throws ServletException if there is a servlet error
-     * @throws IOException if there is an input/output error
+     * @param userId reference to the user role id being deleted
      */
-    public UserRoleDao deleteUserRoleData(HttpServletRequest request) throws ServletException, IOException {
+    public UserRoleDao deleteUserRoleData(String userId )  {
 
-        String userId = request.getParameter("selectDelete");
         int idInt = Integer.parseInt(userId);
 
-        userRoleDao = new UserRoleDao();
+        UserRoleDao userRoleDao = new UserRoleDao();
         userRoleDao.deleteUserRole(idInt);
 
         log.info("deleting userrole");

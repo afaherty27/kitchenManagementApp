@@ -33,13 +33,42 @@ public class UpdateUserActionServlet extends HttpServlet {
      */
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        UpdateUserAction update = new UpdateUserAction();
-        update.updateUserData(request);
-        update.updateUserRoleData(request);
-
         HttpSession session = request.getSession();
 
+        receiveUserParameters(request);
+
         redirectOnSubmit(response);
+    }
+
+    /**
+     * Receives values from manageUser.jsp update modal
+     * * @param request HttpServletRequest object
+     */
+    public void receiveUserParameters(HttpServletRequest request) {
+
+        String userId = request.getParameter("selectUser");
+        String address  = request.getParameter("userAddress");
+        String phone    = request.getParameter("userPhone");
+        String email    = request.getParameter("userEmail");
+        String userRole  = request.getParameter("selectRole");
+
+        updateUser(userId, address, phone, email, userRole);
+
+    }
+
+    /**
+     * passes values into update action
+     * @param userId ref to user id
+     * @param address ref to user address
+     * @param phone ref to user phone
+     * @param email ref to user email
+     * @param userRole ref to user role
+     */
+    public void updateUser(String userId, String address, String phone, String email, String userRole) {
+
+        UpdateUserAction update = new UpdateUserAction();
+        update.updateUserData(userId, address, phone, email);
+        update.updateUserRoleData(userId, userRole);
     }
 
     /**

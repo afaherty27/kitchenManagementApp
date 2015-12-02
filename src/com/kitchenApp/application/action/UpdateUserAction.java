@@ -2,13 +2,7 @@ package com.kitchenApp.application.action;
 
 import com.kitchenApp.database.dataAccess.UserDao;
 import com.kitchenApp.database.dataAccess.UserRoleDao;
-import com.kitchenApp.database.entity.User;
-import com.kitchenApp.database.entity.UserRole;
 import org.apache.log4j.Logger;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 
 /**
  * Performs user updates
@@ -19,27 +13,19 @@ public class UpdateUserAction {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
-    private UserDao userDao;
-    private UserRoleDao userRoleDao;
-
     /**
      * updates user data to kitchenapp database user table
-     * @param request HttpServletRequest object
-     * @throws ServletException if there is a servlet error
-     * @throws IOException if there is an input/output error
+     * @param userId ref to user id
+     * @param address ref to address
+     * @param phone ref to phone
+     * @param email ref to email
+     * @return userDao
      */
-    public UserDao updateUserData(HttpServletRequest request) throws ServletException, IOException {
-
-        String userId = request.getParameter("selectUser");
+    public UserDao updateUserData(String userId, String address, String phone, String email) {
 
         int idInt = Integer.parseInt(userId);
-        log.info(idInt);
 
-        String address  = request.getParameter("userAddress");
-        String phone    = request.getParameter("userPhone");
-        String email    = request.getParameter("userEmail");
-
-        userDao = new UserDao();
+        UserDao userDao = new UserDao();
 
         userDao.updateUser(idInt, address, phone, email);
 
@@ -50,18 +36,15 @@ public class UpdateUserAction {
 
     /**
      * update user role data to kitchenapp database user_role table
-     * @param request HttpServletRequest object
-     * @throws ServletException if there is a servlet error
-     * @throws IOException if there is an input/output error
+     * @param userId reference to user role id
+     * @param userRole reference to user role
+     * @return userRoleDao
      */
-    public UserRoleDao updateUserRoleData(HttpServletRequest request) throws ServletException, IOException {
+    public UserRoleDao updateUserRoleData(String userId, String userRole) {
 
-        String userId = request.getParameter("selectUser");
         int idInt = Integer.parseInt(userId);
 
-        userRoleDao = new UserRoleDao();
-
-        String userRole  = request.getParameter("selectRole");
+        UserRoleDao userRoleDao = new UserRoleDao();
 
         userRoleDao.updateUserRole(idInt, userRole);
 

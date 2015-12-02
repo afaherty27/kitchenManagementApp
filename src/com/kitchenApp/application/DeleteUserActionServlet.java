@@ -35,13 +35,33 @@ public class DeleteUserActionServlet extends HttpServlet {
      */
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        DeleteUserAction delete = new DeleteUserAction();
-        delete.deleteUserData(request);
-        delete.deleteUserRoleData(request);
-
         HttpSession session = request.getSession();
 
+        receiveDeleteParameters(request);
+
         redirectOnSubmit(response);
+    }
+
+    /**
+     * Receives values from addUser.jsp form
+     * @param request HttpServletRequest object
+     */
+    public void receiveDeleteParameters(HttpServletRequest request) {
+
+        String userId = request.getParameter("selectDelete");
+
+        deleteUser(userId);
+    }
+
+    /**
+     * passes userId value to the action servlet
+     * @param userId user id that will be deleted
+     */
+    public void deleteUser(String userId) {
+
+        DeleteUserAction delete = new DeleteUserAction();
+        delete.deleteUserData(userId);
+        delete.deleteUserRoleData(userId);
     }
 
     /**
