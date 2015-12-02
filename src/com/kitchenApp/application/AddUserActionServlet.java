@@ -41,11 +41,44 @@ public class AddUserActionServlet extends HttpServlet {
 
         createSession(request);
 
-        AddUserAction addUser = new AddUserAction();
-        addUser.addUserData(request);
-        addUser.addUserRoleData(request);
+        receiveUserParameters(request);
 
         redirectOnSubmit(response);
+    }
+
+    /**
+     * Receives values from addUser.jsp form
+     * @param request HttpServletRequest object
+     */
+    public void receiveUserParameters(HttpServletRequest request) {
+
+        String userName = request.getParameter("userName");
+        String password = request.getParameter("userPassword");
+        String address  = request.getParameter("userAddress");
+        String phone    = request.getParameter("userPhone");
+        String email    = request.getParameter("userEmail");
+        String social   = request.getParameter("userSocial");
+        String roleType = request.getParameter("selectRole");
+
+        addUser(userName, password, address, phone, email, social, roleType);
+    }
+
+    /**
+     * Passes values from form to action servlet
+     * @param userName ref to form user name input
+     * @param password ref to form password input
+     * @param address ref to form address input
+     * @param phone ref to form phone input
+     * @param email ref to form email input
+     * @param social ref to form social input
+     * @param roleType ref to form role input
+     */
+    public void addUser(String userName, String password, String address, String phone,
+                        String email, String social, String roleType) {
+
+        AddUserAction addUser = new AddUserAction();
+        addUser.addUserData(userName, password, address, phone, email, social);
+        addUser.addUserRoleData(userName, roleType);
     }
 
     /**
@@ -60,6 +93,10 @@ public class AddUserActionServlet extends HttpServlet {
         response.sendRedirect(url);
     }
 
+    /**
+     * Retrieve this session
+     * @param request HttpServletRequest object
+     */
     public void createSession(HttpServletRequest request) {
 
         HttpSession session = request.getSession();
@@ -68,6 +105,10 @@ public class AddUserActionServlet extends HttpServlet {
 
     }
 
+    /**
+     * output a message to the jsp for a succesfull add
+     * @param session HttpSession object
+     */
     public void writeSessionMessage(HttpSession session) {
 
         String message = (String) session.getAttribute("entryString");
