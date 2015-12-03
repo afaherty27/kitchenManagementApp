@@ -33,7 +33,20 @@
   </div> <!-- CLOSE col-sm-4 -->
   <div class="col-sm-4">
     <h2 class="rowHeader">Recipe Development</h2>
-    <p>build form to build recipe and add to a database</p>
+    <p>path in session: ${uploadedFilePath}</p>
+    <h1 style="align: center;">${requestScope["message"]}</h1>
+    <form class="form-horizontal" method="post" enctype="multipart/form-data" action="uploadRecipe">
+      <div class="form-group">
+        <label for="recipe" class="control-label col-xs-2">File:</label>
+        <div class="col-xs-3">
+          <input type="file" id="recipe" name="recipe" />
+          <br /><br />
+          <div class="form-group">
+            <button type="submit" class="btn">Add Recipe</button>
+          </div>
+        </div>
+      </div>
+    </form>
   </div> <!-- CLOSE col-sm-4 -->
 </div> <!-- CLOSE row -->
 
