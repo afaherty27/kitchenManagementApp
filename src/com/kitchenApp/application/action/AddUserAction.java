@@ -27,10 +27,10 @@ public class AddUserAction {
      * @param social ref to user social received from jsp
      * @return user
      */
-    public User addUserData(String userName, String password, String address, String phone, String email, String social) {
+    public User addUserData(String userName, String password, String address, String phone, String email) {
 
         UserDao userDao = new UserDao();
-        User user = new User(ID_PLACEHOLDER, userName, password, address, phone, email, social);
+        User user = new User(ID_PLACEHOLDER, userName, password, address, phone, email);
         userDao.addUser(user);
 
         log.info(user.toString());
