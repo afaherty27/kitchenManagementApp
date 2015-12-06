@@ -52,12 +52,6 @@ session.getAttribute("entryString")== null?"":session.getAttribute("entryString"
             <input type="text" class="form-control" id="userEmail" name="userEmail" placeholder="Email" />
         </div>
     </div>
-    <div class="form-group">
-        <label for="userSocial" class="control-label col-xs-2">SSN</label>
-        <div class="col-xs-3">
-            <input type="text" class="form-control" id="userSocial" name="userSocial" placeholder="SSN" />
-        </div>
-    </div>
     <div class="row">
         <label for="userRole" class="control-label col-xs-2">Role</label>
         <div class="col-xs-3" id="userRole">
