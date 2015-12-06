@@ -14,7 +14,6 @@ public class User {
     private String address;
     private String email;
     private String phone;
-    private String social;
 
     /**
      * zero arg constructor
@@ -30,10 +29,9 @@ public class User {
      * @param password ref to users password
      * @param address ref to users address
      * @param email ref to users email
-     * @param social ref to users social security number
      */
     public User(int userId, String userName, String password, String address,  String phone,
-                String email, String social) {
+                String email) {
 
         this.userId = userId;
         this.userName = userName;
@@ -41,7 +39,6 @@ public class User {
         this.address = address;
         this.email = email;
         this.phone = phone;
-        this. social = social;
     }
 
     /**
@@ -141,22 +138,6 @@ public class User {
     }
 
     /**
-     * Receive value of social
-     * @return social
-     */
-    public String getSocial() {
-        return social;
-    }
-
-    /**
-     * Set value of social
-     * @param social value of users social
-     */
-    public void setSocial(String social) {
-        this.social = social;
-    }
-
-    /**
      * Provides string data of employee information
      * @return string of employee details
      */
@@ -167,8 +148,7 @@ public class User {
                 + password + " "
                 + address + " "
                 + email + " "
-                + phone + " "
-                + social;
+                + phone;
     }
 
 }
