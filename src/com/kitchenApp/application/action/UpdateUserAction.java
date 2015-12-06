@@ -2,6 +2,8 @@ package com.kitchenApp.application.action;
 
 import com.kitchenApp.database.dataAccess.UserDao;
 import com.kitchenApp.database.dataAccess.UserRoleDao;
+import com.kitchenApp.database.entity.User;
+import com.kitchenApp.database.entity.UserRole;
 import org.apache.log4j.Logger;
 
 /**
@@ -40,7 +42,8 @@ public class UpdateUserAction {
      * @param userRole reference to user role
      * @return userRoleDao
      */
-    public UserRoleDao updateUserRoleData(String userId, String userRole) {
+    public UserRoleDao updateUserRoleData(int userId, String userRole) {
+
 
         int idInt = Integer.parseInt(userId);
 
