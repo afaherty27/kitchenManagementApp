@@ -57,10 +57,9 @@ public class AddUserActionServlet extends HttpServlet {
         String address  = request.getParameter("userAddress");
         String phone    = request.getParameter("userPhone");
         String email    = request.getParameter("userEmail");
-        String social   = request.getParameter("userSocial");
         String roleType = request.getParameter("selectRole");
 
-        addUser(userName, password, address, phone, email, social, roleType);
+        addUser(userName, password, address, phone, email, roleType);
     }
 
     /**
@@ -70,14 +69,13 @@ public class AddUserActionServlet extends HttpServlet {
      * @param address ref to form address input
      * @param phone ref to form phone input
      * @param email ref to form email input
-     * @param social ref to form social input
      * @param roleType ref to form role input
      */
     public void addUser(String userName, String password, String address, String phone,
-                        String email, String social, String roleType) {
+                        String email, String roleType) {
 
         AddUserAction addUser = new AddUserAction();
-        addUser.addUserData(userName, password, address, phone, email, social);
+        addUser.addUserData(userName, password, address, phone, email);
         addUser.addUserRoleData(userName, roleType);
     }
 
