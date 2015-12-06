@@ -24,7 +24,6 @@ public class AddUserAction {
      * @param address ref to user address received from jsp
      * @param phone ref to user phone received from jsp
      * @param email ref to user email received from jsp
-     * @param social ref to user social received from jsp
      * @return user
      */
     public User addUserData(String userName, String password, String address, String phone, String email) {
