@@ -64,10 +64,9 @@ public class EmployeeAddActionServlet extends HttpServlet {
         String address  = request.getParameter("userAddress");
         String phone    = request.getParameter("userPhone");
         String email    = request.getParameter("userEmail");
-        String social   = request.getParameter("userSocial");
 
         userDao = new UserDao();
-        user = new User(0, userName, password, address, phone, email, social);
+        user = new User(0, userName, password, address, phone, email);
         userDao.addUser(user);
 
         log.info(user.toString());
