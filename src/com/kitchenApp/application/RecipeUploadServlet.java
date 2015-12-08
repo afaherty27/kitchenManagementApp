@@ -58,7 +58,7 @@ public class RecipeUploadServlet extends HttpServlet {
 
         //add file path to session
 
-        forwardToResultsPage(request, response);
+        forwardToResultsPage(response);
     }
 
     public void forwardToResultsPage(HttpServletResponse response) throws ServletException, IOException {
