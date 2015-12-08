@@ -130,7 +130,7 @@ public class RecipeDao {
             tx = session.beginTransaction();
             Recipe recipe = (Recipe)session.get(Recipe.class, RecipeId);
             recipe.setFilePath(filePath);
-            recipe.setCatagory(category);
+            recipe.setCategory(category);
             recipe.setRecipeName(recipeName);
 
             session.update(recipe);
