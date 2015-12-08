@@ -1,4 +1,4 @@
-package com.kitchenApp.application;
+package com.kitchenApp.application.recipe;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
