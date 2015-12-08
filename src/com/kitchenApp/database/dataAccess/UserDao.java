@@ -112,7 +112,6 @@ public class UserDao {
     /**
      * Updates users information in the database
      * @param UserId reference to primary key in database
-
      * @param address reference to users address
      * @param email reference to users email
      * @param phone reference to users phone
