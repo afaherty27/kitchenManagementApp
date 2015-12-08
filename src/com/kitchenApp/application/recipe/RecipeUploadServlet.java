@@ -21,7 +21,7 @@ import java.util.List;
 
 public class RecipeUploadServlet extends HttpServlet {
 
-    private final String UPLOAD_DIRECTORY = "C:/tomcat/webapps/upload"; //set up in properties file.
+    private final String UPLOAD_DIRECTORY = "C:/Users/Student/Dropbox/enterpriseJava/kitchenManagementApp/recipeUpload"; //set up in properties file.
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -42,31 +42,32 @@ public class RecipeUploadServlet extends HttpServlet {
                         placePathInSession(request, fileName);
                     }
                 }
-
             } catch (Exception e) {
 
                 e.printStackTrace();
             }
-
-        }else{
-
-            request.setAttribute("message",
-
-                    "Sorry this Servlet only handles file upload request");
-
         }
-
-        //add file path to session
 
         forwardToResultsPage(response);
     }
 
+    /**
+     * Redirects user to chef main page
+     * @param response HttpServletResponse object
+     * @throws ServletException if there is a servlet exception
+     * @throws IOException if there is an input/output exception
+     */
     public void forwardToResultsPage(HttpServletResponse response) throws ServletException, IOException {
 
         String url = "/chef";
         response.sendRedirect(url);
     }
 
+    /**
+     * displays the path name of the file uploaded to the server
+     * @param request HttpServletResponse object
+     * @param fileName path name of file uploaded to server
+     */
     public void placePathInSession(HttpServletRequest request, String fileName) {
 
         String fileLocation = UPLOAD_DIRECTORY + fileName;
