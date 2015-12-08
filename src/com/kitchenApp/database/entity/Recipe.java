@@ -24,12 +24,14 @@ public class Recipe {
      * @param recipeId ref to recipe id in database
      * @param filePath ref to recipe filepath
      * @param catagory ref to recipe catagory
+     * @param recipeName ref to recipe name
      */
-    public Recipe(int recipeId, String filePath, String catagory) {
+    public Recipe(int recipeId, String filePath, String catagory, String recipeName) {
 
         this.recipeId = recipeId;
         this.filePath = filePath;
         this.catagory = catagory;
+        this.recipeName = recipeName;
     }
 
     /**
