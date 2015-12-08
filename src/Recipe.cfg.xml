@@ -3,5 +3,15 @@
         "-//Hibernate/Hibernate Mapping DTD//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-
+    <class name="com.kitchenApp.database.entity.Recipe" table="recipe">
+        <meta attribute="class-description">
+            This class contains the recipe detail
+        </meta>
+        <id name="recipeId" type="int" column="recipe_id">
+            <generator class="native" />
+        </id>
+        <property name="filePath" column="file_path" type="string" />
+        <property name="catagory" column="catagory" type="string" />
+        <property name="recipeName"  column="recipe_name"   type="string" />
+    </class>
 </hibernate-mapping>
