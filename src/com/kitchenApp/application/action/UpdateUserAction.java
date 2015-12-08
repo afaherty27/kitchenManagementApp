@@ -42,7 +42,7 @@ public class UpdateUserAction {
      * @param userRole reference to user role
      * @return userRoleDao
      */
-    public UserRoleDao updateUserRoleData(int userId, String userRole) {
+    public UserRoleDao updateUserRoleData(String userId, String userRole) {
 
 
         int idInt = Integer.parseInt(userId);
