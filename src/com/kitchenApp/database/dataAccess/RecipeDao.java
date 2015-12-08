@@ -117,10 +117,10 @@ public class RecipeDao {
      * updates recipe through the web app
      * @param RecipeId ref to recipe id in database
      * @param filePath ref to recipe file path in database
-     * @param catagory ref to recipe catagory in database
+     * @param category ref to recipe catagory in database
      * @param recipeName ref to recipe name in database
      */
-    public void updateRecipe(Integer RecipeId, String filePath, String catagory, String recipeName) {
+    public void updateRecipe(Integer RecipeId, String filePath, String category, String recipeName) {
 
         beginSession();
         Transaction tx = null;
@@ -130,7 +130,7 @@ public class RecipeDao {
             tx = session.beginTransaction();
             Recipe recipe = (Recipe)session.get(Recipe.class, RecipeId);
             recipe.setFilePath(filePath);
-            recipe.setCatagory(catagory);
+            recipe.setCatagory(category);
             recipe.setRecipeName(recipeName);
 
             session.update(recipe);

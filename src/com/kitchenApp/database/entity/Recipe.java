@@ -9,7 +9,7 @@ public class Recipe {
 
     private int recipeId;
     private String filePath;
-    private String catagory;
+    private String category;
     private String recipeName;
 
     /**
@@ -23,14 +23,14 @@ public class Recipe {
      * Overloaded Recipe Constructor
      * @param recipeId ref to recipe id in database
      * @param filePath ref to recipe filepath
-     * @param catagory ref to recipe catagory
+     * @param category ref to recipe catagory
      * @param recipeName ref to recipe name
      */
-    public Recipe(int recipeId, String filePath, String catagory, String recipeName) {
+    public Recipe(int recipeId, String filePath, String category, String recipeName) {
 
         this.recipeId = recipeId;
         this.filePath = filePath;
-        this.catagory = catagory;
+        this.category = category;
         this.recipeName = recipeName;
     }
 
@@ -67,19 +67,19 @@ public class Recipe {
     }
 
     /**
-     * retrieves recipe catagory
-     * @return catagory
+     * retrieves recipe category
+     * @return category
      */
-    public String getCatagory() {
-        return catagory;
+    public String getCategory() {
+        return category;
     }
 
     /**
      * sets recipe catagory
-     * @param catagory ref to recipe catagory in database
+     * @param category ref to recipe catagory in database
      */
-    public void setCatagory(String catagory) {
-        this.catagory = catagory;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     /**
@@ -105,7 +105,7 @@ public class Recipe {
                 System.lineSeparator() +
                 "Location: " + filePath +
                 System.lineSeparator() +
-                "Catagory: " + catagory;
+                "Catagory: " + category;
     }
 
 }

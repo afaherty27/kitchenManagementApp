@@ -11,7 +11,7 @@
             <generator class="native" />
         </id>
         <property name="filePath" column="file_path" type="string" />
-        <property name="catagory" column="catagory" type="string" />
+        <property name="category" column="category" type="string" />
         <property name="recipeName"  column="recipe_name"   type="string" />
     </class>
 </hibernate-mapping>
