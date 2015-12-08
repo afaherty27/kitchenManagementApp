@@ -105,7 +105,7 @@ public class Recipe {
                 System.lineSeparator() +
                 "Location: " + filePath +
                 System.lineSeparator() +
-                "Catagory: " + catagory
+                "Catagory: " + catagory;
     }
 
 }
