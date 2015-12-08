@@ -31,20 +31,51 @@
     <a href="manageEmployees">Manage Employees</a>
     <p>link to a list of staff.  allows to add a new employee</p>
   </div> <!-- CLOSE col-sm-4 -->
+
+<div class="row">
   <div class="col-sm-4">
     <h2 class="rowHeader">Recipe Development</h2>
     <p>File Location: ${uploadedFilePath}</p>
 
     <form class="form-horizontal" method="post" enctype="multipart/form-data" action="uploadRecipe">
+
       <div class="form-group">
-        <label for="recipe" class="control-label col-xs-2">File:</label>
+        <label for="recipeFile" class="control-label col-xs-2">File:</label>
         <div class="col-xs-3">
-          <input type="file" id="recipe" name="recipe" />
-          <br /><br />
-          <div class="form-group">
-            <button type="submit" class="btn">Add Recipe</button>
+          <input type="file" id="recipeFile" name="recipeFile" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="recipeName" class="control-label col-xs-2">Name:</label>
+        <div class="col-xs-3">
+          <input type="text" class="form-control" id="recipeName" name="userAddress" />
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="category" class="control-label col-xs-2">Category:</label>
+        <div class="col-xs-3" id="category">
+          <div class="input-group">
+            <div class="control-group">
+              <div class="controls">
+                <select name="selectCategory">
+                  <option value="dressing">Dressing</option>
+                  <option value="protein">Protein</option>
+                  <option value="sauce">Sauce</option>
+                  <option value="produce">Produce</option>
+                  <option value="marinade">Marinade</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+
+      <br /><br />
+
+      <div class="form-group">
+        <button type="submit" class="btn">Add Recipe</button>
       </div>
     </form>
   </div> <!-- CLOSE col-sm-4 -->
