@@ -19,8 +19,7 @@
         </property>
 
         <!-- List of XML mapping files -->
-       <mapping resource="User.hbm.xml"  class="com.kitchenApp.database.entity.User" />
-
+        <mapping resource="User.hbm.xml"  class="com.kitchenApp.database.entity.User" />
         <mapping resource="UserRole.hbm.xml" class="com.kitchenApp.database.entity.UserRole" />
         <mapping resource="Recipe.cfg.xml" class="com.kitchenApp.database.entity.Recipe" />
     </session-factory>
