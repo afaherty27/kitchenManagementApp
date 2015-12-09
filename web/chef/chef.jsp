@@ -47,9 +47,9 @@
       </div>
 
       <div class="form-group">
-        <label for="recipeName" class="control-label col-xs-2">Name:</label>
+        <label for="recipeTitle" class="control-label col-xs-2">Name:</label>
         <div class="col-xs-3">
-          <input type="text" class="form-control" id="recipeName" name="userAddress" />
+          <input type="text" class="form-control" id="recipeTitle" name="recipeName" />
         </div>
       </div>
 
@@ -75,7 +75,8 @@
       <br /><br />
 
       <div class="form-group">
-        <button type="submit" class="btn">Add Recipe</button>
+        <button type="submit" class="btn  btn-primary">Add Recipe</button>
+        <a class="btn btn-primary" href="#recipes" data-toggle="modal">View Recipes</a>
       </div>
     </form>
   </div> <!-- CLOSE col-sm-4 -->
@@ -83,6 +84,26 @@
 
 
 <c:import url="/jsp/footer.jsp" />
+
+  <!--RECIPE MODAL -->
+  <div class="modal fade" id="recipes" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4>Recipes</h4>
+          <div class="modal-body">
+            <!-- list of recipes -->
+            <c:forEach  var="recipe" items="${displayRecipes}">
+              <a href="${recipe.getFilePath()}">${recipe.getRecipName()}</a>
+            </c:forEach>
+          </div> <!-- END modal-body -->
+          <div class="model-footer">
+            <a class="btn btn-primary" data-dismiss="modal">Close</a>
+          </div> <!-- END modal-footer -->
+        </div> <!-- END modal-header -->
+      </div> <!-- END modal-content-->
+    </div> <!-- END modal-dialog -->
+  </div> <!-- END modal -->
 
 <!--SUPPORT MODAL -->
 <div class="modal fade" id="contact" role="dialog">
