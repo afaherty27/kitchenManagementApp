@@ -101,7 +101,7 @@ public class RecipeUploadServlet extends HttpServlet {
 
         RecipeUploadAction recipeAction = new RecipeUploadAction();
 
-        String filePath = UPLOAD_DIRECTORY + fileName;
+        String filePath = "recipeUpload/" + fileName;
 
         recipeAction.addRecipeData(filePath, category, recipeName);
     }

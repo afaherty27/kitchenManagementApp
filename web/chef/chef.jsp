@@ -1,3 +1,4 @@
+<%@ page import="com.kitchenApp.application.DisplayRecipesServlet" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -79,6 +80,7 @@
         <a class="btn btn-primary" href="#recipes" data-toggle="modal">View Recipes</a>
       </div>
     </form>
+
   </div> <!-- CLOSE col-sm-4 -->
 </div> <!-- CLOSE row -->
 
@@ -92,10 +94,14 @@
         <div class="modal-header">
           <h4>Recipes</h4>
           <div class="modal-body">
-            <!-- list of recipes -->
+
             <c:forEach  var="recipe" items="${displayRecipes}">
-              <a href="${recipe.getFilePath()}">${recipe.getRecipName()}</a>
+              <div><a href="../recipeUpload/pdfExport.pdf ">${recipe.getRecipeName()}</a></div>
             </c:forEach>
+
+            <!-- list of recipes -->
+
+
           </div> <!-- END modal-body -->
           <div class="model-footer">
             <a class="btn btn-primary" data-dismiss="modal">Close</a>
