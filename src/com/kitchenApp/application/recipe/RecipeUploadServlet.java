@@ -7,6 +7,8 @@ import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 @WebServlet(
         name = "recipeUploadServlet",
@@ -21,7 +23,7 @@ import java.io.*;
 @MultipartConfig
 public class RecipeUploadServlet extends HttpServlet {
 
-    private final String UPLOAD_DIRECTORY = "C:/Users/Student/Dropbox/enterpriseJava/kitchenManagementApp/recipeUpload/"; //set up in properties file.4
+    private final String UPLOAD_DIRECTORY = "C:/Users/Student/Dropbox/enterpriseJava/kitchenManagementApp/web/recipeUpload/"; //set up in properties file.4 //C:/Users/Student/Dropbox/enterpriseJava/kitchenManagementApp/recipeUpload/
     private final Logger log = Logger.getLogger(this.getClass());
 
     /**
@@ -48,17 +50,19 @@ public class RecipeUploadServlet extends HttpServlet {
 
         Part filePart = request.getPart("recipeFile");
         String fileName = filePart.getSubmittedFileName();
-        receiveInputParameters(request, fileName);
 
-        try (Writer output = new BufferedWriter(new FileWriter(UPLOAD_DIRECTORY + fileName))){
+       // receiveInputParameters(request, fileName);
 
-            placePathInSession(request, fileName);
-            log.info("Writing File " + fileName);
+        System.out.println("requested file data");
+        System.out.println(filePart);
+        System.out.println(fileName);
+       // System.out.println(fileContent);
 
-        } catch (FileNotFoundException fileNotFound)  {
+        File file = new File(UPLOAD_DIRECTORY , fileName);
 
-            fileNotFound.printStackTrace();
-            log.error(fileNotFound);
+        try (InputStream fileContent = filePart.getInputStream()) {
+
+            Files.copy(fileContent, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
         }
     }
 
