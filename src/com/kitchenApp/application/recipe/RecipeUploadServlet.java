@@ -51,12 +51,7 @@ public class RecipeUploadServlet extends HttpServlet {
         Part filePart = request.getPart("recipeFile");
         String fileName = filePart.getSubmittedFileName();
 
-       // receiveInputParameters(request, fileName);
-
-        System.out.println("requested file data");
-        System.out.println(filePart);
-        System.out.println(fileName);
-       // System.out.println(fileContent);
+        receiveInputParameters(request, fileName);
 
         File file = new File(UPLOAD_DIRECTORY , fileName);
 
