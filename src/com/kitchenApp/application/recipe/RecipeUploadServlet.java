@@ -23,7 +23,7 @@ import java.nio.file.StandardCopyOption;
 @MultipartConfig
 public class RecipeUploadServlet extends HttpServlet {
 
-    private final String UPLOAD_DIRECTORY = "C:/Users/Student/Dropbox/enterpriseJava/kitchenManagementApp/web/recipeUpload/"; //set up in properties file.4 //C:/Users/Student/Dropbox/enterpriseJava/kitchenManagementApp/recipeUpload/
+    private final String UPLOAD_DIRECTORY = "C:/Users/Student/Dropbox/enterpriseJava/kitchenManagementApp/web/recipeUpload"; //set up in properties file.4 //C:/Users/Student/Dropbox/enterpriseJava/kitchenManagementApp/recipeUpload/
     private final Logger log = Logger.getLogger(this.getClass());
 
     /**
@@ -58,6 +58,7 @@ public class RecipeUploadServlet extends HttpServlet {
         try (InputStream fileContent = filePart.getInputStream()) {
 
             Files.copy(fileContent, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            placePathInSession(request, fileName);
         }
     }
 
@@ -96,7 +97,7 @@ public class RecipeUploadServlet extends HttpServlet {
 
         RecipeUploadAction recipeAction = new RecipeUploadAction();
 
-        String filePath = "recipeUpload/" + fileName;
+        String filePath = "../recipeUpload/" + fileName;
 
         recipeAction.addRecipeData(filePath, category, recipeName);
     }
