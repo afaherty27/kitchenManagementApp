@@ -40,7 +40,7 @@
 
     <form class="form-horizontal" method="post" enctype="multipart/form-data" action="uploadRecipe">
 
-      <div class="form-group">
+      <div class="form-group"> <!-- font awesome for modal about how to save as a pdf   .fa-info-circle-->
         <label for="recipeFile" class="control-label col-xs-2">File:</label>
         <div class="col-xs-3">
           <input type="file" id="recipeFile" name="recipeFile" />
@@ -96,11 +96,8 @@
           <div class="modal-body">
 
             <c:forEach  var="recipe" items="${displayRecipes}">
-              <div><a href="../recipeUpload/pdfExport.pdf ">${recipe.getRecipeName()}</a></div>
+              <div><a href="${recipe.getFilePath()}">${recipe.getRecipeName()}</a></div>
             </c:forEach>
-
-            <!-- list of recipes -->
-
 
           </div> <!-- END modal-body -->
           <div class="model-footer">
