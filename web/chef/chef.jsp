@@ -1,4 +1,3 @@
-<%@ page import="com.kitchenApp.application.DisplayRecipesServlet" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -96,7 +95,7 @@
           <div class="modal-body">
 
             <c:forEach  var="recipe" items="${displayRecipes}">
-              <div><a href="${recipe.getFilePath()}">${recipe.getRecipeName()}</a></div>
+              <div><a href="<%=request.getContextPath()%>${recipe.getFilePath()}">${recipe.getRecipeName()}</a></div>
             </c:forEach>
 
           </div> <!-- END modal-body -->

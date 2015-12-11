@@ -9,6 +9,7 @@ import javax.servlet.http.*;
 
 import java.io.IOException;
 
+
 /**
  * @author afaherty
  * Date: 10/14/2015
@@ -46,7 +47,6 @@ public class ChefHomeJSPRedirect extends HttpServlet {
      */
     public void displayRecipeList(HttpServletRequest request) {
 
-        ServletContext context = getServletContext();
         RecipeDao recipeDao = new RecipeDao();
 
         HttpSession session = request.getSession();
