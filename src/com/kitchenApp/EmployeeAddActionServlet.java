@@ -100,12 +100,20 @@ public class EmployeeAddActionServlet extends HttpServlet {
         response.sendRedirect(url);
     }
 
+    /**
+     * creates session to write success message to webpage
+     * @param request HttpServletRequest object
+     */
     public void createSession(HttpServletRequest request) {
 
         session = request.getSession();
         writeSessionMessage(session);
     }
 
+    /**
+     * sets message to jsp attribute for a successfully added user
+     * @param session HttpSession object
+     */
     public void writeSessionMessage(HttpSession session) {
 
         String message = (String) session.getAttribute("entryString");
