@@ -8,10 +8,6 @@ import javax.servlet.http.*;
 
 import java.io.IOException;
 
-/**
- * @author afaherty
- * Date: 11/5/2015
- */
 @WebServlet(
         name = "addEmployeeForm",
         urlPatterns = {"/chef/addEmployee"}
@@ -19,6 +15,8 @@ import java.io.IOException;
 
 /**
  * forwarding class for addEmployee.jsp page
+ * @author afaherty
+ * Date: 11/5/2015
  */
 public class AddEmployeeJSPForward extends HttpServlet {
 

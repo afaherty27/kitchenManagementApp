@@ -8,10 +8,6 @@ import javax.servlet.http.*;
 
 import java.io.IOException;
 
-/**
- * @author afaherty
- * Date: 10/14/2015
- */
 @WebServlet(
         name = "dishHome",
         urlPatterns = {"/dishwasher"}
@@ -19,6 +15,8 @@ import java.io.IOException;
 
 /**
  * Redirect class for dish.jsp page
+ * @author afaherty
+ * Date: 10/14/2015
  */
 public class DishHomeJSPRedirect extends HttpServlet {
 

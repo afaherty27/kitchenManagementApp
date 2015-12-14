@@ -11,12 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-/**
- * Performs webapp database add action
- * @author afaherty
- * 11/5/2015
- */
-
 @WebServlet(
         name = "addEmployeeServlet",
         urlPatterns = "/chef/addAction"
@@ -24,6 +18,8 @@ import java.io.IOException;
 
 /**
  *  Extracts HTML form data to be added to the database regarding new users
+ *  @author afaherty
+ * 11/5/2015
  */
 public class AddUserActionServlet extends HttpServlet {
 
