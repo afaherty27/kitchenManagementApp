@@ -8,16 +8,14 @@ import javax.servlet.http.*;
 
 import java.io.IOException;
 
-/**
- * @author afaherty
- * Date: 10/16/2015
- */
 @WebServlet(
         name = "generalManagerHome",
         urlPatterns = {"/generalManager"}
 )
 /**
  * redirect class for generalManager.jsp page
+ * @author afaherty
+ * Date: 10/16/2015
  */
 public class GMHomeJSPRedirect extends HttpServlet {
 
