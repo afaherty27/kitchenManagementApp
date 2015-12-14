@@ -8,10 +8,6 @@ import javax.servlet.http.*;
 
 import java.io.IOException;
 
-/**
- * @author afaherty
- * Date: 10/16/2015
- */
 @WebServlet(
         name = "cookHome",
         urlPatterns = {"/lineCook"}
@@ -19,6 +15,8 @@ import java.io.IOException;
 
 /**
  * redirect class for lineCook.jsp page
+ * @author afaherty
+ * Date: 10/16/2015
  */
 public class LineCookHomeJSPRedirect extends HttpServlet {
 
