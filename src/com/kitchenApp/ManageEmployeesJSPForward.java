@@ -17,10 +17,6 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * @author afaherty
- * @version 1.0 on 11/23/2015
- */
 @WebServlet(
         name = "manageEmployees",
         urlPatterns = {"/chef/manageEmployees"}
@@ -28,6 +24,8 @@ import java.util.List;
 
 /**
  * forwarding class for manageEmployees.jsp
+ * @author afaherty
+ * @version 1.0 on 11/23/2015
  */
 public class ManageEmployeesJSPForward extends HttpServlet {
 
