@@ -11,6 +11,11 @@
             <generator class="native" />
         </id>
         <property name="userName" column="user_name" type="string" />
-        <property name="userRole" column="role_name" type="string" />
+        <property name="userRole" column="user_role" type="string" />
+
+        <set name="user" inverse="true" cascade="all">
+            <key column="role_Id" not-null="true" />
+            <one-to-many class="com.kitchenApp.database.entity.User" />
+        </set>
     </class>
 </hibernate-mapping>

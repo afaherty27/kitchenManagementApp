@@ -1,8 +1,10 @@
 package com.kitchenApp.database.entity;
 
+import java.util.Set;
+
 /**
  * @author afaherty
- * 11/2/2015
+ *  @version 2.0 on 11/2/2015
  */
 
 public class UserRole {
@@ -10,6 +12,8 @@ public class UserRole {
     private int roleId;
     private String userName;
     private String userRole;
+    private Set<User> user;
+
 
     /**
      * zero arg constructor
@@ -85,6 +89,20 @@ public class UserRole {
     }
 
     /**
+     * retrieves a Set object of User objects
+     * @return user
+     */
+    public Set<User> getUser() { return user; }
+
+    /**
+     * Sets a Set object of User objects
+     * @param user ref to User object
+     */
+    public void setUser(Set<User> user) {
+        this.user = user;
+    }
+
+    /**
      * Provides string data of users role information
      * @return string of user role details
      */
@@ -94,5 +112,4 @@ public class UserRole {
                 + userName + " has been authorized as "
                 + userRole;
     }
-
 }

@@ -15,5 +15,8 @@
         <property name="address"  column="address"   type="string" />
         <property name="email"    column="email"     type="string" />
         <property name="phone"    column="phone"     type="string" />
+
+        <many-to-one name="userRole" class="com.kitchenApp.database.entity.UserRole"
+                     column="role_id" not-null="true" />
     </class>
 </hibernate-mapping>

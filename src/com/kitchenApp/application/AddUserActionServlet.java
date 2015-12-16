@@ -71,8 +71,7 @@ public class AddUserActionServlet extends HttpServlet {
                         String email, String roleType) {
 
         AddUserAction addUser = new AddUserAction();
-        addUser.addUserData(userName, password, address, phone, email);
-        addUser.addUserRoleData(userName, roleType);
+        addUser.addUserData(userName, password, address, phone, email, roleType);
     }
 
     /**

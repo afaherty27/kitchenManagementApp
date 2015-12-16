@@ -63,8 +63,8 @@ public class EmployeeAddActionServlet extends HttpServlet {
         String email    = request.getParameter("userEmail");
 
         userDao = new UserDao();
-        user = new User(0, userName, password, address, phone, email);
-        userDao.addUser(user);
+        //user = new User(0, userName, password, address, phone, email);
+        //userDao.addUser(user);
 
         log.info(user.toString());
     }
@@ -79,8 +79,8 @@ public class EmployeeAddActionServlet extends HttpServlet {
         String roleType = request.getParameter("selectRole");
 
         userRoleDao = new UserRoleDao();
-        userRole = new UserRole(0, userName, roleType);
-        userRoleDao.addUserRole(userRole);
+        //userRole = new UserRole(0, userName, roleType);
+       // userRoleDao.addUserRole(userRole);
 
         log.info(userRole.toString());
     }

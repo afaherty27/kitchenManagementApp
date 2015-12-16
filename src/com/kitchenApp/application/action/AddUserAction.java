@@ -6,6 +6,9 @@ import com.kitchenApp.database.entity.User;
 import com.kitchenApp.database.entity.UserRole;
 import org.apache.log4j.Logger;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Adds user data to the database
  * @author afaherty
@@ -26,13 +29,22 @@ public class AddUserAction {
      * @param email ref to user email received from jsp
      * @return user
      */
-    public User addUserData(String userName, String password, String address, String phone, String email) {
+    public User addUserData(String userName, String password, String address, String phone,
+                            String email, String roleType) {
 
-        UserDao userDao = new UserDao();
-        User user = new User(ID_PLACEHOLDER, userName, password, address, phone, email);
-        userDao.addUser(user);
+        UserRole userRole = new UserRole(ID_PLACEHOLDER, userName, roleType);
+        User user = new User(ID_PLACEHOLDER, userName, password, address, phone, email, userRole);
 
         log.info(user.toString());
+        log.info(userRole.toString());
+
+        Set<User> roles = new HashSet<User>();
+        roles.add(user);
+
+        userRole.setUser(roles);
+        UserRoleDao dao = new UserRoleDao();
+
+        dao.addUserRole(userRole);
 
         return user;
     }

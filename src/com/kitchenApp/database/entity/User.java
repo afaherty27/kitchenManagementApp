@@ -2,7 +2,7 @@ package com.kitchenApp.database.entity;
 
 /**
  * @author afaherty
- * 10/30/2015
+ * @version 2.0 on 12/16/2015
  */
 
 public class User {
@@ -14,10 +14,12 @@ public class User {
     private String address;
     private String email;
     private String phone;
+    private UserRole userRole;
+
 
     /**
      * zero arg constructor
-      */
+     */
     public User() {
 
     }
@@ -29,9 +31,10 @@ public class User {
      * @param password ref to users password
      * @param address ref to users address
      * @param email ref to users email
+     * @param userRole ref to UserRole object
      */
     public User(int userId, String userName, String password, String address,  String phone,
-                String email) {
+                      String email, UserRole userRole) {
 
         this.userId = userId;
         this.userName = userName;
@@ -39,7 +42,23 @@ public class User {
         this.address = address;
         this.email = email;
         this.phone = phone;
+        this.userRole = userRole;
     }
+
+    /**
+     * Recieves value of userRole object
+     * @return userRole
+     */
+    public UserRole getUserRole() {
+        return userRole;
+    }
+
+    /**
+     * Sets user Role object
+     * @param userRole Ref to UserRole object
+     */
+    public void setUserRole(UserRole userRole) { this.userRole = userRole; }
+
 
     /**
      * Receive userId value
@@ -150,5 +169,4 @@ public class User {
                 + email + " "
                 + phone;
     }
-
 }
