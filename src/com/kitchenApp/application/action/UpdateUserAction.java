@@ -29,7 +29,9 @@ public class UpdateUserAction {
 
         UserDao userDao = new UserDao();
 
-        userDao.updateUser(idInt, address, phone, email);
+        userDao.updateUser(idInt, address, phone, email, idInt);
+
+
 
         log.info("updating user");
 
@@ -47,11 +49,19 @@ public class UpdateUserAction {
 
         int idInt = Integer.parseInt(userId);
 
+        UserDao dao = new UserDao();
+        User user = dao.getUser(idInt);
+
+        user.getRole().getRoleId();
+        String stringRoleId = String.valueOf(user.getRole().getRoleId());
+        int intRoleId = Integer.parseInt(stringRoleId);
+
+
         UserRoleDao userRoleDao = new UserRoleDao();
 
-        userRoleDao.updateUserRole(idInt, userRole);
+        userRoleDao.updateUserRole(intRoleId, userRole);
 
-        log.info("updating userrrole");
+        log.info("updating user role");
 
         return userRoleDao;
     }

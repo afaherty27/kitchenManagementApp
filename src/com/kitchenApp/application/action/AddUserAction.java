@@ -30,39 +30,18 @@ public class AddUserAction {
      * @return user
      */
     public User addUserData(String userName, String password, String address, String phone,
-                            String email, String roleType) {
+                           String email, String roleType) {
 
-        UserRole userRole = new UserRole(ID_PLACEHOLDER, userName, roleType);
-        User user = new User(ID_PLACEHOLDER, userName, password, address, phone, email, userRole);
+        UserRoleDao roleDao = new UserRoleDao();
+        UserRole role = new UserRole(ID_PLACEHOLDER, roleType, userName);
+        roleDao.addUserRole(role);
+
+        UserDao dao = new UserDao();
+        User user = new User(0, userName, password, address, phone, email, role);
+        dao.addUser(user);
 
         log.info(user.toString());
-        log.info(userRole.toString());
-
-        Set<User> roles = new HashSet<User>();
-        roles.add(user);
-
-        userRole.setUser(roles);
-        UserRoleDao dao = new UserRoleDao();
-
-        dao.addUserRole(userRole);
 
         return user;
-    }
-
-    /**
-     * add user role data to kitchenapp database user_role table
-     * @param userName ref to user name received from jsp
-     * @param roleType ref to role received from jsp
-     * @return userRole
-     */
-    public UserRole addUserRoleData(String userName, String roleType) {
-
-        UserRoleDao userRoleDao = new UserRoleDao();
-        UserRole userRole = new UserRole(ID_PLACEHOLDER, userName, roleType);
-        userRoleDao.addUserRole(userRole);
-
-        log.info(userRole.toString());
-
-        return userRole;
     }
 }

@@ -1,6 +1,7 @@
 package com.kitchenApp.database.dataAccess;
 
 import com.kitchenApp.database.entity.User;
+import com.kitchenApp.database.entity.UserRole;
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -116,7 +117,7 @@ public class UserDao {
      * @param email reference to users email
      * @param phone reference to users phone
      */
-    public void updateUser(Integer UserId, String address, String phone, String email) {
+    public void updateUser(Integer UserId, String address, String phone, String email, Integer role) {
 
         beginSession();
         Transaction tx = null;
@@ -129,6 +130,8 @@ public class UserDao {
             user.setAddress(address);
             user.setPhone(phone);
             user.setEmail(email);
+
+
 
             session.update(user);
             tx.commit();

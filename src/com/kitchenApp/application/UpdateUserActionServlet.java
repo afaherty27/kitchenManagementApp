@@ -1,6 +1,8 @@
 package com.kitchenApp.application;
 
 import com.kitchenApp.application.action.UpdateUserAction;
+import com.kitchenApp.database.entity.User;
+import com.kitchenApp.database.entity.UserRole;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -67,19 +69,20 @@ public class UpdateUserActionServlet extends HttpServlet {
     public void updateUser(String userId, String address, String phone, String email, String userRole) {
 
         UpdateUserAction update = new UpdateUserAction();
-        update.updateUserData(userId, address, phone, email);
         update.updateUserRoleData(userId, userRole);
+        update.updateUserData(userId, address, phone, email);
+
     }
 
     /**
      * Redirects user to clean form after submit. posts message for successful add
      * @param response HttpServletResponse object
      * @throws ServletException if there is a servlet error
-     * @throws IOException      if there is an input/output error
-     */
-    public void redirectOnSubmit(HttpServletResponse response) throws ServletException, IOException {
+        * @throws IOException      if there is an input/output error
+        */
+        public void redirectOnSubmit(HttpServletResponse response) throws ServletException, IOException {
 
-        log.info("accessed user update");
+            log.info("accessed user update");
         String url = "/chef/manageEmployees";
         response.sendRedirect(url);
     }

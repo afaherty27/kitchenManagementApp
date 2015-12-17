@@ -32,6 +32,7 @@
         <td>${user.getUserId()}</td>
         <td>${user.getUserName()}</td>
         <td>${user.getPhone()}</td>
+
     </c:forEach>
   </table>
 
@@ -47,7 +48,7 @@
           <form method="post" action="deleteUser">
               <c:set var="user" scope="request" />
               <select name="selectDelete">
-                <c:forEach  var="userDelete" items="${displayDelete}">
+                <c:forEach  var="userDelete" items="${displayUsers}">
                   <option value="${userDelete.getUserId()}">${userDelete.getUserName()}</option>
                 </c:forEach>
               </select>
@@ -77,6 +78,7 @@
             <c:forEach  var="user" items="${displayUsers}">
 
                   <option value="${user.getUserId()}">${user.getUserName()}</option>
+              <span value="${user.role.getRoleId()}"></span>
 
 
             </c:forEach>

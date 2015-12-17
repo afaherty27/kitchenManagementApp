@@ -31,8 +31,6 @@ public class ManageEmployeesJSPForward extends HttpServlet {
 
     private UserDao userDao;
     private UserRoleDao userRoleDao;
-    private User user;
-    private UserRole userRole;
     private HttpSession session;
     private final Logger log = Logger.getLogger(this.getClass());
 
@@ -56,13 +54,12 @@ public class ManageEmployeesJSPForward extends HttpServlet {
      */
     public void displayUserList(HttpServletRequest request) {
 
-        ServletContext context = getServletContext();
+       // ServletContext context = getServletContext();
         userDao = new UserDao();
 
         session = request.getSession();
 
         session.setAttribute("displayUsers", userDao.getUserList());
-        session.setAttribute("displayDelete", userDao.getUserList());
 
         log.info("loading user list");
     }

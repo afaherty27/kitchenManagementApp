@@ -16,7 +16,7 @@
         <property name="email"    column="email"     type="string" />
         <property name="phone"    column="phone"     type="string" />
 
-        <many-to-one name="userRole" class="com.kitchenApp.database.entity.UserRole"
-                     column="role_id" not-null="true" />
+        <many-to-one name="role" class="com.kitchenApp.database.entity.UserRole"
+                     column="role" not-null="true" />
     </class>
 </hibernate-mapping>

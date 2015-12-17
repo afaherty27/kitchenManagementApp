@@ -14,7 +14,7 @@ public class User {
     private String address;
     private String email;
     private String phone;
-    private UserRole userRole;
+    private UserRole role;
 
 
     /**
@@ -31,10 +31,10 @@ public class User {
      * @param password ref to users password
      * @param address ref to users address
      * @param email ref to users email
-     * @param userRole ref to UserRole object
+     * @param role ref to UserRole object
      */
     public User(int userId, String userName, String password, String address,  String phone,
-                      String email, UserRole userRole) {
+                      String email, UserRole role) {
 
         this.userId = userId;
         this.userName = userName;
@@ -42,22 +42,22 @@ public class User {
         this.address = address;
         this.email = email;
         this.phone = phone;
-        this.userRole = userRole;
+        this.role = role;
     }
 
     /**
      * Recieves value of userRole object
      * @return userRole
      */
-    public UserRole getUserRole() {
-        return userRole;
+    public UserRole getRole() {
+        return role;
     }
 
     /**
      * Sets user Role object
-     * @param userRole Ref to UserRole object
+     * @param role Ref to UserRole object
      */
-    public void setUserRole(UserRole userRole) { this.userRole = userRole; }
+    public void setRole(UserRole role) { this.role = role; }
 
 
     /**
@@ -167,6 +167,7 @@ public class User {
                 + password + " "
                 + address + " "
                 + email + " "
-                + phone;
+                + phone + " "
+                + role.getRoleId();
     }
 }

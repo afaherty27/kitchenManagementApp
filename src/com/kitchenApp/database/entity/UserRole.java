@@ -12,8 +12,6 @@ public class UserRole {
     private int roleId;
     private String userName;
     private String userRole;
-    private Set<User> user;
-
 
     /**
      * zero arg constructor
@@ -27,7 +25,7 @@ public class UserRole {
      * @param userName value of user name
      * @param userRole value of user role
      */
-    public UserRole(int roleId, String userName, String userRole) {
+    public UserRole(int roleId, String userRole,String userName) {
 
         this.roleId = roleId;
         this.userName = userName;
@@ -92,15 +90,15 @@ public class UserRole {
      * retrieves a Set object of User objects
      * @return user
      */
-    public Set<User> getUser() { return user; }
+//    public Set<User> getUser() { return user; }
 
     /**
      * Sets a Set object of User objects
      * @param user ref to User object
      */
-    public void setUser(Set<User> user) {
-        this.user = user;
-    }
+//    public void setUser(Set<User> user) {
+//        this.user = user;
+//    }
 
     /**
      * Provides string data of users role information

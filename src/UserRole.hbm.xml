@@ -7,15 +7,12 @@
         <meta attribute="class-description">
             This class contains the user role detail
         </meta>
-        <id name="roleId" column="role_id" type="int">
+        <id name="roleId" column="user_role_id" type="int">
             <generator class="native" />
         </id>
         <property name="userName" column="user_name" type="string" />
         <property name="userRole" column="user_role" type="string" />
 
-        <set name="user" inverse="true" cascade="all">
-            <key column="role_Id" not-null="true" />
-            <one-to-many class="com.kitchenApp.database.entity.User" />
-        </set>
+
     </class>
 </hibernate-mapping>
