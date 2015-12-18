@@ -161,8 +161,7 @@ public class User {
      * @return string of employee details
      */
     public String toString() {
-        return  System.lineSeparator() +
-                "New User: " + " "
+        return "New User: " + " "
                 + userName + " "
                 + password + " "
                 + address + " "
