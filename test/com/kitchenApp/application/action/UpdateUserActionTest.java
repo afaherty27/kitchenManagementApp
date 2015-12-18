@@ -69,17 +69,5 @@ public class UpdateUserActionTest {
 
         userDao.deleteUser(user.getUserId());
         userRoleDao.deleteUserRole((role.getRoleId()));
-
-//        UserDao userDao = new UserDao();
-//        UserRoleDao userRoleDao = new UserRoleDao();
-//        UserRole role = new UserRole(0, "ref", "ref"); //to create a ref to delete all test users at end
-//        User user = new User(0, "ref", "ref", "ref", "ref", "ref", role); //to create a ref to delete all test users at end
-//        userRoleDao.addUserRole(role);
-//        userDao.addUser(user);
-//
-//        userDao.deleteUser(user.getUserId());
-//        userDao.deleteUser(user.getUserId() - 1);
-//        userRoleDao.deleteUserRole(role.getRoleId());
-//        userRoleDao.deleteUserRole(role.getRoleId() - 1);
     }
 }
