@@ -10,6 +10,7 @@ import org.junit.runners.Suite;
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        AddUserActionTest.class
+        AddUserActionTest.class,
+        UpdateUserActionTest.class
 })
 public class CRUDActionClassTestSuite {}
