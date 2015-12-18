@@ -49,8 +49,8 @@ public class AddUserActionTest {
 
         UserDao userDao = new UserDao();
         UserRoleDao userRoleDao = new UserRoleDao();
-        UserRole role = new UserRole(0, "ref", "ref"); //to create a ref to delete all test users at end
-        User user = new User(0, "ref", "ref", "ref", "ref", "ref", role); //to create a ref to delete all test users at end
+        UserRole role = new UserRole(0, "ref", "ref");
+        User user = new User(0, "ref", "ref", "ref", "ref", "ref", role);
         userRoleDao.addUserRole(role);
         userDao.addUser(user);
 
