@@ -4,7 +4,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 /**
- * Test Suite for CRUD action classes
+ * Test Suite for classes in com.kitchenApp.application.action package
  * @author afaherty
  * @version 1.0 on 12/17/2015
  */
