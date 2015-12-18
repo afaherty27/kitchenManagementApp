@@ -60,8 +60,8 @@ public class DeleteUserActionServlet extends HttpServlet {
     public void deleteUser(String userId) {
 
         DeleteUserAction delete = new DeleteUserAction();
-        delete.deleteUserData(userId);
         delete.deleteUserRoleData(userId);
+        delete.deleteUserData(userId);
     }
 
     /**
