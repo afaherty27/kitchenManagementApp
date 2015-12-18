@@ -12,6 +12,7 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
         AddUserActionTest.class,
         UpdateUserActionTest.class,
-        DeleteUserActionTest.class
+        DeleteUserActionTest.class,
+        RecipeUploadActionTest.class
 })
 public class ActionPackageTestSuite { }
