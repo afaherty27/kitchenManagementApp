@@ -9,7 +9,7 @@ import org.apache.log4j.Logger;
 /**
  * Performs user updates
  * @author afaherty
- * @version 1.0 on 11/30/2015
+ * @version 2.0 on 11/30/2015
  */
 public class UpdateUserAction {
 
@@ -28,12 +28,9 @@ public class UpdateUserAction {
         int idInt = Integer.parseInt(userId);
 
         UserDao userDao = new UserDao();
-
         userDao.updateUser(idInt, address, phone, email, idInt);
 
-
-
-        log.info("updating user");
+        log.info("updated " +  userDao.getUser(idInt) + " in database");
 
         return userDao;
     }
@@ -46,22 +43,25 @@ public class UpdateUserAction {
      */
     public UserRoleDao updateUserRoleData(String userId, String userRole) {
 
-
         int idInt = Integer.parseInt(userId);
 
+        //receive user data from users table
         UserDao dao = new UserDao();
         User user = dao.getUser(idInt);
 
+        //fetch user_role table data via the PK/FK relationship
         user.getRole().getRoleId();
+
+        //convert User object data into String object
         String stringRoleId = String.valueOf(user.getRole().getRoleId());
+
+        // convert String to int
         int intRoleId = Integer.parseInt(stringRoleId);
 
-
         UserRoleDao userRoleDao = new UserRoleDao();
-
         userRoleDao.updateUserRole(intRoleId, userRole);
 
-        log.info("updating user role");
+        log.info("updated " + user.getUserName() + " roles in database");
 
         return userRoleDao;
     }
