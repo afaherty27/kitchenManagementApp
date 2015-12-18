@@ -12,11 +12,11 @@ import java.util.Set;
 /**
  * Adds user data to the database
  * @author afaherty
- * @version 1.0 on 11/30/2015
+ * @version 3.0 on 12/17/2015
  */
 public class AddUserAction {
 
-    private static final int ID_PLACEHOLDER = 0; //for hibernate auto increment
+    private static final int ID_PLACEHOLDER = 0; //for hibernate auto increment //todo receive from properties file
 
     private final Logger log = Logger.getLogger(this.getClass());
 
