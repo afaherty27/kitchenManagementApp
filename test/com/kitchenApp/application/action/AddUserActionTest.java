@@ -15,7 +15,6 @@ import static org.junit.Assert.*;
  */
 public class AddUserActionTest {
 
-    private int ID_PLACEHOLDER = 0;
     private String userName = "userNameTest";
     private String roleType = "roleTypeTest";
     private String password = "passwordTest";
