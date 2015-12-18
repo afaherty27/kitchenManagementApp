@@ -8,5 +8,8 @@ import org.junit.runners.Suite;
  * @author afaherty
  * @version 1.0 on 12/17/2015
  */
-
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+        AddUserActionTest.class
+})
 public class CRUDActionClassTestSuite {}
