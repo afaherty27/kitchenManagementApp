@@ -22,6 +22,9 @@ public class UpdateUserActionTest {
     private UserRoleDao userRoleDao = new UserRoleDao();
     private UpdateUserAction update = new UpdateUserAction();
 
+    /**
+     * creates user & roles to refer to at the end of the test.  Adds to database.
+     */
     @Before
     public void before() {
         role = new UserRole(0, "refRole", "refUserName");
@@ -30,6 +33,9 @@ public class UpdateUserActionTest {
         userDao.addUser(user);
     }
 
+    /**
+     *  method test for updateUserData method
+     */
     @Test
     public void updateUserData() {
 
@@ -46,6 +52,9 @@ public class UpdateUserActionTest {
 
     }
 
+    /**
+     * method test for updateUserRoleData method
+     */
     @Test
     public void updateUserRoleData() {
 

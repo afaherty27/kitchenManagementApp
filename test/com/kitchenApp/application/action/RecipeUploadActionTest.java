@@ -5,11 +5,6 @@ import com.kitchenApp.database.entity.Recipe;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import javax.servlet.http.Part;
-
-import java.io.IOException;
-
 import static org.junit.Assert.*;
 
 /**
@@ -25,6 +20,9 @@ public class RecipeUploadActionTest {
     private Recipe recipe;
     private RecipeDao dao;
 
+    /**
+     * creates a recipe object to be used later in the test
+     */
    @Before
    public void before() {
        recipe = new Recipe(0, filePath, category, recipeName);
@@ -32,6 +30,9 @@ public class RecipeUploadActionTest {
        dao.addRecipe(recipe);
    }
 
+    /**
+     * method test for addRecipeData method
+     */
     @Test
     public void addRecipeData() {
 
@@ -45,6 +46,9 @@ public class RecipeUploadActionTest {
         assertTrue("list size should be larger than held size", listLength < dao.getRecipeList().size() );
     }
 
+    /**
+     * Cleans test data out of database
+     */
     @After
     public void after() {
 

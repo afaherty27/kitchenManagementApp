@@ -21,6 +21,9 @@ public class DeleteUserActionTest {
     private UserRoleDao userRoleDao = new UserRoleDao();
     private DeleteUserAction delete = new DeleteUserAction();
 
+    /**
+     * creates user & roles to refer to at the end of the test.  Adds to database.
+     */
     @Before
     public void before() {
         role = new UserRole(0, "refRole", "refUserName");
@@ -31,6 +34,9 @@ public class DeleteUserActionTest {
 
     }
 
+    /**
+     * method test for deleteUserData method
+     */
     @Test
     public void deleteUserData() {
 
@@ -47,6 +53,9 @@ public class DeleteUserActionTest {
         assertFalse("incorrect list size after delete", listLength <= userDao.getUserList().size());
     }
 
+    /**
+     * Method test for deleteUserRoleData method
+     */
     @Test
     public void deleteUserRoleData() {
 
