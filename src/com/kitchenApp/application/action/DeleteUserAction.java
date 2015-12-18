@@ -2,12 +2,13 @@ package com.kitchenApp.application.action;
 
 import com.kitchenApp.database.dataAccess.UserDao;
 import com.kitchenApp.database.dataAccess.UserRoleDao;
+import com.kitchenApp.database.entity.User;
 import org.apache.log4j.Logger;
 
 /**
  * deletes user data from kitchenapp database
  * @author afaherty
- * @version 1.0 on 11/23/2015
+ * @version 2.0 on 12/17/2015
  */
 public class DeleteUserAction {
 
@@ -16,6 +17,7 @@ public class DeleteUserAction {
     /**
      * updates user data to kitchenapp database user table
      * @param userId reference to user id being deleted
+     * @return userDao
      */
     public UserDao deleteUserData(String userId) {
 
@@ -24,7 +26,7 @@ public class DeleteUserAction {
         UserDao userDao = new UserDao();
         userDao.deleteUser(idInt);
 
-        log.info("deleting user");
+        log.info("deleting" + userDao.getUser(idInt));
 
         return userDao;
     }
@@ -32,15 +34,29 @@ public class DeleteUserAction {
     /**
      * update user role data to kitchenapp database user_role table
      * @param userId reference to the user role id being deleted
+     * @return userRoleDao
      */
     public UserRoleDao deleteUserRoleData(String userId )  {
 
         int idInt = Integer.parseInt(userId);
 
-        UserRoleDao userRoleDao = new UserRoleDao();
-        userRoleDao.deleteUserRole(idInt);
+        //receive user data from users table
+        UserDao dao = new UserDao();
+        User user = dao.getUser(idInt);
 
-        log.info("deleting userrole");
+        //fetch user_role table data via the PK/FK relationship
+        user.getRole().getRoleId();
+
+        //convert User object data into String object
+        String stringRoleId = String.valueOf(user.getRole().getRoleId());
+
+        // convert String to int
+        int intRoleId = Integer.parseInt(stringRoleId);
+
+        UserRoleDao userRoleDao = new UserRoleDao();
+        userRoleDao.deleteUserRole(intRoleId);
+
+        log.info("deleting" + user.getUserName() + " roles from DB");
 
         return userRoleDao;
     }
