@@ -4,6 +4,14 @@ import com.kitchenApp.database.dataAccess.RecipeDao;
 import com.kitchenApp.database.entity.Recipe;
 import org.apache.log4j.Logger;
 
+import javax.servlet.http.Part;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+
+
 /**
  * Adds recipe data to database
  * @author afaherty
@@ -11,9 +19,19 @@ import org.apache.log4j.Logger;
  */
 public class RecipeUploadAction {
 
-    private static final int ID_PLACEHOLDER = 0; //for hibernate auto increment
+    private static final int ID_PLACEHOLDER = 0; //for hibernate auto increment //todo receive from properties file
 
     private final Logger log = Logger.getLogger(this.getClass());
+
+    public void uploadFileToServer(String fileName, Part filePart, String UPLOAD_DIRECTORY) throws IOException {
+        File file = new File(UPLOAD_DIRECTORY , fileName);
+
+        try (InputStream fileContent = filePart.getInputStream()) {
+
+            Files.copy(fileContent, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+
+        }
+    }
 
     /**
      * adds recipe data to database
