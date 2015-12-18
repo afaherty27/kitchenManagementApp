@@ -23,14 +23,25 @@ public class RecipeUploadAction {
 
     private final Logger log = Logger.getLogger(this.getClass());
 
+
+    /**
+     * Handles file uploading
+     * @param fileName reference to name of file being uploaded
+     * @param filePart reference to the form field value containing the file uploaded
+     * @param UPLOAD_DIRECTORY directory file is loaded into application
+     * @throws IOException if there is an IOException
+     */
     public void uploadFileToServer(String fileName, Part filePart, String UPLOAD_DIRECTORY) throws IOException {
+
         File file = new File(UPLOAD_DIRECTORY , fileName);
 
         try (InputStream fileContent = filePart.getInputStream()) {
 
+            log.debug("attempting to upload file");
             Files.copy(fileContent, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
-
         }
+
+        log.info(fileName + " was uploaded successfully");
     }
 
     /**
@@ -47,7 +58,7 @@ public class RecipeUploadAction {
 
         dao.addRecipe(recipe);
 
-        log.info(recipe.toString());
+        log.debug(recipe.toString());
 
         return recipe;
     }
