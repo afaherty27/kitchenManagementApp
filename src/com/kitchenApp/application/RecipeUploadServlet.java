@@ -1,4 +1,4 @@
-package com.kitchenApp.application.recipe;
+package com.kitchenApp.application;
 
 import com.kitchenApp.application.action.RecipeUploadAction;
 import org.apache.log4j.Logger;
@@ -24,6 +24,7 @@ import java.nio.file.StandardCopyOption;
 public class RecipeUploadServlet extends HttpServlet {
 
     private final String UPLOAD_DIRECTORY = "C:/Users/Student/Dropbox/enterpriseJava/kitchenManagementApp/web/recipeUpload"; //set up in properties file.4 //C:/Users/Student/Dropbox/enterpriseJava/kitchenManagementApp/recipeUpload/
+    private RecipeUploadAction recipeAction;
     private final Logger log = Logger.getLogger(this.getClass());
 
     /**
@@ -48,18 +49,15 @@ public class RecipeUploadServlet extends HttpServlet {
      */
     public void uploadFile(HttpServletRequest request) throws ServletException, IOException {
 
+        recipeAction = new RecipeUploadAction();
+
         Part filePart = request.getPart("recipeFile");
         String fileName = filePart.getSubmittedFileName();
 
+        recipeAction.uploadFileToServer(fileName, filePart, UPLOAD_DIRECTORY);
+
         receiveInputParameters(request, fileName);
-
-        File file = new File(UPLOAD_DIRECTORY , fileName);
-
-        try (InputStream fileContent = filePart.getInputStream()) {
-
-            Files.copy(fileContent, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
-            placePathInSession(request, fileName);
-        }
+        placePathInSession(request, fileName);
     }
 
     /**
@@ -95,7 +93,7 @@ public class RecipeUploadServlet extends HttpServlet {
      */
     public void addRecipe(String category, String recipeName, String fileName) {
 
-        RecipeUploadAction recipeAction = new RecipeUploadAction();
+        recipeAction = new RecipeUploadAction();
 
         String filePath = "../recipeUpload/" + fileName;
 
