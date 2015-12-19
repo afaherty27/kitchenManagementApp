@@ -100,12 +100,9 @@ public class Recipe {
 
     public String toString() {
 
-        return System.lineSeparator() +
-                "New Recipe: " + recipeName +
-                System.lineSeparator() +
-                "Location: " + filePath +
-                System.lineSeparator() +
-                "Catagory: " + category;
+        return "New Recipe: " + recipeName +
+                " Location: " + filePath +
+                " Catagory: " + category;
     }
 
 }
