@@ -73,7 +73,6 @@ public class RecipeDaoTest {
         }
 
         assertNotNull("list is not null", list.size());
-        // i - 1 -> i is getting incremented after final iteration, before exiting loop
         assertTrue(list.size() == i);
     }
 
