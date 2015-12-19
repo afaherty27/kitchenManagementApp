@@ -6,6 +6,9 @@ import org.hibernate.Transaction;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 /**
@@ -42,8 +45,24 @@ public class RecipeDaoTest {
      * method test for getRecipe method
      */
     @Test
-    public void getRecipe() {
+    public void getRecipe() throws HibernateException {
 
+        dao.addRecipe(recipe);
+
+        dao.getRecipe(recipe.getRecipeId());
+
+        assertEquals(String.valueOf(dao.getRecipe(recipe.getRecipeId())), recipe.toString());
+        assertFalse(recipe.getRecipeId() == 1);
+
+        try {
+            recipe.getRecipeId();
+
+        } catch (HibernateException he) {
+            he.printStackTrace();
+            fail("exception");
+        }
+
+        dao.deleteRecipe(recipe.getRecipeId());
     }
 
 
@@ -53,6 +72,17 @@ public class RecipeDaoTest {
     @Test
     public void getRecipeList() {
 
+        List list = dao.getRecipeList();
+
+        int i; //reference to count of messages in database
+
+        for (i = 0; i < list.size(); i++) {
+            i++;
+        }
+
+        assertNotNull("list is not null", list.size());
+        // i - 1 -> i is getting incremented after final iteration, before exiting loop
+        assertTrue(list.size() == i - 1);
     }
 
     /**
