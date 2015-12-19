@@ -54,14 +54,6 @@ public class RecipeDaoTest {
         assertEquals(String.valueOf(dao.getRecipe(recipe.getRecipeId())), recipe.toString());
         assertFalse(recipe.getRecipeId() == 1);
 
-        try {
-            recipe.getRecipeId();
-
-        } catch (HibernateException he) {
-            he.printStackTrace();
-            fail("exception");
-        }
-
         dao.deleteRecipe(recipe.getRecipeId());
     }
 
