@@ -70,7 +70,7 @@ public class RecipeDaoTest {
      * method test for getRecipeList method
      */
     @Test
-    public void getRecipeList() {
+    public void getRecipeList() throws HibernateException {
 
         List list = dao.getRecipeList();
 
@@ -82,14 +82,14 @@ public class RecipeDaoTest {
 
         assertNotNull("list is not null", list.size());
         // i - 1 -> i is getting incremented after final iteration, before exiting loop
-        assertTrue(list.size() == i - 1);
+        assertTrue(list.size() == i);
     }
 
     /**
      * method test for updateRecipe method
      */
     @Test
-    public void updateRecipe() {
+    public void updateRecipe() throws HibernateException {
 
         dao.addRecipe(recipe);
 
@@ -111,7 +111,20 @@ public class RecipeDaoTest {
      * method test for deleteRecipe method
      */
     @Test
-    public void deleteRecipe() {
+    public void deleteRecipe() throws HibernateException {
 
+        dao.addRecipe(recipe);
+
+        int listLength = dao.getRecipeList().size();
+        assertNotNull("integer is null", recipe.getRecipeId());
+
+        dao.deleteRecipe(recipe.getRecipeId());
+
+        assertTrue("post delete list size must be smaller than pre delete",
+                listLength > dao.getRecipeList().size());
+        assertNull("recipe data should not exist", dao.getRecipe(recipe.getRecipeId()));
+
+        Transaction tx = null;
+        assertFalse(tx != null);
     }
 }
