@@ -91,6 +91,20 @@ public class RecipeDaoTest {
     @Test
     public void updateRecipe() {
 
+        dao.addRecipe(recipe);
+
+        String recipePre = String.valueOf(dao.getRecipe(recipe.getRecipeId()));
+        dao.updateRecipe(recipe.getRecipeId(), "update", "update", "update");
+        String recipePost = String.valueOf(dao.getRecipe(recipe.getRecipeId()));
+
+        Transaction tx = null;
+        assertFalse(tx != null);
+
+        assertFalse("user data should not be same", recipePre.equals(recipePost));
+        assertEquals("New Recipe: update Location: update Catagory: update",
+                String.valueOf(dao.getRecipe(recipe.getRecipeId())));
+
+        dao.deleteRecipe(recipe.getRecipeId());
     }
 
     /**
