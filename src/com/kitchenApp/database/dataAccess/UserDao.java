@@ -18,7 +18,6 @@ import java.util.List;
 public class UserDao {
 
     private Session session;
-    private final Logger log = Logger.getLogger(this.getClass());
 
     /**
      * Method to add user to the database
@@ -40,11 +39,9 @@ public class UserDao {
         } catch (HibernateException e){
 
             e.printStackTrace();
-            log.error(e);
 
             if (transaction != null) {
 
-                log.debug("performing rollback");
                 transaction.rollback();
             }
         } finally {
@@ -71,7 +68,6 @@ public class UserDao {
         } catch (HibernateException e) {
 
             e.printStackTrace();
-            log.error(e);
 
         } finally {
 
@@ -100,7 +96,6 @@ public class UserDao {
         } catch (HibernateException e) {
 
             e.printStackTrace();
-            log.error(e);
 
         } finally {
 
@@ -131,19 +126,15 @@ public class UserDao {
             user.setPhone(phone);
             user.setEmail(email);
 
-
-
             session.update(user);
             tx.commit();
 
         }catch (HibernateException e) {
 
             e.printStackTrace();
-            log.error(e);
 
             if (tx != null) {
 
-                log.debug("performing rollback");
                 tx.rollback();
             }
 
@@ -171,11 +162,9 @@ public class UserDao {
         } catch (HibernateException e) {
 
             e.printStackTrace();
-            log.error(e);
 
             if (trans != null) {
 
-                log.debug("performing rollback");
                 trans.rollback();
             }
         } finally {
