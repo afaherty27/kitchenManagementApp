@@ -1,7 +1,6 @@
 package com.kitchenApp.database.dataAccess;
 
 import com.kitchenApp.database.entity.Recipe;
-import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -19,7 +18,6 @@ import java.util.List;
 public class RecipeDao {
 
     private Session session;
-    private final Logger log = Logger.getLogger(this.getClass());
 
     /**
      * Method to add a recipe to the database
@@ -41,11 +39,9 @@ public class RecipeDao {
         } catch (HibernateException e) {
 
             e.printStackTrace();
-            log.error(e);
 
             if (trans != null) {
 
-                log.debug("performing rollback");
                 trans.rollback();
             }
 
@@ -74,7 +70,6 @@ public class RecipeDao {
         } catch (HibernateException e) {
 
             e.printStackTrace();
-            log.error(e);
 
         } finally {
 
@@ -103,7 +98,6 @@ public class RecipeDao {
         } catch (HibernateException e) {
 
             e.printStackTrace();
-            log.error(e);
 
         } finally {
 
@@ -139,11 +133,9 @@ public class RecipeDao {
         } catch (HibernateException e) {
 
             e.printStackTrace();
-            log.error(e);
 
             if (tx != null) {
 
-                log.debug("performing rollback");
                 tx.rollback();
             }
 
@@ -172,11 +164,9 @@ public class RecipeDao {
         } catch (HibernateException e) {
 
             e.printStackTrace();
-            log.error(e);
 
             if (trans != null) {
 
-                log.debug("performing rollback");
                 trans.rollback();
             }
         } finally {
