@@ -1,8 +1,6 @@
 package com.kitchenApp.database.dataAccess;
 
 import com.kitchenApp.database.entity.User;
-import com.kitchenApp.database.entity.UserRole;
-import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
