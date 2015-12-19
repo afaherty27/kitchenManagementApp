@@ -2,6 +2,7 @@ package com.kitchenApp.database.dataAccess;
 
 import com.kitchenApp.database.entity.UserRole;
 import org.hibernate.HibernateException;
+import org.hibernate.Transaction;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -80,8 +81,21 @@ public class UserRoleDaoTest {
      * method test for updateUserRole method
      */
     @Test
-    public void updateUserRole() {
+    public void updateUserRole() throws HibernateException {
 
+        dao.addUserRole(role);
+
+        String rolePre = String.valueOf(dao.getUserRole(role.getRoleId()));
+        dao.updateUserRole(role.getRoleId(), "update");
+        String rolePost = String.valueOf(dao.getUserRole(role.getRoleId()));
+
+        Transaction tx = null;
+        assertFalse(tx != null);
+
+        assertFalse("user data should not be same", rolePre.equals(rolePost));
+        assertEquals("User  testName has been authorized as update", String.valueOf(dao.getUserRole(role.getRoleId())));
+
+        dao.deleteUserRole(role.getRoleId());
     }
 
     /**
@@ -90,6 +104,18 @@ public class UserRoleDaoTest {
     @Test
     public void deleteUserRole() {
 
+        dao.addUserRole(role);
 
+        int listLength = dao.getUserRoleList().size();
+        assertNotNull("integer is null", role.getRoleId());
+
+        dao.deleteUserRole(role.getRoleId());
+
+        assertTrue("post delete list size must be smaller than pre delete",
+                listLength > dao.getUserRoleList().size());
+        assertNull("recipe data should not exist", dao.getUserRole(role.getRoleId()));
+
+        Transaction tx = null;
+        assertFalse(tx != null);
     }
 }
