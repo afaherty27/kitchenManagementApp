@@ -1,6 +1,10 @@
 package com.kitchenApp.database.dataAccess;
 
+import com.kitchenApp.database.entity.Recipe;
+import org.hibernate.HibernateException;
+import org.hibernate.Transaction;
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -11,12 +15,27 @@ import static org.junit.Assert.*;
  */
 public class RecipeDaoTest {
 
+    private Recipe recipe;
+    private RecipeDao dao = new RecipeDao();
+
+    @Before
+    public void before() {
+
+        recipe = new Recipe(0, "testPath", "testCat", "testName");
+    }
+
     /**
      * method test for addRecipe method
      */
     @Test
-    public void addRecipe() {
+    public void addRecipe() throws HibernateException {
 
+        dao.addRecipe(recipe);
+
+        assertEquals("testPath", recipe.getFilePath());
+        assertNotNull("recipeId was not created", recipe.getRecipeId());
+
+        dao.deleteRecipe(recipe.getRecipeId());
     }
 
     /**
