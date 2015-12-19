@@ -44,7 +44,7 @@ public class UserDaoTest {
 
         dao.addUser(user);
 
-        assertEquals("New User:  test test test test test " + role.getRoleId() ,
+        assertEquals("New User:  test test test test test " + role.getRoleId(),
                 String.valueOf(dao.getUser(user.getUserId())));
         assertNotNull("integer is null", user.getUserId());
 
@@ -99,7 +99,13 @@ public class UserDaoTest {
 
         dao.addUser(user);
 
+        String userPre = String.valueOf(dao.getUser(user.getUserId()));
         dao.updateUser(user.getUserId(), "update", "update", "update", role.getRoleId());
+        String userPost = String.valueOf(dao.getUser(user.getUserId()));
+
+        assertFalse("user data should not be same", userPre.equals(userPost));
+        assertEquals("New User:  test test update update update " + role.getRoleId(),
+                String.valueOf(dao.getUser(user.getUserId())));
 
         Transaction tx = null;
         assertFalse(tx != null);
