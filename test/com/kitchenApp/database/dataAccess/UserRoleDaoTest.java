@@ -1,6 +1,9 @@
 package com.kitchenApp.database.dataAccess;
 
+import com.kitchenApp.database.entity.UserRole;
+import org.hibernate.HibernateException;
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -11,12 +14,27 @@ import static org.junit.Assert.*;
  */
 public class UserRoleDaoTest {
 
+    private UserRole role;
+    private UserRoleDao dao = new UserRoleDao();
+
+    @Before
+    public void before() {
+
+        role = new UserRole(0, "testRole", "testName");
+    }
+
     /**
      * method test for addUserRole method
      */
     @Test
-    public void addUserRole() {
+    public void addUserRole() throws HibernateException {
 
+        dao.addUserRole(role);
+
+        assertEquals("testRole", role.getUserRole());
+        assertNotNull("roleId was not created", role.getRoleId());
+
+        dao.deleteUserRole(role.getRoleId());
     }
 
     /**
@@ -49,6 +67,7 @@ public class UserRoleDaoTest {
      */
     @Test
     public void deleteUserRole() {
+
 
     }
 }
