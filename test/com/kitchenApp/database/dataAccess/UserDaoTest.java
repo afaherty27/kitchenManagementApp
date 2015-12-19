@@ -3,10 +3,10 @@ package com.kitchenApp.database.dataAccess;
 import com.kitchenApp.database.entity.User;
 import com.kitchenApp.database.entity.UserRole;
 import org.hibernate.HibernateException;
-import org.junit.After;
+import org.hibernate.Transaction;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
+import java.util.List;
 import static org.junit.Assert.*;
 
 /**
@@ -42,16 +42,17 @@ public class UserDaoTest {
     @Test
     public void addUser() throws HibernateException {
 
-
         dao.addUser(user);
 
         assertEquals("New User:  test test test test test " + role.getRoleId() ,
                 String.valueOf(dao.getUser(user.getUserId())));
         assertNotNull("integer is null", user.getUserId());
 
+        Transaction tx = null;
+        assertFalse(tx != null);
+
         roleDao.deleteUserRole(role.getRoleId());
         dao.deleteUser(user.getUserId());
-
     }
 
     /**
@@ -64,13 +65,12 @@ public class UserDaoTest {
 
         dao.getUser(user.getUserId());
 
-        assertEquals(String.valueOf(dao.getUser(user.getUserId())), user.toString() );
+        assertEquals(String.valueOf(dao.getUser(user.getUserId())), user.toString());
         assertFalse(user.getUserId() == 4);
 
         roleDao.deleteUserRole(role.getRoleId());
         dao.deleteUser(user.getUserId());
     }
-
 
     /**
      * method test for getUserList method
@@ -78,6 +78,17 @@ public class UserDaoTest {
     @Test
     public void getUserList() throws HibernateException {
 
+        List list = dao.getUserList();
+
+        int i; //reference to count of messages in database
+
+        for (i = 0; i < list.size(); i++) {
+            i++;
+        }
+
+        assertNotNull("list is not null", list.size());
+        // i - 1 -> i is getting incremented after final iteration, before exiting loop
+        assertTrue(list.size() == i);
     }
 
     /**
@@ -86,6 +97,15 @@ public class UserDaoTest {
     @Test
     public void updateUser() throws HibernateException {
 
+        dao.addUser(user);
+
+        dao.updateUser(user.getUserId(), "update", "update", "update", role.getRoleId());
+
+        Transaction tx = null;
+        assertFalse(tx != null);
+
+        roleDao.deleteUserRole(role.getRoleId());
+        dao.deleteUser(user.getUserId());
     }
 
     /**
@@ -105,11 +125,8 @@ public class UserDaoTest {
         assertTrue("post delete list size must be smaller than pre delete",
                 listLength > dao.getUserList().size());
         assertNull("user should not exist", dao.getUser(user.getUserId()));
-    }
 
-    @After
-    public void after() {
-
-
+        Transaction tx = null;
+        assertFalse(tx != null);
     }
 }
