@@ -9,6 +9,10 @@ import org.junit.runners.Suite;
  * @version 1.0 on 12/18/2015
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ })
+@Suite.SuiteClasses({
+    RecipeDaoTest.class,
+    UserDaoTest.class,
+    UserRoleDaoTest.class
+})
 public class DataAccessPackageTestSuite {
 }
