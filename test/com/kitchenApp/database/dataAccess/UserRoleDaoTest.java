@@ -5,6 +5,9 @@ import org.hibernate.HibernateException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 /**
@@ -41,8 +44,16 @@ public class UserRoleDaoTest {
      * method test for getUserRole method
      */
     @Test
-    public void getUserRole() {
+    public void getUserRole() throws HibernateException {
 
+        dao.addUserRole(role);
+
+        dao.getUserRole(role.getRoleId());
+
+        assertEquals(String.valueOf(dao.getUserRole(role.getRoleId())), role.toString());
+        assertFalse(role.getRoleId() == 1);
+
+        dao.deleteUserRole(role.getRoleId());
     }
 
 
@@ -50,8 +61,19 @@ public class UserRoleDaoTest {
      * method test for getUserRoleList method
      */
     @Test
-    public void getUserListRole() {
+    public void getUserListRole() throws HibernateException {
 
+        List list = dao.getUserRoleList();
+
+        int i; //reference to count of messages in database
+
+        for (i = 0; i < list.size(); i++) {
+            i++;
+        }
+
+        assertNotNull("list is not null", list.size());
+        // i - 1 -> i is getting incremented after final iteration, before exiting loop
+        assertTrue(list.size() == i);
     }
 
     /**
