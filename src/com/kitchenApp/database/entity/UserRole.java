@@ -105,8 +105,7 @@ public class UserRole {
      * @return string of user role details
      */
     public String toString() {
-        return  System.lineSeparator() +
-                "User " + " "
+        return  "User " + " "
                 + userName + " has been authorized as "
                 + userRole;
     }
