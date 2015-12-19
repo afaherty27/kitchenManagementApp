@@ -16,16 +16,23 @@ import static org.junit.Assert.*;
  */
 public class UserDaoTest {
 
+    private User user;
     private UserRole role;
     private UserRoleDao roleDao;
+    private UserDao dao;
 
     /**
      * Instantiates a UserRole object to be used in each method. Adds to database.
      */
     @Before
     public void before() {
+
         role = new UserRole(0, "role", "name");
+        user = new User(0, "test", "test", "test", "test", "test", role);
+
         roleDao = new UserRoleDao();
+        dao = new UserDao();
+
         roleDao.addUserRole(role);
     }
 
@@ -35,30 +42,24 @@ public class UserDaoTest {
     @Test
     public void addUser() throws HibernateException {
 
-        UserDao dao = new UserDao();
-        User user = new User(0, "test", "test", "test", "test", "test", role);
 
-        try {
-            dao.addUser(user);
+        dao.addUser(user);
 
-            assertEquals("New User:  test test test test test " + role.getRoleId() ,
-                    String.valueOf(dao.getUser(user.getUserId())));
-            assertNotNull("integer is null", user.getUserId());
+        assertEquals("New User:  test test test test test " + role.getRoleId() ,
+                String.valueOf(dao.getUser(user.getUserId())));
+        assertNotNull("integer is null", user.getUserId());
 
-
-        } catch (HibernateException e) {
-            fail("hibernate exception was caught");
-        }
-
-        dao.deleteUser(user.getUserId());
         roleDao.deleteUserRole(role.getRoleId());
+        dao.deleteUser(user.getUserId());
+
     }
 
     /**
      * method test for getUser method
      */
     @Test
-    public void getUser() {
+    public void getUser() throws HibernateException {
+
 
     }
 
@@ -67,7 +68,7 @@ public class UserDaoTest {
      * method test for getUserList method
      */
     @Test
-    public void getUserList() {
+    public void getUserList() throws HibernateException {
 
     }
 
@@ -75,7 +76,7 @@ public class UserDaoTest {
      * method test for updateUser method
      */
     @Test
-    public void updateUser() {
+    public void updateUser() throws HibernateException {
 
     }
 
@@ -83,7 +84,24 @@ public class UserDaoTest {
      * method test for deleteUser method
      */
     @Test
-    public void deleteUser() {
+    public void deleteUser() throws HibernateException {
+
+        dao.addUser(user);
+
+        int listLength = dao.getUserList().size();
+        assertNotNull("integer is null", user.getUserId());
+
+        roleDao.deleteUserRole(role.getRoleId());
+        dao.deleteUser(user.getUserId());
+
+        assertTrue("post delete list size must be smaller than pre delete",
+                listLength > dao.getUserList().size());
+        assertNull("user should not exist", dao.getUser(user.getUserId()));
+    }
+
+    @After
+    public void after() {
+
 
     }
 }
