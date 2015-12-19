@@ -60,7 +60,15 @@ public class UserDaoTest {
     @Test
     public void getUser() throws HibernateException {
 
+        dao.addUser(user);
 
+        dao.getUser(user.getUserId());
+
+        assertEquals(String.valueOf(dao.getUser(user.getUserId())), user.toString() );
+        assertFalse(user.getUserId() == 4);
+
+        roleDao.deleteUserRole(role.getRoleId());
+        dao.deleteUser(user.getUserId());
     }
 
 
