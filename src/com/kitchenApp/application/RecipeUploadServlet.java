@@ -48,11 +48,11 @@ public class RecipeUploadServlet extends HttpServlet {
        forwardToResultsPage(response);
     }
 
-
-
     /**
      * Handles actions to upload file to server
      * @param request HttpServletRequest object
+     * @param uploadDirectory reference to path of file being uploaded
+     * @param accessUpload reference to path of file uploaded within server
      * @throws ServletException if there is a servlet error
      * @throws IOException if there is an input/output error
      */
@@ -87,6 +87,7 @@ public class RecipeUploadServlet extends HttpServlet {
      * Displays the path name of the file uploaded to the server
      * @param request HttpServletResponse object
      * @param fileName ref to display name of file
+     * @param uploadDirectory reference to path of file being uploaded
      */
     public void placePathInSession(HttpServletRequest request, String fileName, String uploadDirectory) {
 
@@ -101,6 +102,7 @@ public class RecipeUploadServlet extends HttpServlet {
      * @param category ref to recipe category
      * @param recipeName ref to recipe name
      * @param fileName ref to file location
+     * @param accessUpload reference to path of file uploaded within server
      */
     public void addRecipe(String category, String recipeName, String fileName, String accessUpload) {
 
@@ -115,6 +117,7 @@ public class RecipeUploadServlet extends HttpServlet {
      * Receives form data the database will require
      * @param request HttpServletRequest object
      * @param fileName reference to the file name
+     * @param accessUpload reference to path of file uploaded within server
      */
     public void receiveInputParameters(HttpServletRequest request, String fileName, String accessUpload) {
 
