@@ -2,13 +2,14 @@ package com.kitchenApp.application;
 
 import com.kitchenApp.application.action.RecipeUploadAction;
 import org.apache.log4j.Logger;
+
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
+import java.util.Properties;
 
 @WebServlet(
         name = "recipeUploadServlet",
@@ -23,8 +24,9 @@ import java.nio.file.StandardCopyOption;
 @MultipartConfig
 public class RecipeUploadServlet extends HttpServlet {
 
-    private final String UPLOAD_DIRECTORY = "C:/Users/Student/Dropbox/enterpriseJava/kitchenManagementApp/web/recipeUpload"; //set up in properties file.4 //C:/Users/Student/Dropbox/enterpriseJava/kitchenManagementApp/recipeUpload/
+    private Properties properties = new Properties();
     private RecipeUploadAction recipeAction;
+
     private final Logger log = Logger.getLogger(this.getClass());
 
     /**
@@ -37,9 +39,16 @@ public class RecipeUploadServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        uploadFile(request);
-        forwardToResultsPage(response);
+        ServletContext context = getServletContext();
+        properties = (Properties)context.getAttribute("kitchenAppProperties");
+        String uploadDirectory = properties.getProperty("upload.location");
+        String accessUpload = properties.getProperty("upload.storage.location");
+
+        uploadFile(request, uploadDirectory, accessUpload);
+       forwardToResultsPage(response);
     }
+
+
 
     /**
      * Handles actions to upload file to server
@@ -47,17 +56,18 @@ public class RecipeUploadServlet extends HttpServlet {
      * @throws ServletException if there is a servlet error
      * @throws IOException if there is an input/output error
      */
-    public void uploadFile(HttpServletRequest request) throws ServletException, IOException {
+    public void uploadFile(HttpServletRequest request, String uploadDirectory, String accessUpload)
+            throws ServletException, IOException {
 
         recipeAction = new RecipeUploadAction();
 
         Part filePart = request.getPart("recipeFile");
         String fileName = filePart.getSubmittedFileName();
 
-        recipeAction.uploadFileToServer(fileName, filePart, UPLOAD_DIRECTORY);
+        recipeAction.uploadFileToServer(fileName, filePart, uploadDirectory);
 
-        receiveInputParameters(request, fileName);
-        placePathInSession(request, fileName);
+        receiveInputParameters(request, fileName, accessUpload);
+        placePathInSession(request, fileName, uploadDirectory);
     }
 
     /**
@@ -69,6 +79,7 @@ public class RecipeUploadServlet extends HttpServlet {
     public void forwardToResultsPage(HttpServletResponse response) throws ServletException, IOException {
 
         String url = "/chef";
+        log.debug(url);
         response.sendRedirect(url);
     }
 
@@ -77,9 +88,9 @@ public class RecipeUploadServlet extends HttpServlet {
      * @param request HttpServletResponse object
      * @param fileName ref to display name of file
      */
-    public void placePathInSession(HttpServletRequest request, String fileName) {
+    public void placePathInSession(HttpServletRequest request, String fileName, String uploadDirectory) {
 
-        String fileLocation = UPLOAD_DIRECTORY + fileName;
+        String fileLocation = uploadDirectory + fileName;
 
         HttpSession session = request.getSession();
         session.setAttribute("uploadedFilePath", fileLocation);
@@ -91,11 +102,11 @@ public class RecipeUploadServlet extends HttpServlet {
      * @param recipeName ref to recipe name
      * @param fileName ref to file location
      */
-    public void addRecipe(String category, String recipeName, String fileName) {
+    public void addRecipe(String category, String recipeName, String fileName, String accessUpload) {
 
         recipeAction = new RecipeUploadAction();
 
-        String filePath = "../recipeUpload/" + fileName;
+        String filePath = accessUpload + fileName;
 
         recipeAction.addRecipeData(filePath, category, recipeName);
     }
@@ -105,11 +116,11 @@ public class RecipeUploadServlet extends HttpServlet {
      * @param request HttpServletRequest object
      * @param fileName reference to the file name
      */
-    public void receiveInputParameters(HttpServletRequest request, String fileName) {
+    public void receiveInputParameters(HttpServletRequest request, String fileName, String accessUpload) {
 
         String category = request.getParameter("selectCategory");
         String recipeName = request.getParameter("recipeName");
 
-        addRecipe(category, recipeName, fileName);
+        addRecipe(category, recipeName, fileName, accessUpload);
     }
 }
