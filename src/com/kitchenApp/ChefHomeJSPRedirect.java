@@ -54,7 +54,8 @@ public class ChefHomeJSPRedirect extends HttpServlet {
      */
     public void displayRecipeList(HttpServletRequest request) {
 
-        RecipeDao recipeDao = new RecipeDao();
+        ServletContext context = getServletContext();
+        RecipeDao recipeDao = (RecipeDao)context.getAttribute("recipeDao");
 
         HttpSession session = request.getSession();
 
