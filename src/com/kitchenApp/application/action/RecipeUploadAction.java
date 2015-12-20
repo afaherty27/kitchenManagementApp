@@ -11,7 +11,6 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
-
 /**
  * Adds recipe data to database
  * @author afaherty
@@ -19,10 +18,7 @@ import java.nio.file.StandardCopyOption;
  */
 public class RecipeUploadAction {
 
-    private static final int ID_PLACEHOLDER = 0; //for hibernate auto increment //todo receive from properties file
-
     private final Logger log = Logger.getLogger(this.getClass());
-
 
     /**
      * Handles file uploading
@@ -54,7 +50,8 @@ public class RecipeUploadAction {
     public Recipe addRecipeData(String filePath, String category, String recipeName) {
 
         RecipeDao dao = new RecipeDao();
-        Recipe recipe = new Recipe(ID_PLACEHOLDER, filePath, category, recipeName);
+
+        Recipe recipe = new Recipe(0, filePath, category, recipeName);
 
         dao.addRecipe(recipe);
 
