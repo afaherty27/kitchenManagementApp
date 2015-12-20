@@ -31,5 +31,31 @@ public class ApplicationStartup extends HttpServlet {
 
     public void init() throws ServletException {
 
+        loadProperties();
+
+        ServletContext context = getServletContext();
+
+        context.setAttribute("kitchenAppProperties", properties);
+
     }
+
+    public void loadProperties() {
+
+        properties = new Properties();
+
+        try {
+            properties.load(this.getClass().getResourceAsStream("/kitchenApp.properties"));
+
+        } catch (IOException io) {
+
+            io.printStackTrace();
+            log.error("ERROR LOADING PROPERTIES FILE");
+        } catch (Exception e) {
+
+            e.printStackTrace();
+            log.error("Exception Caught");
+        }
+    }
+
+
 }
