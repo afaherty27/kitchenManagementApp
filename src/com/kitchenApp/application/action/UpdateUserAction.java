@@ -51,8 +51,6 @@ public class UpdateUserAction {
         User user = userDao.getUser(idInt);
 
         //fetch user_role table data via the PK/FK relationship
-        user.getRole().getRoleId();
-
         //convert User object data into String object
         String stringRoleId = String.valueOf(user.getRole().getRoleId());
 
