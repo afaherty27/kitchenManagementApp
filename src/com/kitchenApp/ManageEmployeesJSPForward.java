@@ -61,7 +61,7 @@ public class ManageEmployeesJSPForward extends HttpServlet {
 
         session.setAttribute("displayUsers", userDao.getUserList());
 
-        log.info("loading user list");
+        log.debug("loading user list");
     }
 
     /**
@@ -75,7 +75,7 @@ public class ManageEmployeesJSPForward extends HttpServlet {
 
         String url = "/chef/manageEmployees.jsp";
 
-        log.info("Accessing: " + url);
+        log.debug("Accessing: " + url);
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
