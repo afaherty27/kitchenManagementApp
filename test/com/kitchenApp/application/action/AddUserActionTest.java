@@ -21,7 +21,8 @@ public class AddUserActionTest {
     private String address = "addressTest";
     private String phone = "testPhone";
     private String email = "testEmail";
-
+    private UserRoleDao userRoleDao;
+    private UserDao userDao;
 
     /**
      * Test case for addUserData method
@@ -29,12 +30,12 @@ public class AddUserActionTest {
     @Test
     public void addUserData() {
 
-        UserDao userDao = new UserDao();
+        userDao = new UserDao();
 
         AddUserAction add = new AddUserAction();
         int listLength = userDao.getUserList().size();
 
-        add.addUserData(userName,password,address, phone, email, roleType);
+        add.addUserData(userName,password,address, phone, email, roleType, userDao, userRoleDao);
 
         assertNotNull(add);
         assertTrue("list size should be larger than held size", listLength < userDao.getUserList().size() );
@@ -46,8 +47,8 @@ public class AddUserActionTest {
     @After
     public void after() {
 
-        UserDao userDao = new UserDao();
-        UserRoleDao userRoleDao = new UserRoleDao();
+        userDao = new UserDao();
+        userRoleDao = new UserRoleDao();
         UserRole role = new UserRole(0, "ref", "ref");
         User user = new User(0, "ref", "ref", "ref", "ref", "ref", role);
         userRoleDao.addUserRole(role);

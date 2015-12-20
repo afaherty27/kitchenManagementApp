@@ -42,7 +42,7 @@ public class UpdateUserActionTest {
         String idString = String.valueOf(user.getUserId());
         String preUpdate = String.valueOf(userDao.getUser(user.getUserId()));
 
-        update.updateUserData(idString, "updateAddress", "updatePhone", "updateEmail");
+        update.updateUserData(idString, "updateAddress", "updatePhone", "updateEmail", userDao);
 
         String postUpdate = String.valueOf(userDao.getUser(user.getUserId()));
 
@@ -61,7 +61,7 @@ public class UpdateUserActionTest {
         String idString = String.valueOf(role.getRoleId());
         String preUpdate = String.valueOf(userRoleDao.getUserRole(role.getRoleId()));
 
-        update.updateUserRoleData(idString, "updateRole");
+        update.updateUserRoleData(idString, "updateRole", userDao, userRoleDao);
 
         String postUpdate = String.valueOf(userRoleDao.getUserRole(role.getRoleId()));
 

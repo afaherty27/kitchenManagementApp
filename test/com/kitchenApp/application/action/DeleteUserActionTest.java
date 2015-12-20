@@ -43,7 +43,7 @@ public class DeleteUserActionTest {
         int listLength = userDao.getUserList().size();
 
         String idString = String.valueOf(user.getUserId());
-        delete.deleteUserData(idString);
+        delete.deleteUserData(idString, userDao);
 
         //delete related user role from database
         userRoleDao.deleteUserRole((role.getRoleId()));
@@ -62,7 +62,7 @@ public class DeleteUserActionTest {
         int listLength = userRoleDao.getUserRoleList().size();
 
         String idString = String.valueOf(user.getUserId());
-        delete.deleteUserRoleData(idString);
+        delete.deleteUserRoleData(idString, userDao, userRoleDao);
 
         //delete related user from database
         userDao.deleteUser(user.getUserId());
