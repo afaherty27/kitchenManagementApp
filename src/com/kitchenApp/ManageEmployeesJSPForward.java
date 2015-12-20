@@ -54,8 +54,8 @@ public class ManageEmployeesJSPForward extends HttpServlet {
      */
     public void displayUserList(HttpServletRequest request) {
 
-       // ServletContext context = getServletContext();
-        userDao = new UserDao();
+        ServletContext context = getServletContext();
+        UserDao userDao = (UserDao)context.getAttribute("userDao");
 
         session = request.getSession();
 
