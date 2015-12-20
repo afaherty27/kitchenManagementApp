@@ -36,8 +36,8 @@ public class LineCookHomeJSPRedirect extends HttpServlet {
         ServletContext context = getServletContext();
         HttpSession session = request.getSession();
 
-        displayRecipeList(request, context, session);
-        displayUserList(request, context, session);
+        displayRecipeList(context, session);
+        displayUserList(context, session);
         redirectUser(response);
     }
 
@@ -56,16 +56,12 @@ public class LineCookHomeJSPRedirect extends HttpServlet {
     }
 
     /** Retrieves recipe list to display to the web page
-     * @param request HttpServletRequest object
      * @param context ServletContext object
      * @param session HttpSession object
      */
-    public void displayRecipeList(HttpServletRequest request, ServletContext context,
-                                  HttpSession session) {
+    public void displayRecipeList(ServletContext context, HttpSession session) {
 
         RecipeDao recipeDao = (RecipeDao)context.getAttribute("recipeDao");
-
-        session = request.getSession();
 
         session.setAttribute("displayRecipes", recipeDao.getRecipeList());
 
@@ -73,12 +69,10 @@ public class LineCookHomeJSPRedirect extends HttpServlet {
     }
 
     /** Retrieves user list to display to the web page
-     * @param request HttpServletRequest object
      * @param context ServletContext object
      * @param session HttpSession object
      */
-    public void displayUserList(HttpServletRequest request, ServletContext context,
-                                HttpSession session) {
+    public void displayUserList(ServletContext context, HttpSession session) {
 
         UserDao userDao = (UserDao)context.getAttribute("userDao");
 
