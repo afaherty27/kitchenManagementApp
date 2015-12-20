@@ -32,14 +32,24 @@ public class ChefHomeJSPRedirect extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         displayRecipeList(request);
+        redirectUser(response);
+    }
+
+    /**
+     * Redirects user to chef.jsp
+     * @param response HttpServletResponse object
+     * @throws IOException if there is an input/output error
+     */
+    public void redirectUser(HttpServletResponse response) throws IOException {
+
         String url = "/chef/chef.jsp";
 
-        log.info("Accessing: " + url);
+        log.debug("Accessing: " + url);
 
         response.sendRedirect(url);
     }
 
-    /** Retrieves user list to display to the web page
+    /** Retrieves recipe list to display to the web page
      * @param request HttpServletRequest object
      */
     public void displayRecipeList(HttpServletRequest request) {
@@ -50,6 +60,6 @@ public class ChefHomeJSPRedirect extends HttpServlet {
 
         session.setAttribute("displayRecipes", recipeDao.getRecipeList());
 
-        log.info("loading recipe list");
+        log.debug("loading recipe list");
     }
 }
