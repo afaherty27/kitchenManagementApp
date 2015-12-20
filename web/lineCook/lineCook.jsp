@@ -19,17 +19,17 @@
 <div class="container">
 <div class="row">
   <div class="col-sm-4">
-    <h2 class="rowHeader">View Recipes</h2>
-    <p>
-      link to recipe book db
-    </p>
+    <h2 class="rowHeader">Recipe Book</h2>
+    <c:forEach  var="recipe" items="${displayRecipes}">
+      <div><a href="<%=request.getContextPath()%>${recipe.getFilePath()}">${recipe.getRecipeName()}</a></div>
+    </c:forEach>
   </div> <!-- CLOSE col-sm-4 -->
   <div class="col-sm-4">
     <h2 class="rowHeader">View Schedule</h2>
     <p>link to schedule</p>
   </div> <!-- CLOSE col-sm-4 -->
   <div class="col-sm-4">
-    <h2 class="rowHeader">View Contact List</h2>
+    <h2 class="rowHeader">Kitchen Contact List</h2>
     <p>link to contact list db with search results</p>
   </div> <!-- CLOSE col-sm-4 -->
 </div> <!-- CLOSE row -->
