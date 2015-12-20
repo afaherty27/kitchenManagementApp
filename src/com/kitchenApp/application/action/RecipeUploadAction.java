@@ -47,9 +47,7 @@ public class RecipeUploadAction {
      * @param recipeName ref to recipe name
      * @return recipe
      */
-    public Recipe addRecipeData(String filePath, String category, String recipeName) {
-
-        RecipeDao dao = new RecipeDao();
+    public Recipe addRecipeData(String filePath, String category, String recipeName, RecipeDao dao) {
 
         Recipe recipe = new Recipe(0, filePath, category, recipeName);
 

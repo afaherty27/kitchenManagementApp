@@ -40,7 +40,7 @@ public class RecipeUploadActionTest {
 
         int listLength = dao.getRecipeList().size();
 
-        upload.addRecipeData(filePath, category, recipeName);
+        upload.addRecipeData(filePath, category, recipeName, dao);
 
         assertNotNull(upload);
         assertTrue("list size should be larger than held size", listLength < dao.getRecipeList().size() );

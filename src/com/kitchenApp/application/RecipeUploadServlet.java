@@ -1,6 +1,7 @@
 package com.kitchenApp.application;
 
 import com.kitchenApp.application.action.RecipeUploadAction;
+import com.kitchenApp.database.dataAccess.RecipeDao;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletContext;
@@ -106,11 +107,13 @@ public class RecipeUploadServlet extends HttpServlet {
      */
     public void addRecipe(String category, String recipeName, String fileName, String accessUpload) {
 
+        ServletContext context = getServletContext();
+        RecipeDao recipeDao = (RecipeDao)context.getAttribute("recipeDao");
         recipeAction = new RecipeUploadAction();
 
         String filePath = accessUpload + fileName;
 
-        recipeAction.addRecipeData(filePath, category, recipeName);
+        recipeAction.addRecipeData(filePath, category, recipeName, recipeDao);
     }
 
     /**
