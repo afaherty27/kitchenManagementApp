@@ -16,24 +16,40 @@
 <c:import url="/jsp/navbar.jsp" />
 
 <!-- ROW 1 GRID -->
-<div class="container">
 <div class="row">
-  <div class="col-sm-4">
-    <h2 class="rowHeader">Recipe Book</h2>
-    <c:forEach  var="recipe" items="${displayRecipes}">
-      <div><a href="<%=request.getContextPath()%>${recipe.getFilePath()}">${recipe.getRecipeName()}</a></div>
-    </c:forEach>
-  </div> <!-- CLOSE col-sm-4 -->
-  <div class="col-sm-4">
-    <h2 class="rowHeader">View Schedule</h2>
-    <p>link to schedule</p>
-  </div> <!-- CLOSE col-sm-4 -->
+<div class="container">
   <div class="col-sm-4">
     <h2 class="rowHeader">Kitchen Contact List</h2>
-    <p>link to contact list db with search results</p>
-  </div> <!-- CLOSE col-sm-4 -->
+    <table class="table" style="margin-left: 10%; width: 20%;">
+        <tr>
+          <td style="font-weight: bolder; font-size: larger">NAME</td>
+          <td style="font-weight: bolder; font-size: larger">PHONE</td>
+
+        </tr>
+
+        <c:forEach  var="user" items="${displayUsers}">
+          <tr>
+            <td>${user.getUserName()}</td>
+            <td>${user.getPhone()}</td>
+          </tr>
+        </c:forEach>
+      </table>
+    </div> <!-- CLOSE col-sm-4 -->
+
+    <div class="col-sm-4">
+      <h2 class="rowHeader">Recipe Book</h2>
+      <c:forEach  var="recipe" items="${displayRecipes}">
+        <div><a href="<%=request.getContextPath()%>${recipe.getFilePath()}">${recipe.getRecipeName()}</a></div>
+      </c:forEach>
+    </div> <!-- CLOSE col-sm-4 -->
+
+    <div class="col-sm-4">
+      <h2 class="rowHeader">View Schedule</h2>
+      <p>COMING SOON</p>
+    </div> <!-- CLOSE col-sm-4 -->
+  </div> <!-- CLOSE container -->
 </div> <!-- CLOSE row -->
-</div> <!-- CLOSE container -->
+
 
 <!-- FOOTER -->
 <div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
