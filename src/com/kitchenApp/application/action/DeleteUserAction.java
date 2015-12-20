@@ -17,13 +17,13 @@ public class DeleteUserAction {
     /**
      * updates user data to kitchenapp database user table
      * @param userId reference to user id being deleted
+     * @param userDao UserDao object
      * @return userDao
      */
-    public UserDao deleteUserData(String userId) {
+    public UserDao deleteUserData(String userId, UserDao userDao) {
 
         int idInt = Integer.parseInt(userId);
 
-        UserDao userDao = new UserDao();
         userDao.deleteUser(idInt);
 
         log.info("deleting" + userDao.getUser(idInt));
@@ -34,30 +34,29 @@ public class DeleteUserAction {
     /**
      * update user role data to kitchenapp database user_role table
      * @param userId reference to the user role id being deleted
+     * @param userDao UserDao object
+     * @param roleDao UserRoleDao object
      * @return userRoleDao
      */
-    public UserRoleDao deleteUserRoleData(String userId )  {
+    public UserRoleDao deleteUserRoleData(String userId, UserDao userDao, UserRoleDao roleDao)  {
 
         int idInt = Integer.parseInt(userId);
 
         //receive user data from users table
-        UserDao dao = new UserDao();
-        User user = dao.getUser(idInt);
+
+        User user = userDao.getUser(idInt);
 
         //fetch user_role table data via the PK/FK relationship
-        user.getRole().getRoleId();
-
         //convert User object data into String object
         String stringRoleId = String.valueOf(user.getRole().getRoleId());
 
         // convert String to int
         int intRoleId = Integer.parseInt(stringRoleId);
 
-        UserRoleDao userRoleDao = new UserRoleDao();
-        userRoleDao.deleteUserRole(intRoleId);
+        roleDao.deleteUserRole(intRoleId);
 
         log.info("deleting" + user.getUserName() + " roles from DB");
 
-        return userRoleDao;
+        return roleDao;
     }
 }

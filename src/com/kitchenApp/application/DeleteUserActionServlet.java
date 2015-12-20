@@ -2,8 +2,11 @@ package com.kitchenApp.application;
 
 import com.kitchenApp.application.action.DeleteUserAction;
 import com.kitchenApp.application.action.UpdateUserAction;
+import com.kitchenApp.database.dataAccess.UserDao;
+import com.kitchenApp.database.dataAccess.UserRoleDao;
 import org.apache.log4j.Logger;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -59,9 +62,13 @@ public class DeleteUserActionServlet extends HttpServlet {
      */
     public void deleteUser(String userId) {
 
+        ServletContext context = getServletContext();
+        UserDao userDao = (UserDao)context.getAttribute("userDao");
+        UserRoleDao userRoleDao = (UserRoleDao)context.getAttribute("userRoleDao");
+
         DeleteUserAction delete = new DeleteUserAction();
-        delete.deleteUserRoleData(userId);
-        delete.deleteUserData(userId);
+        delete.deleteUserRoleData(userId, userDao, userRoleDao);
+        delete.deleteUserData(userId, userDao);
     }
 
     /**
