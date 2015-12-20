@@ -38,7 +38,7 @@ public class ApplicationStartup extends HttpServlet {
         loadProperties();
         loadRecipeDao();
         loadUserDao();
-        loadUserDao();
+        loadUserRoleDao();
 
         ServletContext context = getServletContext();
 
