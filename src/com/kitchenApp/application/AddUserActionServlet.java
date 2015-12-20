@@ -1,8 +1,11 @@
 package com.kitchenApp.application;
 
 import com.kitchenApp.application.action.AddUserAction;
+import com.kitchenApp.database.dataAccess.UserDao;
+import com.kitchenApp.database.dataAccess.UserRoleDao;
 import org.apache.log4j.Logger;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -70,8 +73,12 @@ public class AddUserActionServlet extends HttpServlet {
     public void addUser(String userName, String password, String address, String phone,
                         String email, String roleType) {
 
+        ServletContext context = getServletContext();
+        UserDao userDao = (UserDao)context.getAttribute("userDao");
+        UserRoleDao userRoleDao = (UserRoleDao)context.getAttribute("userRoleDao");
+
         AddUserAction addUser = new AddUserAction();
-        addUser.addUserData(userName, password, address, phone, email, roleType);
+        addUser.addUserData(userName, password, address, phone, email, roleType, userDao, userRoleDao);
     }
 
     /**
@@ -104,9 +111,9 @@ public class AddUserActionServlet extends HttpServlet {
      */
     public void writeSessionMessage(HttpSession session) {
 
-        String message = (String) session.getAttribute("entryString");
+        //String message = (String) session.getAttribute("entryString");
 
-        message = "<h4 style=\"color: red; font-variant: small-caps\""
+        String message = "<h4 style=\"color: red; font-variant: small-caps\""
                 + ">Success</h4>";
         session.setAttribute("entryString", message);
         log.info("User added successfully");

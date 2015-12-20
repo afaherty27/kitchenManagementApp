@@ -16,8 +16,6 @@ import java.util.Set;
  */
 public class AddUserAction {
 
-    private static final int ID_PLACEHOLDER = 0; //for hibernate auto increment //todo receive from properties file
-
     private final Logger log = Logger.getLogger(this.getClass());
 
     /**
@@ -27,18 +25,18 @@ public class AddUserAction {
      * @param address ref to user address received from jsp
      * @param phone ref to user phone received from jsp
      * @param email ref to user email received from jsp
+     * @param userDao UserDao object
+     * @param roleDao UserRoleDao object
      * @return user
      */
     public User addUserData(String userName, String password, String address, String phone,
-                           String email, String roleType) {
+                           String email, String roleType, UserDao userDao, UserRoleDao roleDao) {
 
-        UserRoleDao roleDao = new UserRoleDao();
-        UserRole role = new UserRole(ID_PLACEHOLDER, roleType, userName);
+        UserRole role = new UserRole(0, roleType, userName);
         roleDao.addUserRole(role);
 
-        UserDao dao = new UserDao();
         User user = new User(0, userName, password, address, phone, email, role);
-        dao.addUser(user);
+        userDao.addUser(user);
 
         log.info(user.toString());
 
