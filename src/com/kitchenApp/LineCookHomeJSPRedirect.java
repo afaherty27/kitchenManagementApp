@@ -33,8 +33,11 @@ public class LineCookHomeJSPRedirect extends HttpServlet {
      */
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        displayRecipeList(request);
-        displayUserList(request);
+        ServletContext context = getServletContext();
+        HttpSession session = request.getSession();
+
+        displayRecipeList(request, context, session);
+        displayUserList(request, context, session);
         redirectUser(response);
     }
 
@@ -54,12 +57,15 @@ public class LineCookHomeJSPRedirect extends HttpServlet {
 
     /** Retrieves recipe list to display to the web page
      * @param request HttpServletRequest object
+     * @param context ServletContext object
+     * @param session HttpSession object
      */
-    public void displayRecipeList(HttpServletRequest request) {
+    public void displayRecipeList(HttpServletRequest request, ServletContext context,
+                                  HttpSession session) {
 
-        RecipeDao recipeDao = new RecipeDao();
+        RecipeDao recipeDao = (RecipeDao)context.getAttribute("recipeDao");
 
-        HttpSession session = request.getSession();
+        session = request.getSession();
 
         session.setAttribute("displayRecipes", recipeDao.getRecipeList());
 
@@ -68,12 +74,13 @@ public class LineCookHomeJSPRedirect extends HttpServlet {
 
     /** Retrieves user list to display to the web page
      * @param request HttpServletRequest object
+     * @param context ServletContext object
+     * @param session HttpSession object
      */
-    public void displayUserList(HttpServletRequest request) {
+    public void displayUserList(HttpServletRequest request, ServletContext context,
+                                HttpSession session) {
 
-        UserDao userDao = new UserDao();
-
-        HttpSession session = request.getSession();
+        UserDao userDao = (UserDao)context.getAttribute("userDao");
 
         session.setAttribute("displayUsers", userDao.getUserList());
 
