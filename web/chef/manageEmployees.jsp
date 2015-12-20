@@ -32,7 +32,7 @@
         <td>${user.getUserId()}</td>
         <td>${user.getUserName()}</td>
         <td>${user.getPhone()}</td>
-
+      </tr>
     </c:forEach>
   </table>
 
