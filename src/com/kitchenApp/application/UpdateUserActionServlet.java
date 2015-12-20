@@ -1,10 +1,13 @@
 package com.kitchenApp.application;
 
 import com.kitchenApp.application.action.UpdateUserAction;
+import com.kitchenApp.database.dataAccess.UserDao;
+import com.kitchenApp.database.dataAccess.UserRoleDao;
 import com.kitchenApp.database.entity.User;
 import com.kitchenApp.database.entity.UserRole;
 import org.apache.log4j.Logger;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -65,12 +68,17 @@ public class UpdateUserActionServlet extends HttpServlet {
      * @param phone ref to user phone
      * @param email ref to user email
      * @param userRole ref to user role
+     *
      */
     public void updateUser(String userId, String address, String phone, String email, String userRole) {
 
+        ServletContext context = getServletContext();
+        UserDao userDao = (UserDao)context.getAttribute("userDao");
+        UserRoleDao userRoleDao = (UserRoleDao)context.getAttribute("userRoleDao");
+
         UpdateUserAction update = new UpdateUserAction();
-        update.updateUserRoleData(userId, userRole);
-        update.updateUserData(userId, address, phone, email);
+        update.updateUserRoleData(userId, userRole, userDao, userRoleDao);
+        update.updateUserData(userId, address, phone, email, userDao);
 
     }
 

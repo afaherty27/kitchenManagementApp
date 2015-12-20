@@ -21,13 +21,13 @@ public class UpdateUserAction {
      * @param address ref to address
      * @param phone ref to phone
      * @param email ref to email
+     * @param userDao UserDao object
      * @return userDao
      */
-    public UserDao updateUserData(String userId, String address, String phone, String email) {
+    public UserDao updateUserData(String userId, String address, String phone, String email, UserDao userDao) {
 
         int idInt = Integer.parseInt(userId);
 
-        UserDao userDao = new UserDao();
         userDao.updateUser(idInt, address, phone, email, idInt);
 
         log.info("updated " +  userDao.getUser(idInt) + " in database");
@@ -39,15 +39,16 @@ public class UpdateUserAction {
      * update user role data to kitchenapp database user_role table
      * @param userId reference to user role id
      * @param userRole reference to user role
+     * @param userDao UserDao object
+     * @param roleDao UserRoleDao object
      * @return userRoleDao
      */
-    public UserRoleDao updateUserRoleData(String userId, String userRole) {
+    public UserRoleDao updateUserRoleData(String userId, String userRole, UserDao userDao, UserRoleDao roleDao) {
 
         int idInt = Integer.parseInt(userId);
 
         //receive user data from users table
-        UserDao dao = new UserDao();
-        User user = dao.getUser(idInt);
+        User user = userDao.getUser(idInt);
 
         //fetch user_role table data via the PK/FK relationship
         user.getRole().getRoleId();
@@ -58,11 +59,10 @@ public class UpdateUserAction {
         // convert String to int
         int intRoleId = Integer.parseInt(stringRoleId);
 
-        UserRoleDao userRoleDao = new UserRoleDao();
-        userRoleDao.updateUserRole(intRoleId, userRole);
+        roleDao.updateUserRole(intRoleId, userRole);
 
         log.info("updated " + user.getUserName() + " roles in database");
 
-        return userRoleDao;
+        return roleDao;
     }
 }
