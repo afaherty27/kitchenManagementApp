@@ -53,10 +53,25 @@ public class DeleteUserAction {
         // convert String to int
         int intRoleId = Integer.parseInt(stringRoleId);
 
+        emailUser(user);
+
         roleDao.deleteUserRole(intRoleId);
 
         log.info("deleting" + user.getUserName() + " roles from DB");
 
         return roleDao;
+    }
+
+    /**
+     * Sends new user an email to confirm new user data
+     * @param user User object
+     */
+    public void emailUser(User user) {
+
+        String subject = "KMA: Privileges Revoked";
+
+        EmailUser emailUser = new EmailUser();
+
+        emailUser.sendMessage(subject, user.deleteMessage(), user.getEmail());
     }
 }

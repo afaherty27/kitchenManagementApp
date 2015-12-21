@@ -59,8 +59,23 @@ public class UpdateUserAction {
 
         roleDao.updateUserRole(intRoleId, userRole);
 
+        emailUser(user);
+
         log.info("updated " + user.getUserName() + " roles in database");
 
         return roleDao;
+    }
+
+    /**
+     * Sends new user an email to confirm new user data
+     * @param user User object
+     */
+    public void emailUser(User user) {
+
+        String subject = "KMA: Profile Update";
+
+        EmailUser emailUser = new EmailUser();
+
+        emailUser.sendMessage(subject, user.updateMessage(), user.getEmail());
     }
 }

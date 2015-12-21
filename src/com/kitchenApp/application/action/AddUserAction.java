@@ -51,7 +51,7 @@ public class AddUserAction {
      * @param user User object
      */
     public void emailUser(String email, User user) {
-        String subject = "New User Confirmation";
+        String subject = "KMA: New User Confirmation";
 
         EmailUser emailUser = new EmailUser();
 
