@@ -213,6 +213,6 @@ public class User {
                 System.lineSeparator() +
                 "Your account has been suspended" +
                 System.lineSeparator() +
-                + "--KMA Team"
+                "--KMA Team";
     }
 }
