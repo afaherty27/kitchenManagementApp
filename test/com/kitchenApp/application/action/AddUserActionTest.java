@@ -31,6 +31,7 @@ public class AddUserActionTest {
     public void addUserData() {
 
         userDao = new UserDao();
+        userRoleDao = new UserRoleDao();
 
         AddUserAction add = new AddUserAction();
         int listLength = userDao.getUserList().size();
@@ -46,9 +47,9 @@ public class AddUserActionTest {
      */
     @After
     public void after() {
-
-        userDao = new UserDao();
-        userRoleDao = new UserRoleDao();
+//
+//        userDao = new UserDao();
+//        userRoleDao = new UserRoleDao();
         UserRole role = new UserRole(0, "ref", "ref");
         User user = new User(0, "ref", "ref", "ref", "ref", "ref", role);
         userRoleDao.addUserRole(role);
