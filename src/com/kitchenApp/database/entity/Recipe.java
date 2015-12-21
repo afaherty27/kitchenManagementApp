@@ -98,6 +98,10 @@ public class Recipe {
         this.recipeName = recipeName;
     }
 
+    /**
+     * String displaying recipe file data
+     * @return recipe data
+     */
     public String toString() {
 
         return "New Recipe: " + recipeName +
@@ -105,4 +109,14 @@ public class Recipe {
                 " Catagory: " + category;
     }
 
+    /**
+     * Message to alert users a new recipe has been added to the app
+     * @return new recipe message
+     */
+    public String newRecipeMessage() {
+
+        return "Recipe for " + recipeName +
+                System.lineSeparator() +
+                " has been added to the KMA page for use.";
+    }
 }
