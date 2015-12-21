@@ -38,7 +38,7 @@ public class EmailUser {
                 response += line;
             }
             reader.close();
-            System.out.println("The response was: " + response);
+            log.debug("The response was: " + response);
 
         } catch (MalformedURLException e) {
 
