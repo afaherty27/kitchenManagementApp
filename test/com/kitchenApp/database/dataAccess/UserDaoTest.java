@@ -87,7 +87,7 @@ public class UserDaoTest {
         }
 
         assertNotNull("list is not null", list.size());
-        assertTrue(list.size() == i);
+        assertTrue(list.size() == i - 1);
     }
 
     /**
