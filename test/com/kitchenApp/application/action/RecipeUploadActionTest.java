@@ -18,7 +18,7 @@ public class RecipeUploadActionTest {
     private String category = "testCategory";
     private String recipeName = "test name";
     private Recipe recipe;
-    private RecipeDao dao;
+    private RecipeDao dao = new RecipeDao();
 
     /**
      * creates a recipe object to be used later in the test
@@ -26,7 +26,6 @@ public class RecipeUploadActionTest {
    @Before
    public void before() {
        recipe = new Recipe(0, filePath, category, recipeName);
-       dao = new RecipeDao();
        dao.addRecipe(recipe);
    }
 
