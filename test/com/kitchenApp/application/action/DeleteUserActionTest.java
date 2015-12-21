@@ -68,7 +68,7 @@ public class DeleteUserActionTest {
         userDao.deleteUser(user.getUserId());
 
         assertNotNull("DeleteUserAction object not instantiated", delete);
-        assertTrue("updating incorrect user role id", idString.equals(String.valueOf(role.getRoleId())));
+        assertTrue("deleting incorrect user role id", user.getRole().getRoleId() == role.getRoleId());
         assertFalse("incorrect list size after delete", listLength <= userRoleDao.getUserRoleList().size());
     }
 }
