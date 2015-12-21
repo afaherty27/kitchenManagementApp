@@ -58,14 +58,19 @@ public class UpdateUserActionTest {
     @Test
     public void updateUserRoleData() {
 
-        String idString = String.valueOf(role.getRoleId());
+        //System.out.println(String.valueOf(userDao.getUser(user.getUserId())));
+
+        String idString = String.valueOf(user.getUserId());
+        System.out.println("id used"  + idString);
+        System.out.println("user id: " + user.getUserId() + " role id: " + user.getRole().getRoleId());
         String preUpdate = String.valueOf(userRoleDao.getUserRole(role.getRoleId()));
+        System.out.println("preupdate: " + preUpdate);
 
         update.updateUserRoleData(idString, "updateRole", userDao, userRoleDao);
 
         String postUpdate = String.valueOf(userRoleDao.getUserRole(role.getRoleId()));
 
-        assertTrue("updating incorrect user role id", idString.equals(String.valueOf(role.getRoleId())));
+        assertTrue("updating incorrect user role id", user.getRole().getRoleId() == role.getRoleId());
         assertFalse("user role data update failed", preUpdate.equals(postUpdate));
         assertNotNull("UpdateUserAction object not instantiated", update);
     }
