@@ -40,6 +40,21 @@ public class AddUserAction {
 
         log.info(user.toString());
 
+        emailUser(email, user);
+
         return user;
+    }
+
+    /**
+     * Sends new user an email to confirm new user data
+     * @param email address email will be sent too
+     * @param user User object
+     */
+    public void emailUser(String email, User user) {
+        String subject = "New User Confirmation";
+
+        EmailUser emailUser = new EmailUser();
+
+        emailUser.sendMessage(subject, user.welcomeMessage(), email);
     }
 }

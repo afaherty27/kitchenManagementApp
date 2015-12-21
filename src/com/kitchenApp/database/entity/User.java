@@ -169,4 +169,22 @@ public class User {
                 + phone + " "
                 + role.getRoleId();
     }
+
+    public String welcomeMessage() {
+        return "Hello, " + userName
+                + System.lineSeparator() +
+                "You have been added to the Kitchen Management Webapp" +
+                System.lineSeparator() +
+                "Please check the information below" +
+                System.lineSeparator() +
+                "Email: " + email +
+                System.lineSeparator() +
+                "Phone: " + phone +
+                System.lineSeparator() +
+                "Temp password is " + password +
+                System.lineSeparator() +
+                "Please change this to a more secure password" +
+                System.lineSeparator() +
+                "Thank you, KMA Team";
+    }
 }
