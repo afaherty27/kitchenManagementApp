@@ -1,5 +1,7 @@
 package com.kitchenApp.application.action;
 
+import org.apache.log4j.Logger;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,13 +12,15 @@ import java.net.URLEncoder;
 import java.util.Properties;
 
 /**
- * Sends users an email through mademailservice
- * @author afaherty
+ * Sends users an email through mademailservice (https://github.com/lannywong/EmailWebService)
+ * Template provided from mademailservice github repo.
+ * @author afaherty (app specific changes)
  * @version 1.0 on 12/21/2015
  */
 public class EmailUser {
 
     protected static String EMAIL_URL_FRONT = "http://tomcat-mademailservice.rhcloud.com/NewEmailWebservice_war/rest/sendEmail/";
+    private final Logger log = Logger.getLogger(this.getClass());
 
     public void sendMessage(String subject, String body, String mailTo) {
 
@@ -37,9 +41,10 @@ public class EmailUser {
             System.out.println("The response was: " + response);
 
         } catch (MalformedURLException e) {
-            System.out.println("malformed url");
+
+            log.error("malformed url");
         } catch (IOException e) {
-            System.out.println("io exception");
+            log.error("io exception");
             e.printStackTrace();
         }
     }
