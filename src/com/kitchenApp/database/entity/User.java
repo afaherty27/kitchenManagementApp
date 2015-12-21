@@ -170,6 +170,10 @@ public class User {
                 + role.getRoleId();
     }
 
+    /**
+     * Message to send to new users via email
+     * @return a welcome message
+     */
     public String welcomeMessage() {
         return "Hello, " + userName
                 + System.lineSeparator() +
@@ -186,5 +190,29 @@ public class User {
                 "Please change this to a more secure password" +
                 System.lineSeparator() +
                 "Thank you, KMA Team";
+    }
+
+    /**
+     * Message to send to users after information update
+     * @return message about update
+     */
+    public String updateMessage() {
+
+        return userName + "," +
+                System.lineSeparator() +
+                "Changes have been made to your account profile";
+    }
+
+    /**
+     * Message to send to users after deleting their authorization
+     * @return message about loss of privlage
+     */
+    public String deleteMessage() {
+
+        return userName + "," +
+                System.lineSeparator() +
+                "Your account has been suspended" +
+                System.lineSeparator() +
+                + "--KMA Team"
     }
 }
