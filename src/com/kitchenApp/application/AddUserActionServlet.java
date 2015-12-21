@@ -1,6 +1,7 @@
 package com.kitchenApp.application;
 
 import com.kitchenApp.application.action.AddUserAction;
+import com.kitchenApp.application.action.EmailUser;
 import com.kitchenApp.database.dataAccess.UserDao;
 import com.kitchenApp.database.dataAccess.UserRoleDao;
 import org.apache.log4j.Logger;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Properties;
 
 @WebServlet(
         name = "addEmployeeServlet",
@@ -110,8 +112,6 @@ public class AddUserActionServlet extends HttpServlet {
      * @param session HttpSession object
      */
     public void writeSessionMessage(HttpSession session) {
-
-        //String message = (String) session.getAttribute("entryString");
 
         String message = "<h4 style=\"color: red; font-variant: small-caps\""
                 + ">Success</h4>";
