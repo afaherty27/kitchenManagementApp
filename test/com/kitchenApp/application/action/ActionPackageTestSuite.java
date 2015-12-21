@@ -13,6 +13,7 @@ import org.junit.runners.Suite;
         AddUserActionTest.class,
         UpdateUserActionTest.class,
         DeleteUserActionTest.class,
-        RecipeUploadActionTest.class
+        RecipeUploadActionTest.class,
+        EmailUserTest.class
 })
 public class ActionPackageTestSuite { }
