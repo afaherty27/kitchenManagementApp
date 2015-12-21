@@ -3,7 +3,8 @@ CREATE TABLE kitchenapp.user_role
 (
   user_role_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
  # user_name VARCHAR(15) NOT NULL,
-  user_role VARCHAR(15) NOT NULL
+  user_role VARCHAR(15) NOT NULL,
+  user_name VARCHAR(15) NOT NULL
 );
 
 #create user sample table
