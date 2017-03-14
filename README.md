@@ -1,6 +1,8 @@
 # kitchenManagementApp
 web app for simplifying kitchen management
 
+# THE EMAIL WEBSERVICE USED IN THIS APP IS NO LONGER HOSTED.  A FIX IS IN THE WORKS
+
 ##INTRO
 This web app will allow kitchen managers to simplify their work load, and provide all the
     information to their staff members
